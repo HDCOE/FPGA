@@ -1,0 +1,1504 @@
+INFO-FLOW: Workspace /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1 opened at Mon Jan 07 16:12:18 +03 2019
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/xfir.lib 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx_old.lib 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx_vivado.lib 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute       config_chip_info -quiet -speed medium 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.14 sec.
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.2 sec.
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.2 sec.
+Command     ap_source done; 0.2 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx_hp.lib 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq_hp.hlp 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     set_part xc7z020clg484-1 
+Execute       add_library xilinx/zynq/zynq:xc7z020:clg484:-1 
+Execute         get_default_platform 
+Execute         license_isbetapart xc7z020 
+Command         license_isbetapart done; error code: 1; 
+Execute         get_default_platform 
+Execute         config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute     config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 0.38 sec.
+Execute   set_part xc7z020clg484-1 -tool vivado 
+Execute     add_library xilinx/zynq/zynq:xc7z020:clg484:-1 
+Execute       get_default_platform 
+Execute       license_isbetapart xc7z020 
+Command       license_isbetapart done; error code: 1; 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute       config_chip_info -quiet -speed slow 
+Execute     add_library xilinx/zynq/zynq_fpv6 
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute   create_clock -period 10 -name default 
+Execute   csynth_design 
+Execute     get_config_compile -effort 
+Execute     get_config_compile -enable_clang39 
+Execute     get_config_compile -g 
+Execute     get_config_compile -lm 
+Execute     get_config_compile -ng 
+Execute     get_config_compile -opt_fp 
+Execute     get_config_compile -skip_cdt 
+Execute     get_config_compile -skip_syncheck 
+Execute     get_config_compile -skip_transform 
+Execute     get_config_compile -keep_printf 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+Execute       get_config_schedule -relax_ii_for_timing 
+Execute       get_config_schedule -suppress_dependence_error_break 
+INFO: [HLS 200-10] Analyzing design file 'CNN/Lenet5.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       is_m_axi_addr64 
+INFO-FLOW: Handling CNN/Lenet5.cpp as C++
+Execute       get_default_platform 
+Execute       is_encrypted CNN/Lenet5.cpp 
+Execute       get_default_platform 
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/home/hadee/Vivado/Vivado/2018.2/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "CNN/Lenet5.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot" -I "/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet5.pp.0.cpp" 
+INFO-FLOW: exec /home/hadee/Vivado/Vivado/2018.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /home/hadee/Vivado/Vivado/2018.2/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E CNN/Lenet5.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot -I /home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet5.pp.0.cpp
+Command       clang done; 2.44 sec.
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/home/hadee/Vivado/Vivado/2018.2/lnx64/tools/gcc" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot" -I "/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet5.pp.0.cpp"  -o "/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/useless.bc"  
+INFO-FLOW: exec /home/hadee/Vivado/Vivado/2018.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /home/hadee/Vivado/Vivado/2018.2/lnx64/tools/gcc -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot -I /home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet5.pp.0.cpp -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/useless.bc
+Command       clang done; 7.1 sec.
+INFO-FLOW: GCC PP time: 9 seconds per iteration
+Execute       list_core -type functional_unit 
+Execute       tidy_31 xilinx-systemc-detector /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet5.pp.0.cpp std=gnu++98 -directive=/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /home/hadee/Vivado/Vivado/2018.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet5.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 9.25 sec.
+INFO-FLOW: CDT Preprocessing with tidy-3.1...
+Execute       tidy_31 xilinx-directive2pragma /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet5.pp.0.cpp std=gnu++98 -directive=/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/solution1.json 
+INFO-FLOW: exec /home/hadee/Vivado/Vivado/2018.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/solution1.json -quiet -fix-errors /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet5.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 9.32 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr /home/hadee/Vivado/Vivado/2018.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/xilinx-dataflow-lawyer.Lenet5.pp.0.cpp.diag.yml /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet5.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/xilinx-dataflow-lawyer.Lenet5.pp.0.cpp.out.log 2> /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/xilinx-dataflow-lawyer.Lenet5.pp.0.cpp.err.log 
+Command       ap_eval done; 6.38 sec.
+Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet5.pp.0.cpp std=gnu++98 
+INFO-FLOW: exec /home/hadee/Vivado/Vivado/2018.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer -quiet -fix-errors /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet5.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+INFO-FLOW: exec /home/hadee/Vivado/Vivado/2018.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet5.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 21.98 sec.
+INFO-FLOW: tidy-3.1 time 37 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute       tidy_31 xilinx-ssdm-intrinsics-arguments /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet5.pragma.1.cpp std=gnu++98 
+INFO-FLOW: exec /home/hadee/Vivado/Vivado/2018.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet5.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 13.55 sec.
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/home/hadee/Vivado/Vivado/2018.2/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet5.pragma.1.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot" -I "/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet5.pragma.2.cpp" 
+INFO-FLOW: exec /home/hadee/Vivado/Vivado/2018.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /home/hadee/Vivado/Vivado/2018.2/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet5.pragma.1.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot -I /home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet5.pragma.2.cpp
+Command       clang done; 2.29 sec.
+Execute       get_default_platform 
+INFO-FLOW: Processing labels
+Execute       clang -src /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet5.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain /home/hadee/Vivado/Vivado/2018.2/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet5.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot" -I "/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet5.bc" 
+INFO-FLOW: exec /home/hadee/Vivado/Vivado/2018.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /home/hadee/Vivado/Vivado/2018.2/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet5.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot -I /home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet5.bc
+Command       clang done; 8.41 sec.
+INFO-FLOW: Linking Debug ...
+Execute       llvm-ld /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet5.g.bc -hls-opt -except-internalize Lenet -L/home/hadee/Vivado/Vivado/2018.2/lnx64/lib -lhlsm -lhlsmc++ -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/a.g 
+Command       llvm-ld done; 2.84 sec.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:22 ; elapsed = 00:01:25 . Memory (MB): peak = 377.109 ; gain = 0.176 ; free physical = 389 ; free virtual = 1236
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:22 ; elapsed = 00:01:25 . Memory (MB): peak = 377.109 ; gain = 0.176 ; free physical = 389 ; free virtual = 1236
+Execute       ::config_rtl 
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+Execute         transform -promote-dbg-pointer /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/a.pp.bc -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/a.pp.0.bc -f 
+Command         transform done; 0.72 sec.
+Execute         llvm-ld /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/a.pp.0.bc -disable-opt -L/home/hadee/Vivado/Vivado/2018.2/lnx64/lib -lfloatconversion -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/a.g.0 
+Command         llvm-ld done; 2.56 sec.
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top Lenet -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/a.g.0.bc -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [XFORM 203-603] Inlining function 'tensor_t<2, 2, 2>::get' into 'tensor_t<2, 2, 2>::operator()' (CNN/Tensor.h:51).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<2, 2, 2>::operator()' into 'conv_layer1<2, 2, 2, 1, 2, 2, 2>::conv_layer1.1' (CNN/conv.hpp:26).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<2, 2, 2>::operator()' into 'fc_layer<2, 2, 2, 2>::fc_layer.1' (CNN/fc.hpp:31).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<2, 2, 2>::operator()' into 'conv_layer1<2, 2, 2, 1, 2, 2, 2>::Padding' (CNN/conv.hpp:52).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<2, 2, 2>::operator()' into 'fc_layer<2, 2, 2, 2>::forward_fc' (CNN/fc.hpp:51).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<2, 2, 2>::operator()' into 'fc_layer<2, 2, 2, 2>::forward_fc' (CNN/fc.hpp:51).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<2, 2, 2>::operator()' into 'activation_layer<2, 2, 2>::forward_ReLu' (CNN/activation.hpp:22).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<2, 2, 2>::operator()' into 'activation_layer<2, 2, 2>::forward_ReLu' (CNN/activation.hpp:22).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<2, 2, 2>::operator()' into 'activation_layer<2, 2, 2>::forward_ReLu' (CNN/activation.hpp:20).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<2, 2, 2>::operator()' into 'activation_layer<2, 2, 2>::forward_ReLu' (CNN/activation.hpp:19).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<2, 2, 2>::operator()' into 'conv_layer1<2, 2, 2, 1, 2, 2, 2>::Conv_forward' (CNN/conv.hpp:103).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<2, 2, 2>::operator()' into 'conv_layer1<2, 2, 2, 1, 2, 2, 2>::Conv_forward' (CNN/conv.hpp:99).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<2, 2, 2>::operator()' into 'conv_layer1<2, 2, 2, 1, 2, 2, 2>::Conv_forward' (CNN/conv.hpp:99).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<2, 2, 2>::operator()' into 'conv_layer1<2, 2, 2, 1, 2, 2, 2>::Conv_forward' (CNN/conv.hpp:85).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<4, 4, 2>::get' into 'tensor_t<4, 4, 2>::operator()' (CNN/Tensor.h:51).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<4, 4, 2>::operator()' into 'conv_layer1<2, 2, 2, 1, 2, 2, 2>::Padding' (CNN/conv.hpp:56).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<4, 4, 2>::operator()' into 'conv_layer1<2, 2, 2, 1, 2, 2, 2>::Padding' (CNN/conv.hpp:52).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<4, 4, 2>::operator()' into 'conv_layer1<2, 2, 2, 1, 2, 2, 2>::Conv_forward' (CNN/conv.hpp:99).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<1, 1, 2>::get' into 'tensor_t<1, 1, 2>::operator()' (CNN/Tensor.h:51).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<1, 1, 2>::operator()' into 'conv_layer1<2, 2, 2, 1, 2, 2, 2>::Conv_forward' (CNN/conv.hpp:103).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<1, 1, 2>::operator()' into 'fc_layer<2, 2, 2, 2>::forward_fc' (CNN/fc.hpp:53).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<1, 1, 2>::operator()' into 'fc_layer<2, 2, 2, 2>::forward_fc' (CNN/fc.hpp:53).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<1, 1, 2>::operator()' into 'classifier<1, 1, 2>::softmax' (CNN/classifier.hpp:23).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<1, 1, 2>::operator()' into 'classifier<1, 1, 2>::softmax' (CNN/classifier.hpp:26).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<1, 1, 2>::operator()' into 'classifier<1, 1, 2>::softmax' (CNN/classifier.hpp:27).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<1, 1, 2>::operator()' into 'classifier<1, 1, 2>::softmax' (CNN/classifier.hpp:33).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<1, 1, 2>::operator()' into 'classifier<1, 1, 2>::softmax' (CNN/classifier.hpp:39).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<1, 1, 2>::operator()' into 'classifier<1, 1, 2>::softmax' (CNN/classifier.hpp:41).
+Command         transform done; 9.11 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:34 ; elapsed = 00:01:38 . Memory (MB): peak = 575.855 ; gain = 198.922 ; free physical = 218 ; free virtual = 1093
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/a.g.1.bc -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+INFO: [XFORM 203-602] Inlining function 'hls::exp<16, 8>' into 'classifier<1, 1, 2>::softmax' (CNN/classifier.hpp:34) automatically.
+Command         transform done; 1.03 sec.
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+WARNING: [SYNCHK 200-23] /home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_exp_apfixed.h:195: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+Command         transform done; 0.64 sec.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:36 ; elapsed = 00:01:39 . Memory (MB): peak = 638.422 ; gain = 261.488 ; free physical = 127 ; free virtual = 1028
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/a.g.1.bc to /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -clib-intrinsic-prepare -dce -func-buffer -dce -array-normalize -func-legal -instcombine -gvn -constprop -dce -ptrArgReplace -mem2reg -instcombine -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg -instcombine -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -instcombine -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -inst-simplify -dce -norm-name -function-inline -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/a.o.1.bc -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'exp_reduce::exp<16, 8>' (/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_exp_apfixed.h:45:29).
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1' (/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_exp_apfixed.h:194) in function 'exp_reduce::exp<16, 8>' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-2' (/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_exp_apfixed.h:201) in function 'exp_reduce::exp<16, 8>' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-3' (/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_exp_apfixed.h:258) in function 'exp_reduce::exp<16, 8>' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-4' (/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_exp_apfixed.h:264) in function 'exp_reduce::exp<16, 8>' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-5' (/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_exp_apfixed.h:267) in function 'exp_reduce::exp<16, 8>' completely.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv1.W.size.z' (CNN/Lenet5.cpp:37) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'conv1.bias.data.V' (CNN/Lenet5.cpp:37) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'fc1.bias.data.V' (CNN/Lenet5.cpp:44) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'fc1.output.data.V' (CNN/Lenet5.cpp:44) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'softmax.input.data.V' (CNN/Lenet5.cpp:46) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'softmax.y_hat.data.V' (CNN/Lenet5.cpp:46) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'conv1.W.size.z' (CNN/Lenet5.cpp:37) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv1.bias.data.V' (CNN/Lenet5.cpp:37) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'fc1.bias.data.V' (CNN/Lenet5.cpp:44) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'fc1.output.data.V' (CNN/Lenet5.cpp:44) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'softmax.input.data.V' (CNN/Lenet5.cpp:46) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'softmax.y_hat.data.V' (CNN/Lenet5.cpp:46) in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'hls::exp<16, 8>' into 'classifier<1, 1, 2>::softmax' (CNN/classifier.hpp:34) automatically.
+INFO: [XFORM 203-602] Inlining function 'tensor_t<1, 1, 2>::set_all' into 'Lenet' (CNN/conv.hpp:14->CNN/conv.hpp:33->CNN/Lenet5.cpp:37) automatically.
+Command         transform done; 1.79 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/a.o.1.tmp.bc -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_exp_apfixed.h:45:1) to (/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_exp_apfixed.h:871:1) in function 'exp_reduce::exp<16, 8>'... converting 5 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'exp_reduce::exp<16, 8>' (/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_exp_apfixed.h:45:1)...7 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'conv_layer1<2, 2, 2, 1, 2, 2, 2>::Padding' (CNN/conv.hpp:35)...6 expression(s) balanced.
+Command         transform done; 1.16 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:39 ; elapsed = 00:01:42 . Memory (MB): peak = 776.938 ; gain = 400.004 ; free physical = 99 ; free virtual = 911
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -instcombine -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -bitwidth -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -dead-allocation-elimination -cdfg-build /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/a.o.2.bc -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+WARNING: [XFORM 203-631] Renaming function 'fc_layer<2, 2, 2, 2>::forward_fc' to 'forward_fc' (CNN/fc.hpp:39)
+WARNING: [XFORM 203-631] Renaming function 'exp_reduce::exp<16, 8>' to 'exp<16, 8>' (/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_exp_apfixed.h:45:1)
+WARNING: [XFORM 203-631] Renaming function 'conv_layer1<2, 2, 2, 1, 2, 2, 2>::Padding' to 'Padding' (CNN/conv.hpp:35)
+WARNING: [XFORM 203-631] Renaming function 'conv_layer1<2, 2, 2, 1, 2, 2, 2>::Conv_forward' to 'Conv_forward' (CNN/conv.hpp:63)
+WARNING: [XFORM 203-631] Renaming function 'classifier<1, 1, 2>::softmax' to 'softmax' (CNN/classifier.hpp:15)
+WARNING: [XFORM 203-631] Renaming function 'activation_layer<2, 2, 2>::forward_ReLu' to 'forward_ReLu' (CNN/activation.hpp:11)
+Command         transform done; 1.78 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:40 ; elapsed = 00:01:44 . Memory (MB): peak = 904.938 ; gain = 528.004 ; free physical = 95 ; free virtual = 806
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 18.81 sec.
+Command     elaborate done; 103.11 sec.
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'Lenet' ...
+Execute       ap_set_top_model Lenet 
+WARNING: [SYN 201-103] Legalizing function name 'copy_tensor.1' to 'copy_tensor_1'.
+WARNING: [SYN 201-103] Legalizing function name 'copy_tensor.3' to 'copy_tensor_3'.
+WARNING: [SYN 201-103] Legalizing function name 'exp<16, 8>' to 'exp_16_8_s'.
+WARNING: [SYN 201-103] Legalizing function name 'copy_tensor.2' to 'copy_tensor_2'.
+Execute       get_model_list Lenet -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model Lenet 
+Execute       preproc_iomode -model copy_tensor 
+Execute       preproc_iomode -model copy_tensor.2 
+Execute       preproc_iomode -model softmax 
+Execute       preproc_iomode -model exp<16, 8> 
+Execute       preproc_iomode -model copy_tensor.3 
+Execute       preproc_iomode -model forward_fc 
+Execute       preproc_iomode -model forward_ReLu 
+Execute       preproc_iomode -model Conv_forward 
+Execute       preproc_iomode -model Padding 
+Execute       preproc_iomode -model copy_tensor.1 
+Execute       get_model_list Lenet -filter all-wo-channel 
+INFO-FLOW: Model list for configure: copy_tensor.1 Padding Conv_forward forward_ReLu forward_fc copy_tensor.3 {exp<16, 8>} softmax copy_tensor.2 copy_tensor Lenet
+INFO-FLOW: Configuring Module : copy_tensor.1 ...
+Execute       set_default_model copy_tensor.1 
+Execute       apply_spec_resource_limit copy_tensor.1 
+INFO-FLOW: Configuring Module : Padding ...
+Execute       set_default_model Padding 
+Execute       apply_spec_resource_limit Padding 
+INFO-FLOW: Configuring Module : Conv_forward ...
+Execute       set_default_model Conv_forward 
+Execute       apply_spec_resource_limit Conv_forward 
+INFO-FLOW: Configuring Module : forward_ReLu ...
+Execute       set_default_model forward_ReLu 
+Execute       apply_spec_resource_limit forward_ReLu 
+INFO-FLOW: Configuring Module : forward_fc ...
+Execute       set_default_model forward_fc 
+Execute       apply_spec_resource_limit forward_fc 
+INFO-FLOW: Configuring Module : copy_tensor.3 ...
+Execute       set_default_model copy_tensor.3 
+Execute       apply_spec_resource_limit copy_tensor.3 
+INFO-FLOW: Configuring Module : exp<16, 8> ...
+Execute       set_default_model exp<16, 8> 
+Execute       apply_spec_resource_limit exp<16, 8> 
+INFO-FLOW: Configuring Module : softmax ...
+Execute       set_default_model softmax 
+Execute       apply_spec_resource_limit softmax 
+INFO-FLOW: Configuring Module : copy_tensor.2 ...
+Execute       set_default_model copy_tensor.2 
+Execute       apply_spec_resource_limit copy_tensor.2 
+INFO-FLOW: Configuring Module : copy_tensor ...
+Execute       set_default_model copy_tensor 
+Execute       apply_spec_resource_limit copy_tensor 
+INFO-FLOW: Configuring Module : Lenet ...
+Execute       set_default_model Lenet 
+Execute       apply_spec_resource_limit Lenet 
+INFO-FLOW: Model list for preprocess: copy_tensor.1 Padding Conv_forward forward_ReLu forward_fc copy_tensor.3 {exp<16, 8>} softmax copy_tensor.2 copy_tensor Lenet
+INFO-FLOW: Preprocessing Module: copy_tensor.1 ...
+Execute       set_default_model copy_tensor.1 
+Execute       cdfg_preprocess -model copy_tensor.1 
+Execute       rtl_gen_preprocess copy_tensor.1 
+INFO-FLOW: Preprocessing Module: Padding ...
+Execute       set_default_model Padding 
+Execute       cdfg_preprocess -model Padding 
+Execute       rtl_gen_preprocess Padding 
+INFO-FLOW: Preprocessing Module: Conv_forward ...
+Execute       set_default_model Conv_forward 
+Execute       cdfg_preprocess -model Conv_forward 
+Execute       rtl_gen_preprocess Conv_forward 
+INFO-FLOW: Preprocessing Module: forward_ReLu ...
+Execute       set_default_model forward_ReLu 
+Execute       cdfg_preprocess -model forward_ReLu 
+Execute       rtl_gen_preprocess forward_ReLu 
+INFO-FLOW: Preprocessing Module: forward_fc ...
+Execute       set_default_model forward_fc 
+Execute       cdfg_preprocess -model forward_fc 
+Execute       rtl_gen_preprocess forward_fc 
+INFO-FLOW: Preprocessing Module: copy_tensor.3 ...
+Execute       set_default_model copy_tensor.3 
+Execute       cdfg_preprocess -model copy_tensor.3 
+Execute       rtl_gen_preprocess copy_tensor.3 
+INFO-FLOW: Preprocessing Module: exp<16, 8> ...
+Execute       set_default_model exp<16, 8> 
+Execute       cdfg_preprocess -model exp<16, 8> 
+Execute       rtl_gen_preprocess exp<16, 8> 
+INFO-FLOW: Preprocessing Module: softmax ...
+Execute       set_default_model softmax 
+Execute       cdfg_preprocess -model softmax 
+Execute       rtl_gen_preprocess softmax 
+INFO-FLOW: Preprocessing Module: copy_tensor.2 ...
+Execute       set_default_model copy_tensor.2 
+Execute       cdfg_preprocess -model copy_tensor.2 
+Execute       rtl_gen_preprocess copy_tensor.2 
+INFO-FLOW: Preprocessing Module: copy_tensor ...
+Execute       set_default_model copy_tensor 
+Execute       cdfg_preprocess -model copy_tensor 
+Execute       rtl_gen_preprocess copy_tensor 
+INFO-FLOW: Preprocessing Module: Lenet ...
+Execute       set_default_model Lenet 
+Execute       cdfg_preprocess -model Lenet 
+Execute       rtl_gen_preprocess Lenet 
+INFO-FLOW: Model list for synthesis: copy_tensor.1 Padding Conv_forward forward_ReLu forward_fc copy_tensor.3 {exp<16, 8>} softmax copy_tensor.2 copy_tensor Lenet
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'copy_tensor_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model copy_tensor.1 
+Execute       schedule -model copy_tensor.1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.11 sec.
+INFO: [HLS 200-111]  Elapsed time: 104.41 seconds; current allocated memory: 449.812 MB.
+Execute       report -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_1.verbose.sched.rpt -verbose -f 
+INFO: [HLS 200-434] Only 0 loops out of a total 3 loops have been pipelined in this design.
+Execute       db_write -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_1.sched.adb -f 
+INFO-FLOW: Finish scheduling copy_tensor.1.
+Execute       set_default_model copy_tensor.1 
+Execute       bind -model copy_tensor.1 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=copy_tensor.1
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.07 seconds; current allocated memory: 450.049 MB.
+Execute       report -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_1.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_1.bind.adb -f 
+INFO-FLOW: Finish binding copy_tensor.1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Padding' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Padding 
+Execute       schedule -model Padding 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.16 seconds; current allocated memory: 450.346 MB.
+Execute       report -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Padding.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Padding.sched.adb -f 
+INFO-FLOW: Finish scheduling Padding.
+Execute       set_default_model Padding 
+Execute       bind -model Padding 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=Padding
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.08 seconds; current allocated memory: 450.521 MB.
+Execute       report -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Padding.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Padding.bind.adb -f 
+INFO-FLOW: Finish binding Padding.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Conv_forward' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Conv_forward 
+Execute       schedule -model Conv_forward 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.19 seconds; current allocated memory: 450.884 MB.
+Execute       report -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Conv_forward.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Conv_forward.sched.adb -f 
+INFO-FLOW: Finish scheduling Conv_forward.
+Execute       set_default_model Conv_forward 
+Execute       bind -model Conv_forward 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=Conv_forward
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.13 seconds; current allocated memory: 451.246 MB.
+Execute       report -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Conv_forward.verbose.bind.rpt -verbose -f 
+Command       report done; 0.13 sec.
+Execute       db_write -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Conv_forward.bind.adb -f 
+INFO-FLOW: Finish binding Conv_forward.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'forward_ReLu' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model forward_ReLu 
+Execute       schedule -model forward_ReLu 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.21 seconds; current allocated memory: 451.424 MB.
+Execute       report -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_ReLu.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_ReLu.sched.adb -f 
+INFO-FLOW: Finish scheduling forward_ReLu.
+Execute       set_default_model forward_ReLu 
+Execute       bind -model forward_ReLu 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=forward_ReLu
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.06 seconds; current allocated memory: 451.553 MB.
+Execute       report -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_ReLu.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_ReLu.bind.adb -f 
+INFO-FLOW: Finish binding forward_ReLu.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'forward_fc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model forward_fc 
+Execute       schedule -model forward_fc 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.11 seconds; current allocated memory: 451.820 MB.
+Execute       report -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_fc.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_fc.sched.adb -f 
+INFO-FLOW: Finish scheduling forward_fc.
+Execute       set_default_model forward_fc 
+Execute       bind -model forward_fc 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=forward_fc
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.07 seconds; current allocated memory: 452.087 MB.
+Execute       report -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_fc.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_fc.bind.adb -f 
+INFO-FLOW: Finish binding forward_fc.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'copy_tensor_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model copy_tensor.3 
+Execute       schedule -model copy_tensor.3 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.13 seconds; current allocated memory: 452.189 MB.
+Execute       report -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_3.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_3.sched.adb -f 
+INFO-FLOW: Finish scheduling copy_tensor.3.
+Execute       set_default_model copy_tensor.3 
+Execute       bind -model copy_tensor.3 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=copy_tensor.3
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 452.270 MB.
+Execute       report -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_3.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_3.bind.adb -f 
+INFO-FLOW: Finish binding copy_tensor.3.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'exp_16_8_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model exp<16, 8> 
+Execute       schedule -model exp<16, 8> 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'exp<16, 8>'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 6.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.12 seconds; current allocated memory: 452.558 MB.
+Execute       report -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/exp_16_8_s.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/exp_16_8_s.sched.adb -f 
+INFO-FLOW: Finish scheduling exp<16, 8>.
+Execute       set_default_model exp<16, 8> 
+Execute       bind -model exp<16, 8> 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=exp<16, 8>
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.1 seconds; current allocated memory: 452.831 MB.
+Execute       report -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/exp_16_8_s.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/exp_16_8_s.bind.adb -f 
+INFO-FLOW: Finish binding exp<16, 8>.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'softmax' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model softmax 
+Execute       schedule -model softmax 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.18 seconds; current allocated memory: 453.219 MB.
+Execute       report -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/softmax.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/softmax.sched.adb -f 
+INFO-FLOW: Finish scheduling softmax.
+Execute       set_default_model softmax 
+Execute       bind -model softmax 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=softmax
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.15 seconds; current allocated memory: 453.493 MB.
+Execute       report -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/softmax.verbose.bind.rpt -verbose -f 
+Command       report done; 0.13 sec.
+Execute       db_write -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/softmax.bind.adb -f 
+INFO-FLOW: Finish binding softmax.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'copy_tensor_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model copy_tensor.2 
+Execute       schedule -model copy_tensor.2 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.2 seconds; current allocated memory: 453.725 MB.
+Execute       report -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_2.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_2.sched.adb -f 
+INFO-FLOW: Finish scheduling copy_tensor.2.
+Execute       set_default_model copy_tensor.2 
+Execute       bind -model copy_tensor.2 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=copy_tensor.2
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 453.863 MB.
+Execute       report -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_2.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_2.bind.adb -f 
+INFO-FLOW: Finish binding copy_tensor.2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'copy_tensor' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model copy_tensor 
+Execute       schedule -model copy_tensor 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.1 seconds; current allocated memory: 454.063 MB.
+Execute       report -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor.sched.adb -f 
+INFO-FLOW: Finish scheduling copy_tensor.
+Execute       set_default_model copy_tensor 
+Execute       bind -model copy_tensor 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=copy_tensor
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 454.200 MB.
+Execute       report -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor.bind.adb -f 
+INFO-FLOW: Finish binding copy_tensor.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Lenet' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Lenet 
+Execute       schedule -model Lenet 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.1 seconds; current allocated memory: 454.470 MB.
+Execute       report -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.sched.adb -f 
+INFO-FLOW: Finish scheduling Lenet.
+Execute       set_default_model Lenet 
+Execute       bind -model Lenet 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=Lenet
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.54 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.58 seconds; current allocated memory: 454.972 MB.
+Execute       report -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.verbose.bind.rpt -verbose -f 
+Command       report done; 0.32 sec.
+Execute       db_write -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.bind.adb -f 
+INFO-FLOW: Finish binding Lenet.
+Execute       get_model_list Lenet -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess copy_tensor.1 
+Execute       rtl_gen_preprocess Padding 
+Execute       rtl_gen_preprocess Conv_forward 
+Execute       rtl_gen_preprocess forward_ReLu 
+Execute       rtl_gen_preprocess forward_fc 
+Execute       rtl_gen_preprocess copy_tensor.3 
+Execute       rtl_gen_preprocess exp<16, 8> 
+Execute       rtl_gen_preprocess softmax 
+Execute       rtl_gen_preprocess copy_tensor.2 
+Execute       rtl_gen_preprocess copy_tensor 
+Execute       rtl_gen_preprocess Lenet 
+INFO-FLOW: Model list for RTL generation: copy_tensor.1 Padding Conv_forward forward_ReLu forward_fc copy_tensor.3 {exp<16, 8>} softmax copy_tensor.2 copy_tensor Lenet
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'copy_tensor_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model copy_tensor.1 -vendor xilinx -mg_file /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_1.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'copy_tensor_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.38 seconds; current allocated memory: 455.419 MB.
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl copy_tensor.1 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/systemc/copy_tensor_1 -synmodules copy_tensor.1 Padding Conv_forward forward_ReLu forward_fc copy_tensor.3 {exp<16, 8>} softmax copy_tensor.2 copy_tensor Lenet 
+Execute       gen_rtl copy_tensor.1 -style xilinx -f -lang vhdl -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/vhdl/copy_tensor_1 
+Execute       gen_rtl copy_tensor.1 -style xilinx -f -lang vlog -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/verilog/copy_tensor_1 
+Execute       gen_tb_info copy_tensor.1 -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_1 -p /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db 
+Execute       report -model copy_tensor.1 -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/report/copy_tensor_1_csynth.rpt -f 
+Execute       report -model copy_tensor.1 -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/report/copy_tensor_1_csynth.xml -f -x 
+Execute       report -model copy_tensor.1 -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_1.verbose.rpt -verbose -f 
+Execute       db_write -model copy_tensor.1 -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_1.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Padding' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model Padding -vendor xilinx -mg_file /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Padding.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Padding'.
+INFO: [HLS 200-111]  Elapsed time: 0.18 seconds; current allocated memory: 456.732 MB.
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Padding -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/systemc/Padding -synmodules copy_tensor.1 Padding Conv_forward forward_ReLu forward_fc copy_tensor.3 {exp<16, 8>} softmax copy_tensor.2 copy_tensor Lenet 
+Execute       gen_rtl Padding -style xilinx -f -lang vhdl -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/vhdl/Padding 
+Execute       gen_rtl Padding -style xilinx -f -lang vlog -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/verilog/Padding 
+Execute       gen_tb_info Padding -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Padding -p /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db 
+Execute       report -model Padding -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/report/Padding_csynth.rpt -f 
+Execute       report -model Padding -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/report/Padding_csynth.xml -f -x 
+Execute       report -model Padding -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Padding.verbose.rpt -verbose -f 
+Execute       db_write -model Padding -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Padding.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Conv_forward' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model Conv_forward -vendor xilinx -mg_file /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Conv_forward.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'Conv_forward_conv1_W_data_V' to 'Conv_forward_convbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Lenet_mac_muladd_16s_10s_24ns_24_1_1' to 'Lenet_mac_muladd_cud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'Lenet_mac_muladd_cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Conv_forward'.
+INFO: [HLS 200-111]  Elapsed time: 0.24 seconds; current allocated memory: 458.178 MB.
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Conv_forward -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/systemc/Conv_forward -synmodules copy_tensor.1 Padding Conv_forward forward_ReLu forward_fc copy_tensor.3 {exp<16, 8>} softmax copy_tensor.2 copy_tensor Lenet 
+Execute       gen_rtl Conv_forward -style xilinx -f -lang vhdl -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/vhdl/Conv_forward 
+Execute       gen_rtl Conv_forward -style xilinx -f -lang vlog -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/verilog/Conv_forward 
+Execute       gen_tb_info Conv_forward -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Conv_forward -p /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db 
+Execute       report -model Conv_forward -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/report/Conv_forward_csynth.rpt -f 
+Execute       report -model Conv_forward -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/report/Conv_forward_csynth.xml -f -x 
+Execute       report -model Conv_forward -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Conv_forward.verbose.rpt -verbose -f 
+Command       report done; 0.15 sec.
+Execute       db_write -model Conv_forward -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Conv_forward.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'forward_ReLu' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model forward_ReLu -vendor xilinx -mg_file /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_ReLu.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'forward_ReLu'.
+INFO: [HLS 200-111]  Elapsed time: 0.34 seconds; current allocated memory: 459.946 MB.
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl forward_ReLu -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/systemc/forward_ReLu -synmodules copy_tensor.1 Padding Conv_forward forward_ReLu forward_fc copy_tensor.3 {exp<16, 8>} softmax copy_tensor.2 copy_tensor Lenet 
+Execute       gen_rtl forward_ReLu -style xilinx -f -lang vhdl -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/vhdl/forward_ReLu 
+Execute       gen_rtl forward_ReLu -style xilinx -f -lang vlog -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/verilog/forward_ReLu 
+Execute       gen_tb_info forward_ReLu -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_ReLu -p /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db 
+Execute       report -model forward_ReLu -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/report/forward_ReLu_csynth.rpt -f 
+Execute       report -model forward_ReLu -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/report/forward_ReLu_csynth.xml -f -x 
+Execute       report -model forward_ReLu -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_ReLu.verbose.rpt -verbose -f 
+Execute       db_write -model forward_ReLu -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_ReLu.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'forward_fc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model forward_fc -vendor xilinx -mg_file /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_fc.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'forward_fc_fc1_W_data_V' to 'forward_fc_fc1_W_dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Lenet_mac_muladd_10s_16s_24ns_24_1_1' to 'Lenet_mac_muladd_eOg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'Lenet_mac_muladd_eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'forward_fc'.
+INFO: [HLS 200-111]  Elapsed time: 0.19 seconds; current allocated memory: 460.971 MB.
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl forward_fc -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/systemc/forward_fc -synmodules copy_tensor.1 Padding Conv_forward forward_ReLu forward_fc copy_tensor.3 {exp<16, 8>} softmax copy_tensor.2 copy_tensor Lenet 
+Execute       gen_rtl forward_fc -style xilinx -f -lang vhdl -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/vhdl/forward_fc 
+Execute       gen_rtl forward_fc -style xilinx -f -lang vlog -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/verilog/forward_fc 
+Execute       gen_tb_info forward_fc -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_fc -p /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db 
+Execute       report -model forward_fc -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/report/forward_fc_csynth.rpt -f 
+Execute       report -model forward_fc -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/report/forward_fc_csynth.xml -f -x 
+Execute       report -model forward_fc -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_fc.verbose.rpt -verbose -f 
+Execute       db_write -model forward_fc -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_fc.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'copy_tensor_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model copy_tensor.3 -vendor xilinx -mg_file /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_3.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'copy_tensor_3'.
+INFO: [HLS 200-111]  Elapsed time: 0.23 seconds; current allocated memory: 462.103 MB.
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl copy_tensor.3 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/systemc/copy_tensor_3 -synmodules copy_tensor.1 Padding Conv_forward forward_ReLu forward_fc copy_tensor.3 {exp<16, 8>} softmax copy_tensor.2 copy_tensor Lenet 
+Execute       gen_rtl copy_tensor.3 -style xilinx -f -lang vhdl -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/vhdl/copy_tensor_3 
+Execute       gen_rtl copy_tensor.3 -style xilinx -f -lang vlog -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/verilog/copy_tensor_3 
+Execute       gen_tb_info copy_tensor.3 -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_3 -p /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db 
+Execute       report -model copy_tensor.3 -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/report/copy_tensor_3_csynth.rpt -f 
+Execute       report -model copy_tensor.3 -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/report/copy_tensor_3_csynth.xml -f -x 
+Execute       report -model copy_tensor.3 -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_3.verbose.rpt -verbose -f 
+Execute       db_write -model copy_tensor.3 -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_3.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'exp_16_8_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model exp<16, 8> -vendor xilinx -mg_file /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/exp_16_8_s.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'exp_16_8_s_f_x_lsb_table' to 'exp_16_8_s_f_x_lsfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'exp_16_8_s_exp_x_msb_2_m_1_tabl' to 'exp_16_8_s_exp_x_g8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'exp_16_8_s_exp_x_msb_1_table' to 'exp_16_8_s_exp_x_hbi' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'exp_16_8_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.17 seconds; current allocated memory: 463.163 MB.
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl exp<16, 8> -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/systemc/exp_16_8_s -synmodules copy_tensor.1 Padding Conv_forward forward_ReLu forward_fc copy_tensor.3 {exp<16, 8>} softmax copy_tensor.2 copy_tensor Lenet 
+Execute       gen_rtl exp<16, 8> -style xilinx -f -lang vhdl -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/vhdl/exp_16_8_s 
+Execute       gen_rtl exp<16, 8> -style xilinx -f -lang vlog -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/verilog/exp_16_8_s 
+Execute       gen_tb_info exp<16, 8> -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/exp_16_8_s -p /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db 
+Execute       report -model exp<16, 8> -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/report/exp_16_8_s_csynth.rpt -f 
+Execute       report -model exp<16, 8> -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/report/exp_16_8_s_csynth.xml -f -x 
+Execute       report -model exp<16, 8> -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/exp_16_8_s.verbose.rpt -verbose -f 
+Command       report done; 0.13 sec.
+Execute       db_write -model exp<16, 8> -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/exp_16_8_s.adb -f 
+Command       db_write done; 0.12 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'softmax' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model softmax -vendor xilinx -mg_file /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/softmax.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'Lenet_sdiv_24ns_16s_16_28_seq_1' to 'Lenet_sdiv_24ns_1ibs' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'Lenet_sdiv_24ns_1ibs': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'softmax'.
+INFO: [HLS 200-111]  Elapsed time: 0.4 seconds; current allocated memory: 464.978 MB.
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl softmax -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/systemc/softmax -synmodules copy_tensor.1 Padding Conv_forward forward_ReLu forward_fc copy_tensor.3 {exp<16, 8>} softmax copy_tensor.2 copy_tensor Lenet 
+Execute       gen_rtl softmax -style xilinx -f -lang vhdl -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/vhdl/softmax 
+Execute       gen_rtl softmax -style xilinx -f -lang vlog -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/verilog/softmax 
+Execute       gen_tb_info softmax -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/softmax -p /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db 
+Execute       report -model softmax -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/report/softmax_csynth.rpt -f 
+Execute       report -model softmax -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/report/softmax_csynth.xml -f -x 
+Execute       report -model softmax -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/softmax.verbose.rpt -verbose -f 
+Command       report done; 0.16 sec.
+Execute       db_write -model softmax -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/softmax.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'copy_tensor_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model copy_tensor.2 -vendor xilinx -mg_file /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_2.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'copy_tensor_2'.
+INFO: [HLS 200-111]  Elapsed time: 0.34 seconds; current allocated memory: 466.265 MB.
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl copy_tensor.2 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/systemc/copy_tensor_2 -synmodules copy_tensor.1 Padding Conv_forward forward_ReLu forward_fc copy_tensor.3 {exp<16, 8>} softmax copy_tensor.2 copy_tensor Lenet 
+Execute       gen_rtl copy_tensor.2 -style xilinx -f -lang vhdl -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/vhdl/copy_tensor_2 
+Execute       gen_rtl copy_tensor.2 -style xilinx -f -lang vlog -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/verilog/copy_tensor_2 
+Execute       gen_tb_info copy_tensor.2 -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_2 -p /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db 
+Execute       report -model copy_tensor.2 -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/report/copy_tensor_2_csynth.rpt -f 
+Execute       report -model copy_tensor.2 -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/report/copy_tensor_2_csynth.xml -f -x 
+Execute       report -model copy_tensor.2 -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_2.verbose.rpt -verbose -f 
+Execute       db_write -model copy_tensor.2 -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_2.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'copy_tensor' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model copy_tensor -vendor xilinx -mg_file /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'copy_tensor'.
+INFO: [HLS 200-111]  Elapsed time: 0.17 seconds; current allocated memory: 467.127 MB.
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl copy_tensor -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/systemc/copy_tensor -synmodules copy_tensor.1 Padding Conv_forward forward_ReLu forward_fc copy_tensor.3 {exp<16, 8>} softmax copy_tensor.2 copy_tensor Lenet 
+Execute       gen_rtl copy_tensor -style xilinx -f -lang vhdl -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/vhdl/copy_tensor 
+Execute       gen_rtl copy_tensor -style xilinx -f -lang vlog -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/verilog/copy_tensor 
+Execute       gen_tb_info copy_tensor -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor -p /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db 
+Execute       report -model copy_tensor -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/report/copy_tensor_csynth.rpt -f 
+Execute       report -model copy_tensor -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/report/copy_tensor_csynth.xml -f -x 
+Execute       report -model copy_tensor -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor.verbose.rpt -verbose -f 
+Execute       db_write -model copy_tensor -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Lenet' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model Lenet -vendor xilinx -mg_file /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'Lenet/data_in_data_V' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Lenet/data_in_size_x' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Lenet/data_in_size_y' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Lenet/data_in_size_z' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Lenet/conv_data_V' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Lenet/conv_size_x' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Lenet/conv_size_y' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Lenet/conv_size_z' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Lenet/relu_data_V' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Lenet/relu_size_x' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Lenet/relu_size_y' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Lenet/relu_size_z' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Lenet/pool_data_V' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Lenet/pool_size_x' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Lenet/pool_size_y' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Lenet/pool_size_z' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Lenet/fc_data_V' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Lenet/fc_size_x' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Lenet/fc_size_y' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Lenet/fc_size_z' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Lenet/data_out_data_V' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Lenet/data_out_size_x' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Lenet/data_out_size_y' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Lenet/data_out_size_z' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'Lenet' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'data_in_data_V', 'data_in_size_x', 'data_in_size_y', 'data_in_size_z', 'conv_data_V', 'conv_size_x', 'conv_size_y', 'conv_size_z', 'relu_data_V', 'relu_size_x', 'relu_size_y', 'pool_data_V', 'pool_size_x', 'pool_size_y', 'pool_size_z', 'fc_data_V', 'fc_size_x', 'fc_size_y', 'fc_size_z', 'data_out_data_V', 'data_out_size_x', 'data_out_size_y' and 'data_out_size_z' to AXI-Lite port axilite.
+INFO: [SYN 201-210] Renamed object name 'Lenet_conv1_input_data_V' to 'Lenet_conv1_inputjbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Lenet_conv1_output_data_V' to 'Lenet_conv1_outpukbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Lenet_conv1_a_slice_pad_da' to 'Lenet_conv1_a_slilbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Lenet_fx_input_data_V' to 'Lenet_fx_input_damb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Lenet_fx_output_data_V' to 'Lenet_fx_output_dncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Lenet_fc1_input_data_V' to 'Lenet_fc1_input_docq' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Lenet'.
+Command       create_rtl_model done; 0.17 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.34 seconds; current allocated memory: 468.760 MB.
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Lenet -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/systemc/Lenet -synmodules copy_tensor.1 Padding Conv_forward forward_ReLu forward_fc copy_tensor.3 {exp<16, 8>} softmax copy_tensor.2 copy_tensor Lenet 
+Execute       gen_rtl Lenet -istop -style xilinx -f -lang vhdl -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/vhdl/Lenet 
+Execute       gen_rtl Lenet -istop -style xilinx -f -lang vlog -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/verilog/Lenet 
+Execute       export_constraint_db -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.constraint.tcl -f -tool general 
+Execute       report -model Lenet -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.design.xml -verbose -f -dv 
+Command       report done; 0.28 sec.
+Execute       report -model Lenet -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.sdaccel.xml -verbose -f -sdaccel 
+Execute       gen_tb_info Lenet -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet -p /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db 
+Execute       report -model Lenet -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/report/Lenet_csynth.rpt -f 
+Execute       report -model Lenet -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/syn/report/Lenet_csynth.xml -f -x 
+Execute       report -model Lenet -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.verbose.rpt -verbose -f 
+Command       report done; 0.37 sec.
+Execute       db_write -model Lenet -o /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.adb -f 
+Command       db_write done; 0.11 sec.
+Execute       sc_get_clocks Lenet 
+Execute       sc_get_portdomain Lenet 
+INFO-FLOW: Model list for RTL component generation: copy_tensor.1 Padding Conv_forward forward_ReLu forward_fc copy_tensor.3 {exp<16, 8>} softmax copy_tensor.2 copy_tensor Lenet
+INFO-FLOW: Handling components in module [copy_tensor_1] ... 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_1.compgen.tcl 
+INFO-FLOW: Handling components in module [Padding] ... 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Padding.compgen.tcl 
+INFO-FLOW: Handling components in module [Conv_forward] ... 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Conv_forward.compgen.tcl 
+INFO-FLOW: Found component Lenet_mac_muladd_cud.
+INFO-FLOW: Append model Lenet_mac_muladd_cud
+INFO-FLOW: Found component Conv_forward_convbkb.
+INFO-FLOW: Append model Conv_forward_convbkb
+INFO-FLOW: Handling components in module [forward_ReLu] ... 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_ReLu.compgen.tcl 
+INFO-FLOW: Handling components in module [forward_fc] ... 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_fc.compgen.tcl 
+INFO-FLOW: Found component Lenet_mac_muladd_eOg.
+INFO-FLOW: Append model Lenet_mac_muladd_eOg
+INFO-FLOW: Handling components in module [copy_tensor_3] ... 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_3.compgen.tcl 
+INFO-FLOW: Handling components in module [exp_16_8_s] ... 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/exp_16_8_s.compgen.tcl 
+INFO-FLOW: Found component exp_16_8_s_f_x_lsfYi.
+INFO-FLOW: Append model exp_16_8_s_f_x_lsfYi
+INFO-FLOW: Found component exp_16_8_s_exp_x_g8j.
+INFO-FLOW: Append model exp_16_8_s_exp_x_g8j
+INFO-FLOW: Found component exp_16_8_s_exp_x_hbi.
+INFO-FLOW: Append model exp_16_8_s_exp_x_hbi
+INFO-FLOW: Handling components in module [softmax] ... 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/softmax.compgen.tcl 
+INFO-FLOW: Found component Lenet_sdiv_24ns_1ibs.
+INFO-FLOW: Append model Lenet_sdiv_24ns_1ibs
+INFO-FLOW: Handling components in module [copy_tensor_2] ... 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_2.compgen.tcl 
+INFO-FLOW: Handling components in module [copy_tensor] ... 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor.compgen.tcl 
+INFO-FLOW: Handling components in module [Lenet] ... 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.compgen.tcl 
+INFO-FLOW: Found component Lenet_conv1_inputjbC.
+INFO-FLOW: Append model Lenet_conv1_inputjbC
+INFO-FLOW: Found component Lenet_conv1_a_slilbW.
+INFO-FLOW: Append model Lenet_conv1_a_slilbW
+INFO-FLOW: Found component Lenet_axilite_s_axi.
+INFO-FLOW: Append model Lenet_axilite_s_axi
+INFO-FLOW: Append model copy_tensor_1
+INFO-FLOW: Append model Padding
+INFO-FLOW: Append model Conv_forward
+INFO-FLOW: Append model forward_ReLu
+INFO-FLOW: Append model forward_fc
+INFO-FLOW: Append model copy_tensor_3
+INFO-FLOW: Append model exp_16_8_s
+INFO-FLOW: Append model softmax
+INFO-FLOW: Append model copy_tensor_2
+INFO-FLOW: Append model copy_tensor
+INFO-FLOW: Append model Lenet
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: Lenet_mac_muladd_cud Conv_forward_convbkb Lenet_mac_muladd_eOg exp_16_8_s_f_x_lsfYi exp_16_8_s_exp_x_g8j exp_16_8_s_exp_x_hbi Lenet_sdiv_24ns_1ibs Lenet_conv1_inputjbC Lenet_conv1_a_slilbW Lenet_axilite_s_axi copy_tensor_1 Padding Conv_forward forward_ReLu forward_fc copy_tensor_3 exp_16_8_s softmax copy_tensor_2 copy_tensor Lenet
+INFO-FLOW: To file: write model Lenet_mac_muladd_cud
+INFO-FLOW: To file: write model Conv_forward_convbkb
+INFO-FLOW: To file: write model Lenet_mac_muladd_eOg
+INFO-FLOW: To file: write model exp_16_8_s_f_x_lsfYi
+INFO-FLOW: To file: write model exp_16_8_s_exp_x_g8j
+INFO-FLOW: To file: write model exp_16_8_s_exp_x_hbi
+INFO-FLOW: To file: write model Lenet_sdiv_24ns_1ibs
+INFO-FLOW: To file: write model Lenet_conv1_inputjbC
+INFO-FLOW: To file: write model Lenet_conv1_a_slilbW
+INFO-FLOW: To file: write model Lenet_axilite_s_axi
+INFO-FLOW: To file: write model copy_tensor_1
+INFO-FLOW: To file: write model Padding
+INFO-FLOW: To file: write model Conv_forward
+INFO-FLOW: To file: write model forward_ReLu
+INFO-FLOW: To file: write model forward_fc
+INFO-FLOW: To file: write model copy_tensor_3
+INFO-FLOW: To file: write model exp_16_8_s
+INFO-FLOW: To file: write model softmax
+INFO-FLOW: To file: write model copy_tensor_2
+INFO-FLOW: To file: write model copy_tensor
+INFO-FLOW: To file: write model Lenet
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+Execute       get_config_sdx -target 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq.gen 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute               source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command           ap_source done; 0.17 sec.
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.17 sec.
+Command       ap_source done; 0.17 sec.
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_1.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Padding.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Conv_forward.compgen.tcl 
+INFO: [RTMG 210-279] Implementing memory 'Conv_forward_convbkb_rom' using distributed ROMs.
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_ReLu.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_fc.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_3.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/exp_16_8_s.compgen.tcl 
+INFO: [RTMG 210-279] Implementing memory 'exp_16_8_s_f_x_lsfYi_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'exp_16_8_s_exp_x_g8j_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'exp_16_8_s_exp_x_hbi_rom' using distributed ROMs.
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/softmax.compgen.tcl 
+INFO: [RTMG 210-282] Generating pipelined core: 'Lenet_sdiv_24ns_1ibs_div'
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_2.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'Lenet_conv1_inputjbC_ram (RAM_1P)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'Lenet_conv1_a_slilbW_ram (RAM)' using distributed RAMs.
+Execute         source ./axilite.slave.tcl 
+Execute         is_m_axi_addr64 
+Execute       get_config_sdx -target 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq.gen 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute               source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source done; 0.11 sec.
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command           ap_source done; 0.16 sec.
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.16 sec.
+Command       ap_source done; 0.16 sec.
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.rtl_wrap.cfg.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.rtl_wrap.cfg.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.rtl_wrap.cfg.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_1.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Padding.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Conv_forward.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_ReLu.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_fc.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_3.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/exp_16_8_s.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/softmax.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_2.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_1.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Padding.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Conv_forward.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_ReLu.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_fc.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_3.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/exp_16_8_s.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/softmax.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_2.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_1.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Padding.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Conv_forward.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_ReLu.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_fc.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_3.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/exp_16_8_s.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/softmax.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_2.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.compgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.constraint.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.constraint.tcl 
+Execute       sc_get_clocks Lenet 
+Execute       source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_sdx -target 
+Execute       get_config_sdx -profile 
+Execute       ::config_rtl 
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:47 ; elapsed = 00:01:52 . Memory (MB): peak = 904.938 ; gain = 528.004 ; free physical = 112 ; free virtual = 780
+INFO: [SYSC 207-301] Generating SystemC RTL for Lenet.
+INFO: [VHDL 208-304] Generating VHDL RTL for Lenet.
+INFO: [VLOG 209-307] Generating Verilog RTL for Lenet.
+Command     autosyn done; 8.26 sec.
+Command   csynth_design done; 111.38 sec.
+Command ap_source done; 111.83 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1 opened at Mon Jan 07 16:15:20 +03 2019
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/xfir.lib 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx_old.lib 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx_vivado.lib 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute       config_chip_info -quiet -speed medium 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.13 sec.
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.17 sec.
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.18 sec.
+Command     ap_source done; 0.18 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx_hp.lib 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq_hp.hlp 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     set_part xc7z020clg484-1 
+Execute       add_library xilinx/zynq/zynq:xc7z020:clg484:-1 
+Execute         get_default_platform 
+Execute         license_isbetapart xc7z020 
+Command         license_isbetapart done; error code: 1; 
+Execute         get_default_platform 
+Execute         config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute     config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 0.33 sec.
+Execute   export_design -flow impl -rtl verilog -format ip_catalog -description cnn -vendor user.org -display_name cnn 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.12 sec.
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.18 sec.
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.18 sec.
+Command     ap_source done; 0.18 sec.
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     get_config_sdx -target 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.12 sec.
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.16 sec.
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.16 sec.
+Command     ap_source done; 0.16 sec.
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.rtl_wrap.cfg.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.rtl_wrap.cfg.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.rtl_wrap.cfg.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_1.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Padding.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Conv_forward.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_ReLu.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_fc.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_3.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/exp_16_8_s.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/softmax.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_2.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_1.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Padding.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Conv_forward.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_ReLu.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_fc.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_3.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/exp_16_8_s.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/softmax.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_2.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_1.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Padding.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Conv_forward.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_ReLu.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_fc.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_3.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/exp_16_8_s.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/softmax.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_2.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.constraint.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.constraint.tcl 
+Execute     sc_get_clocks Lenet 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     get_config_sdx -target 
+Execute     get_config_sdx -profile 
+Execute     ::config_rtl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.rtl_wrap.cfg.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.rtl_wrap.cfg.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.rtl_wrap.cfg.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.rtl_wrap.cfg.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.rtl_wrap.cfg.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.rtl_wrap.cfg.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.constraint.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.constraint.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.constraint.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.12 sec.
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.16 sec.
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.16 sec.
+Command     ap_source done; 0.16 sec.
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.13 sec.
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.19 sec.
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.19 sec.
+Command     ap_source done; 0.19 sec.
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     get_config_sdx -target 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.12 sec.
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.17 sec.
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.18 sec.
+Command     ap_source done; 0.18 sec.
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_1.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Padding.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Conv_forward.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_ReLu.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/forward_fc.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_3.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/exp_16_8_s.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/softmax.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor_2.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/copy_tensor.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.compgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.constraint.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/Lenet.tbgen.tcl 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.11 sec.
+Execute           source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.15 sec.
+Execute         source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.15 sec.
+Command     ap_source done; 0.15 sec.
+Execute     source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source /home/hadee/Vivado/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     get_config_rtl -vivado_synth_design_args 
+Execute     source /home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/.autopilot/db/global.setting.tcl 
+Execute     get_config_rtl -vivado_synth_strategy 
+Execute     get_config_rtl -vivado_synth_strategy 
+Execute     get_config_rtl -vivado_phys_opt 
+Command   export_design done; 465.44 sec.
+Command ap_source done; 465.77 sec.
+Execute cleanup_all 

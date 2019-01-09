@@ -1,0 +1,314 @@
+
+
+================================================================
+== Vivado HLS Report for 'Lenet'
+================================================================
+* Date:           Mon Jan  7 16:14:04 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        CNN
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.718|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 15
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.90>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%conv1_input_data_V = alloca [8 x i16], align 2" [CNN/Lenet5.cpp:37]   --->   Operation 16 'alloca' 'conv1_input_data_V' <Predicate = true> <Delay = 0.00> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 16> <Depth = 8> <RAM>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%conv1_output_data_V = alloca [8 x i16], align 2" [CNN/Lenet5.cpp:37]   --->   Operation 17 'alloca' 'conv1_output_data_V' <Predicate = true> <Delay = 0.00> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 16> <Depth = 8> <RAM>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%conv1_a_slice_pad_da = alloca [32 x i16], align 2"   --->   Operation 18 'alloca' 'conv1_a_slice_pad_da' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%fx_input_data_V = alloca [8 x i16], align 2" [CNN/Lenet5.cpp:40]   --->   Operation 19 'alloca' 'fx_input_data_V' <Predicate = true> <Delay = 0.00> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 16> <Depth = 8> <RAM>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%fx_output_data_V = alloca [8 x i16], align 2" [CNN/Lenet5.cpp:40]   --->   Operation 20 'alloca' 'fx_output_data_V' <Predicate = true> <Delay = 0.00> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 16> <Depth = 8> <RAM>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%fc1_input_data_V = alloca [8 x i16], align 2" [CNN/Lenet5.cpp:44]   --->   Operation 21 'alloca' 'fc1_input_data_V' <Predicate = true> <Delay = 0.00> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 16> <Depth = 8> <RAM>
+ST_1 : Operation 22 [1/1] (1.00ns)   --->   "%data_in_size_x_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %data_in_size_x)" [CNN/Lenet5.cpp:50]   --->   Operation 22 'read' 'data_in_size_x_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 23 [1/1] (1.00ns)   --->   "%data_in_size_y_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %data_in_size_y)" [CNN/Lenet5.cpp:50]   --->   Operation 23 'read' 'data_in_size_y_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 24 [1/1] (1.00ns)   --->   "%data_in_size_z_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %data_in_size_z)" [CNN/Lenet5.cpp:50]   --->   Operation 24 'read' 'data_in_size_z_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 25 [2/2] (1.90ns)   --->   "call fastcc void @copy_tensor.1([8 x i16]* %conv1_input_data_V, [8 x i16]* %data_in_data_V, i32 2, i32 2, i32 %data_in_size_x_read, i32 %data_in_size_y_read, i32 %data_in_size_z_read)" [CNN/Lenet5.cpp:50]   --->   Operation 25 'call' <Predicate = true> <Delay = 1.90> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_1 : Operation 26 [1/1] (1.00ns)   --->   "%data_out_size_x_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %data_out_size_x)" [CNN/Lenet5.cpp:67]   --->   Operation 26 'read' 'data_out_size_x_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 27 [1/1] (1.00ns)   --->   "%data_out_size_y_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %data_out_size_y)" [CNN/Lenet5.cpp:67]   --->   Operation 27 'read' 'data_out_size_y_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 28 [1/1] (1.00ns)   --->   "%conv_size_x_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %conv_size_x)" [CNN/Lenet5.cpp:69]   --->   Operation 28 'read' 'conv_size_x_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 29 [1/1] (1.00ns)   --->   "%conv_size_y_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %conv_size_y)" [CNN/Lenet5.cpp:69]   --->   Operation 29 'read' 'conv_size_y_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 30 [1/1] (1.00ns)   --->   "%relu_size_x_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %relu_size_x)" [CNN/Lenet5.cpp:70]   --->   Operation 30 'read' 'relu_size_x_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 31 [1/1] (1.00ns)   --->   "%relu_size_y_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %relu_size_y)" [CNN/Lenet5.cpp:70]   --->   Operation 31 'read' 'relu_size_y_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 32 [1/1] (1.00ns)   --->   "%fc_size_x_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %fc_size_x)" [CNN/Lenet5.cpp:71]   --->   Operation 32 'read' 'fc_size_x_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 33 [1/1] (1.00ns)   --->   "%fc_size_y_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %fc_size_y)" [CNN/Lenet5.cpp:71]   --->   Operation 33 'read' 'fc_size_y_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 34 [1/2] (0.00ns)   --->   "call fastcc void @copy_tensor.1([8 x i16]* %conv1_input_data_V, [8 x i16]* %data_in_data_V, i32 2, i32 2, i32 %data_in_size_x_read, i32 %data_in_size_y_read, i32 %data_in_size_z_read)" [CNN/Lenet5.cpp:50]   --->   Operation 34 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 35 [2/2] (0.00ns)   --->   "call fastcc void @Conv_forward([8 x i16]* %conv1_input_data_V, [8 x i16]* %conv1_output_data_V, [32 x i16]* %conv1_a_slice_pad_da)" [CNN/Lenet5.cpp:51]   --->   Operation 35 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 36 [1/2] (0.00ns)   --->   "call fastcc void @Conv_forward([8 x i16]* %conv1_input_data_V, [8 x i16]* %conv1_output_data_V, [32 x i16]* %conv1_a_slice_pad_da)" [CNN/Lenet5.cpp:51]   --->   Operation 36 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 1.90>
+ST_5 : Operation 37 [2/2] (1.90ns)   --->   "call fastcc void @copy_tensor.1([8 x i16]* %fx_input_data_V, [8 x i16]* %conv1_output_data_V, i32 2, i32 2, i32 2, i32 2, i32 2)" [CNN/Lenet5.cpp:58]   --->   Operation 37 'call' <Predicate = true> <Delay = 1.90> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 38 [1/2] (0.00ns)   --->   "call fastcc void @copy_tensor.1([8 x i16]* %fx_input_data_V, [8 x i16]* %conv1_output_data_V, i32 2, i32 2, i32 2, i32 2, i32 2)" [CNN/Lenet5.cpp:58]   --->   Operation 38 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 1.90>
+ST_7 : Operation 39 [2/2] (0.00ns)   --->   "call fastcc void @forward_ReLu([8 x i16]* %fx_input_data_V, [8 x i16]* %fx_output_data_V)" [CNN/Lenet5.cpp:59]   --->   Operation 39 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_7 : Operation 40 [2/2] (1.90ns)   --->   "call fastcc void @copy_tensor.1([8 x i16]* %conv_data_V, [8 x i16]* %conv1_output_data_V, i32 %conv_size_x_read, i32 %conv_size_y_read, i32 2, i32 2, i32 2)" [CNN/Lenet5.cpp:69]   --->   Operation 40 'call' <Predicate = true> <Delay = 1.90> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 0.00>
+ST_8 : Operation 41 [1/2] (0.00ns)   --->   "call fastcc void @forward_ReLu([8 x i16]* %fx_input_data_V, [8 x i16]* %fx_output_data_V)" [CNN/Lenet5.cpp:59]   --->   Operation 41 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 42 [1/2] (0.00ns)   --->   "call fastcc void @copy_tensor.1([8 x i16]* %conv_data_V, [8 x i16]* %conv1_output_data_V, i32 %conv_size_x_read, i32 %conv_size_y_read, i32 2, i32 2, i32 2)" [CNN/Lenet5.cpp:69]   --->   Operation 42 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 9 <SV = 8> <Delay = 1.90>
+ST_9 : Operation 43 [2/2] (1.90ns)   --->   "call fastcc void @copy_tensor.1([8 x i16]* %fc1_input_data_V, [8 x i16]* %fx_output_data_V, i32 2, i32 2, i32 2, i32 2, i32 2)" [CNN/Lenet5.cpp:61]   --->   Operation 43 'call' <Predicate = true> <Delay = 1.90> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 9> <Delay = 0.00>
+ST_10 : Operation 44 [1/2] (0.00ns)   --->   "call fastcc void @copy_tensor.1([8 x i16]* %fc1_input_data_V, [8 x i16]* %fx_output_data_V, i32 2, i32 2, i32 2, i32 2, i32 2)" [CNN/Lenet5.cpp:61]   --->   Operation 44 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 10> <Delay = 1.90>
+ST_11 : Operation 45 [2/2] (0.00ns)   --->   "%call_ret2 = call fastcc { i16, i16 } @forward_fc([8 x i16]* %fc1_input_data_V)" [CNN/Lenet5.cpp:62]   --->   Operation 45 'call' 'call_ret2' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_11 : Operation 46 [2/2] (1.90ns)   --->   "call fastcc void @copy_tensor.1([8 x i16]* %relu_data_V, [8 x i16]* %fx_output_data_V, i32 %relu_size_x_read, i32 %relu_size_y_read, i32 2, i32 2, i32 2)" [CNN/Lenet5.cpp:70]   --->   Operation 46 'call' <Predicate = true> <Delay = 1.90> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 12 <SV = 11> <Delay = 0.00>
+ST_12 : Operation 47 [1/2] (0.00ns)   --->   "%call_ret2 = call fastcc { i16, i16 } @forward_fc([8 x i16]* %fc1_input_data_V)" [CNN/Lenet5.cpp:62]   --->   Operation 47 'call' 'call_ret2' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_12 : Operation 48 [1/1] (0.00ns)   --->   "%fc1_output_data_0_V = extractvalue { i16, i16 } %call_ret2, 0" [CNN/Lenet5.cpp:62]   --->   Operation 48 'extractvalue' 'fc1_output_data_0_V' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 49 [1/1] (0.00ns)   --->   "%fc1_output_data_1_V = extractvalue { i16, i16 } %call_ret2, 1" [CNN/Lenet5.cpp:62]   --->   Operation 49 'extractvalue' 'fc1_output_data_1_V' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 50 [2/2] (0.00ns)   --->   "%call_ret = call fastcc { i16, i16 } @copy_tensor.3(i16 %fc1_output_data_0_V, i16 %fc1_output_data_1_V)" [CNN/Lenet5.cpp:64]   --->   Operation 50 'call' 'call_ret' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_12 : Operation 51 [1/2] (0.00ns)   --->   "call fastcc void @copy_tensor.1([8 x i16]* %relu_data_V, [8 x i16]* %fx_output_data_V, i32 %relu_size_x_read, i32 %relu_size_y_read, i32 2, i32 2, i32 2)" [CNN/Lenet5.cpp:70]   --->   Operation 51 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_12 : Operation 52 [2/2] (0.00ns)   --->   "call fastcc void @copy_tensor([8 x i16]* %fc_data_V, i16 %fc1_output_data_0_V, i16 %fc1_output_data_1_V, i32 %fc_size_x_read, i32 %fc_size_y_read)" [CNN/Lenet5.cpp:71]   --->   Operation 52 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 13 <SV = 12> <Delay = 1.76>
+ST_13 : Operation 53 [1/2] (0.00ns)   --->   "%call_ret = call fastcc { i16, i16 } @copy_tensor.3(i16 %fc1_output_data_0_V, i16 %fc1_output_data_1_V)" [CNN/Lenet5.cpp:64]   --->   Operation 53 'call' 'call_ret' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_13 : Operation 54 [1/1] (0.00ns)   --->   "%softmax_input_data_0 = extractvalue { i16, i16 } %call_ret, 0" [CNN/Lenet5.cpp:64]   --->   Operation 54 'extractvalue' 'softmax_input_data_0' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 55 [1/1] (0.00ns)   --->   "%softmax_input_data_1 = extractvalue { i16, i16 } %call_ret, 1" [CNN/Lenet5.cpp:64]   --->   Operation 55 'extractvalue' 'softmax_input_data_1' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 56 [2/2] (1.76ns)   --->   "%call_ret3 = call fastcc { i16, i16 } @softmax(i16 %softmax_input_data_0, i16 %softmax_input_data_1)" [CNN/Lenet5.cpp:65]   --->   Operation 56 'call' 'call_ret3' <Predicate = true> <Delay = 1.76> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_13 : Operation 57 [1/2] (0.00ns)   --->   "call fastcc void @copy_tensor([8 x i16]* %fc_data_V, i16 %fc1_output_data_0_V, i16 %fc1_output_data_1_V, i32 %fc_size_x_read, i32 %fc_size_y_read)" [CNN/Lenet5.cpp:71]   --->   Operation 57 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 14 <SV = 13> <Delay = 0.00>
+ST_14 : Operation 58 [1/2] (0.00ns)   --->   "%call_ret3 = call fastcc { i16, i16 } @softmax(i16 %softmax_input_data_0, i16 %softmax_input_data_1)" [CNN/Lenet5.cpp:65]   --->   Operation 58 'call' 'call_ret3' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_14 : Operation 59 [1/1] (0.00ns)   --->   "%softmax_y_hat_data_0 = extractvalue { i16, i16 } %call_ret3, 0" [CNN/Lenet5.cpp:65]   --->   Operation 59 'extractvalue' 'softmax_y_hat_data_0' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 60 [1/1] (0.00ns)   --->   "%softmax_y_hat_data_1 = extractvalue { i16, i16 } %call_ret3, 1" [CNN/Lenet5.cpp:65]   --->   Operation 60 'extractvalue' 'softmax_y_hat_data_1' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 61 [2/2] (0.00ns)   --->   "call fastcc void @copy_tensor.2([27 x i16]* %data_out_data_V, i16 %softmax_y_hat_data_0, i16 %softmax_y_hat_data_1, i32 %data_out_size_x_read, i32 %data_out_size_y_read)" [CNN/Lenet5.cpp:67]   --->   Operation 61 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 15 <SV = 14> <Delay = 0.00>
+ST_15 : Operation 62 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([8 x i16]* %data_in_data_V), !map !593"   --->   Operation 62 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 63 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %data_in_size_x), !map !599"   --->   Operation 63 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 64 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %data_in_size_y), !map !603"   --->   Operation 64 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 65 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %data_in_size_z), !map !607"   --->   Operation 65 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 66 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([8 x i16]* %conv_data_V), !map !611"   --->   Operation 66 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 67 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %conv_size_x), !map !615"   --->   Operation 67 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 68 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %conv_size_y), !map !619"   --->   Operation 68 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 69 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %conv_size_z), !map !623"   --->   Operation 69 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 70 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([8 x i16]* %relu_data_V), !map !627"   --->   Operation 70 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 71 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %relu_size_x), !map !631"   --->   Operation 71 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 72 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %relu_size_y), !map !635"   --->   Operation 72 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 73 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %relu_size_z), !map !639"   --->   Operation 73 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 74 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([8 x i16]* %pool_data_V), !map !643"   --->   Operation 74 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 75 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %pool_size_x), !map !647"   --->   Operation 75 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 76 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %pool_size_y), !map !651"   --->   Operation 76 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 77 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %pool_size_z), !map !655"   --->   Operation 77 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 78 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([8 x i16]* %fc_data_V), !map !659"   --->   Operation 78 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 79 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %fc_size_x), !map !663"   --->   Operation 79 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 80 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %fc_size_y), !map !667"   --->   Operation 80 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 81 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %fc_size_z), !map !671"   --->   Operation 81 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 82 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([27 x i16]* %data_out_data_V), !map !675"   --->   Operation 82 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 83 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %data_out_size_x), !map !681"   --->   Operation 83 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 84 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %data_out_size_y), !map !685"   --->   Operation 84 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 85 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %data_out_size_z), !map !689"   --->   Operation 85 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 86 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([6 x i8]* @Lenet_str) nounwind"   --->   Operation 86 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 87 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecMemCore([8 x i16]* %data_in_data_V, [1 x i8]* @p_str3, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str3, i32 -1, [1 x i8]* @p_str3, [1 x i8]* @p_str3, [1 x i8]* @p_str3, [1 x i8]* @p_str3, [1 x i8]* @p_str3)"   --->   Operation 87 'specmemcore' 'empty' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 88 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([8 x i16]* %data_in_data_V, i32* %data_in_size_x, i32* %data_in_size_y, i32* %data_in_size_z, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [CNN/Lenet5.cpp:27]   --->   Operation 88 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 89 [1/1] (0.00ns)   --->   "%empty_103 = call i32 (...)* @_ssdm_op_SpecMemCore([27 x i16]* %data_out_data_V, [1 x i8]* @p_str8, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str8, i32 -1, [1 x i8]* @p_str8, [1 x i8]* @p_str8, [1 x i8]* @p_str8, [1 x i8]* @p_str8, [1 x i8]* @p_str8)"   --->   Operation 89 'specmemcore' 'empty_103' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 90 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([27 x i16]* %data_out_data_V, i32* %data_out_size_x, i32* %data_out_size_y, i32* %data_out_size_z, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [CNN/Lenet5.cpp:28]   --->   Operation 90 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 91 [1/1] (0.00ns)   --->   "%empty_104 = call i32 (...)* @_ssdm_op_SpecMemCore([8 x i16]* %conv_data_V, [1 x i8]* @p_str4, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str4, i32 -1, [1 x i8]* @p_str4, [1 x i8]* @p_str4, [1 x i8]* @p_str4, [1 x i8]* @p_str4, [1 x i8]* @p_str4)"   --->   Operation 91 'specmemcore' 'empty_104' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 92 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([8 x i16]* %conv_data_V, i32* %conv_size_x, i32* %conv_size_y, i32* %conv_size_z, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [CNN/Lenet5.cpp:30]   --->   Operation 92 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 93 [1/1] (0.00ns)   --->   "%empty_105 = call i32 (...)* @_ssdm_op_SpecMemCore([8 x i16]* %relu_data_V, [1 x i8]* @p_str5, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str5, i32 -1, [1 x i8]* @p_str5, [1 x i8]* @p_str5, [1 x i8]* @p_str5, [1 x i8]* @p_str5, [1 x i8]* @p_str5)"   --->   Operation 93 'specmemcore' 'empty_105' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 94 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([8 x i16]* %relu_data_V, i32* %relu_size_x, i32* %relu_size_y, i32* %relu_size_z, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [CNN/Lenet5.cpp:31]   --->   Operation 94 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 95 [1/1] (0.00ns)   --->   "%empty_106 = call i32 (...)* @_ssdm_op_SpecMemCore([8 x i16]* %pool_data_V, [1 x i8]* @p_str6, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str6, i32 -1, [1 x i8]* @p_str6, [1 x i8]* @p_str6, [1 x i8]* @p_str6, [1 x i8]* @p_str6, [1 x i8]* @p_str6)"   --->   Operation 95 'specmemcore' 'empty_106' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 96 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([8 x i16]* %pool_data_V, i32* %pool_size_x, i32* %pool_size_y, i32* %pool_size_z, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [CNN/Lenet5.cpp:32]   --->   Operation 96 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 97 [1/1] (0.00ns)   --->   "%empty_107 = call i32 (...)* @_ssdm_op_SpecMemCore([8 x i16]* %fc_data_V, [1 x i8]* @p_str7, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str7, i32 -1, [1 x i8]* @p_str7, [1 x i8]* @p_str7, [1 x i8]* @p_str7, [1 x i8]* @p_str7, [1 x i8]* @p_str7)"   --->   Operation 97 'specmemcore' 'empty_107' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 98 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([8 x i16]* %fc_data_V, i32* %fc_size_x, i32* %fc_size_y, i32* %fc_size_z, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [CNN/Lenet5.cpp:33]   --->   Operation 98 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 99 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [CNN/Lenet5.cpp:35]   --->   Operation 99 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 100 [1/2] (0.00ns)   --->   "call fastcc void @copy_tensor.2([27 x i16]* %data_out_data_V, i16 %softmax_y_hat_data_0, i16 %softmax_y_hat_data_1, i32 %data_out_size_x_read, i32 %data_out_size_y_read)" [CNN/Lenet5.cpp:67]   --->   Operation 100 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_15 : Operation 101 [1/1] (0.00ns)   --->   "%empty_108 = call i32 (...)* @_ssdm_op_SpecMemCore([8 x i16]* %fx_output_data_V, [1 x i8]* @p_str3, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str3, i32 -1, [1 x i8]* @p_str3, [1 x i8]* @p_str3, [1 x i8]* @p_str3, [1 x i8]* @p_str3, [1 x i8]* @p_str3)"   --->   Operation 101 'specmemcore' 'empty_108' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 102 [1/1] (0.00ns)   --->   "%empty_109 = call i32 (...)* @_ssdm_op_SpecMemCore([8 x i16]* %conv1_output_data_V, [1 x i8]* @p_str3, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str3, i32 -1, [1 x i8]* @p_str3, [1 x i8]* @p_str3, [1 x i8]* @p_str3, [1 x i8]* @p_str3, [1 x i8]* @p_str3)"   --->   Operation 102 'specmemcore' 'empty_109' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 103 [1/1] (0.00ns)   --->   "%empty_110 = call i32 (...)* @_ssdm_op_SpecMemCore([8 x i16]* %fc1_input_data_V, [1 x i8]* @p_str4, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str4, i32 -1, [1 x i8]* @p_str4, [1 x i8]* @p_str4, [1 x i8]* @p_str4, [1 x i8]* @p_str4, [1 x i8]* @p_str4)"   --->   Operation 103 'specmemcore' 'empty_110' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 104 [1/1] (0.00ns)   --->   "%empty_111 = call i32 (...)* @_ssdm_op_SpecMemCore([8 x i16]* %fx_input_data_V, [1 x i8]* @p_str4, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str4, i32 -1, [1 x i8]* @p_str4, [1 x i8]* @p_str4, [1 x i8]* @p_str4, [1 x i8]* @p_str4, [1 x i8]* @p_str4)"   --->   Operation 104 'specmemcore' 'empty_111' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 105 [1/1] (0.00ns)   --->   "%empty_112 = call i32 (...)* @_ssdm_op_SpecMemCore([8 x i16]* %conv1_input_data_V, [1 x i8]* @p_str4, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str4, i32 -1, [1 x i8]* @p_str4, [1 x i8]* @p_str4, [1 x i8]* @p_str4, [1 x i8]* @p_str4, [1 x i8]* @p_str4)"   --->   Operation 105 'specmemcore' 'empty_112' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 106 [1/1] (0.00ns)   --->   "ret void" [CNN/Lenet5.cpp:74]   --->   Operation 106 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 2.91ns
+The critical path consists of the following:
+	s_axi read on port 'data_in_size_x' (CNN/Lenet5.cpp:50) [74]  (1 ns)
+	'call' operation (CNN/Lenet5.cpp:50) to 'copy_tensor.1' [77]  (1.91 ns)
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+ <State 5>: 1.91ns
+The critical path consists of the following:
+	'call' operation (CNN/Lenet5.cpp:58) to 'copy_tensor.1' [79]  (1.91 ns)
+
+ <State 6>: 0ns
+The critical path consists of the following:
+
+ <State 7>: 1.91ns
+The critical path consists of the following:
+	'call' operation (CNN/Lenet5.cpp:69) to 'copy_tensor.1' [96]  (1.91 ns)
+
+ <State 8>: 0ns
+The critical path consists of the following:
+
+ <State 9>: 1.91ns
+The critical path consists of the following:
+	'call' operation (CNN/Lenet5.cpp:61) to 'copy_tensor.1' [81]  (1.91 ns)
+
+ <State 10>: 0ns
+The critical path consists of the following:
+
+ <State 11>: 1.91ns
+The critical path consists of the following:
+	'call' operation (CNN/Lenet5.cpp:70) to 'copy_tensor.1' [99]  (1.91 ns)
+
+ <State 12>: 0ns
+The critical path consists of the following:
+
+ <State 13>: 1.77ns
+The critical path consists of the following:
+	'call' operation ('call_ret', CNN/Lenet5.cpp:64) to 'copy_tensor.3' [85]  (0 ns)
+	'call' operation ('call_ret3', CNN/Lenet5.cpp:65) to 'softmax' [88]  (1.77 ns)
+
+ <State 14>: 0ns
+The critical path consists of the following:
+
+ <State 15>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

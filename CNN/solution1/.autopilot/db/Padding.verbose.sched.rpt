@@ -1,0 +1,210 @@
+
+
+================================================================
+== Vivado HLS Report for 'Padding'
+================================================================
+* Date:           Mon Jan  7 16:14:02 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        CNN
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     5.015|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  105|  105|  105|  105|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                 |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |    Loop Name    | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1         |  104|  104|        26|          -|          -|     4|    no    |
+        | + Loop 1.1      |   24|   24|         6|          -|          -|     4|    no    |
+        |  ++ Loop 1.1.1  |    4|    4|         2|          -|          -|     2|    no    |
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 5
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond2)
+3 --> 
+	4  / (!exitcond1)
+	2  / (exitcond1)
+4 --> 
+	5  / (!exitcond)
+	3  / (exitcond)
+5 --> 
+	4  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecMemCore([8 x i16]* %conv_layer1_2_2_2_1_2_2_2_input_data_V, [1 x i8]* @p_str4, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str4, i32 -1, [1 x i8]* @p_str4, [1 x i8]* @p_str4, [1 x i8]* @p_str4, [1 x i8]* @p_str4, [1 x i8]* @p_str4)"   --->   Operation 6 'specmemcore' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (1.76ns)   --->   "br label %.loopexit" [CNN/conv.hpp:44]   --->   Operation 7 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 1.76>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%p_x_assign = phi i3 [ 0, %0 ], [ %i, %.loopexit.loopexit ]"   --->   Operation 8 'phi' 'p_x_assign' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%p_x_assign_cast6 = zext i3 %p_x_assign to i5" [CNN/conv.hpp:44]   --->   Operation 9 'zext' 'p_x_assign_cast6' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%empty_100 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)"   --->   Operation 10 'speclooptripcount' 'empty_100' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (1.13ns)   --->   "%exitcond2 = icmp eq i3 %p_x_assign, -4" [CNN/conv.hpp:44]   --->   Operation 11 'icmp' 'exitcond2' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 12 [1/1] (1.65ns)   --->   "%i = add i3 %p_x_assign, 1" [CNN/conv.hpp:44]   --->   Operation 12 'add' 'i' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "br i1 %exitcond2, label %5, label %.preheader6.preheader" [CNN/conv.hpp:44]   --->   Operation 13 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (1.13ns)   --->   "%tmp_s = icmp eq i3 %p_x_assign, 0" [CNN/conv.hpp:50]   --->   Operation 14 'icmp' 'tmp_s' <Predicate = (!exitcond2)> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 15 [1/1] (1.13ns)   --->   "%p_not = icmp ugt i3 %p_x_assign, 2" [CNN/conv.hpp:50]   --->   Operation 15 'icmp' 'p_not' <Predicate = (!exitcond2)> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 16 [1/1] (1.76ns)   --->   "br label %.preheader6" [CNN/conv.hpp:46]   --->   Operation 16 'br' <Predicate = (!exitcond2)> <Delay = 1.76>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "ret void" [CNN/conv.hpp:61]   --->   Operation 17 'ret' <Predicate = (exitcond2)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 2.10>
+ST_3 : Operation 18 [1/1] (0.00ns)   --->   "%p_y_assign = phi i3 [ 0, %.preheader6.preheader ], [ %j, %.preheader6.loopexit ]"   --->   Operation 18 'phi' 'p_y_assign' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 19 [1/1] (0.00ns)   --->   "%empty_101 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)"   --->   Operation 19 'speclooptripcount' 'empty_101' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 20 [1/1] (1.13ns)   --->   "%exitcond1 = icmp eq i3 %p_y_assign, -4" [CNN/conv.hpp:46]   --->   Operation 20 'icmp' 'exitcond1' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 21 [1/1] (1.65ns)   --->   "%j = add i3 %p_y_assign, 1" [CNN/conv.hpp:46]   --->   Operation 21 'add' 'j' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %.loopexit.loopexit, label %.preheader.preheader" [CNN/conv.hpp:46]   --->   Operation 22 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 23 [1/1] (1.13ns)   --->   "%tmp_9 = icmp eq i3 %p_y_assign, 0" [CNN/conv.hpp:50]   --->   Operation 23 'icmp' 'tmp_9' <Predicate = (!exitcond1)> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 24 [1/1] (1.13ns)   --->   "%p_not1 = icmp ugt i3 %p_y_assign, 2" [CNN/conv.hpp:50]   --->   Operation 24 'icmp' 'p_not1' <Predicate = (!exitcond1)> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 25 [1/1] (0.00ns) (grouped into LUT with out node brmerge2)   --->   "%tmp = or i1 %tmp_s, %tmp_9" [CNN/conv.hpp:50]   --->   Operation 25 'or' 'tmp' <Predicate = (!exitcond1)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 26 [1/1] (0.00ns) (grouped into LUT with out node brmerge2)   --->   "%tmp1 = or i1 %p_not, %p_not1" [CNN/conv.hpp:50]   --->   Operation 26 'or' 'tmp1' <Predicate = (!exitcond1)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 27 [1/1] (0.97ns) (out node of the LUT)   --->   "%brmerge2 = or i1 %tmp1, %tmp" [CNN/conv.hpp:50]   --->   Operation 27 'or' 'brmerge2' <Predicate = (!exitcond1)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%tmp_27 = trunc i3 %p_y_assign to i2" [CNN/conv.hpp:46]   --->   Operation 28 'trunc' 'tmp_27' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (0.00ns) (grouped into LUT with out node tmp3)   --->   "%tmp_28 = shl i3 %p_y_assign, 1" [CNN/Tensor.h:55->CNN/Tensor.h:51->CNN/conv.hpp:52]   --->   Operation 29 'shl' 'tmp_28' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (1.65ns) (out node of the LUT)   --->   "%tmp3 = add i3 %tmp_28, %p_x_assign" [CNN/Tensor.h:55->CNN/Tensor.h:51->CNN/conv.hpp:52]   --->   Operation 30 'add' 'tmp3' <Predicate = (!exitcond1)> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 31 [1/1] (1.76ns)   --->   "br label %.preheader" [CNN/conv.hpp:48]   --->   Operation 31 'br' <Predicate = (!exitcond1)> <Delay = 1.76>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "br label %.loopexit"   --->   Operation 32 'br' <Predicate = (exitcond1)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 5.01>
+ST_4 : Operation 33 [1/1] (0.00ns)   --->   "%p_z_assign = phi i2 [ %c, %4 ], [ 0, %.preheader.preheader ]"   --->   Operation 33 'phi' 'p_z_assign' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 34 [1/1] (0.00ns)   --->   "%empty_102 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)"   --->   Operation 34 'speclooptripcount' 'empty_102' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 35 [1/1] (0.95ns)   --->   "%exitcond = icmp eq i2 %p_z_assign, -2" [CNN/conv.hpp:48]   --->   Operation 35 'icmp' 'exitcond' <Predicate = true> <Delay = 0.95> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 36 [1/1] (1.56ns)   --->   "%c = add i2 %p_z_assign, 1" [CNN/conv.hpp:48]   --->   Operation 36 'add' 'c' <Predicate = true> <Delay = 1.56> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 37 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %.preheader6.loopexit, label %1" [CNN/conv.hpp:48]   --->   Operation 37 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 38 [1/1] (0.00ns)   --->   "%tmp_29 = trunc i2 %p_z_assign to i1" [CNN/conv.hpp:48]   --->   Operation 38 'trunc' 'tmp_29' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_4 : Operation 39 [1/1] (0.00ns)   --->   "%tmp2 = call i5 @_ssdm_op_BitConcatenate.i5.i1.i2.i2(i1 %tmp_29, i2 %tmp_27, i2 0)" [CNN/Tensor.h:55->CNN/Tensor.h:51->CNN/conv.hpp:56]   --->   Operation 39 'bitconcatenate' 'tmp2' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_4 : Operation 40 [1/1] (1.78ns)   --->   "%tmp_10 = add i5 %p_x_assign_cast6, %tmp2" [CNN/Tensor.h:55->CNN/Tensor.h:51->CNN/conv.hpp:56]   --->   Operation 40 'add' 'tmp_10' <Predicate = (!exitcond)> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 41 [1/1] (0.00ns)   --->   "%tmp_11 = zext i5 %tmp_10 to i64" [CNN/Tensor.h:55->CNN/Tensor.h:51->CNN/conv.hpp:56]   --->   Operation 41 'zext' 'tmp_11' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "br i1 %brmerge2, label %3, label %2" [CNN/conv.hpp:50]   --->   Operation 42 'br' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_4 : Operation 43 [1/1] (0.00ns)   --->   "%tmp_12 = call i3 @_ssdm_op_BitConcatenate.i3.i1.i2(i1 %tmp_29, i2 0)" [CNN/Tensor.h:55->CNN/Tensor.h:51->CNN/conv.hpp:52]   --->   Operation 43 'bitconcatenate' 'tmp_12' <Predicate = (!exitcond & !brmerge2)> <Delay = 0.00>
+ST_4 : Operation 44 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp4 = add i3 %tmp_12, -3" [CNN/Tensor.h:55->CNN/Tensor.h:51->CNN/conv.hpp:52]   --->   Operation 44 'add' 'tmp4' <Predicate = (!exitcond & !brmerge2)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 45 [1/1] (2.69ns) (root node of TernaryAdder)   --->   "%tmp_13 = add i3 %tmp4, %tmp3" [CNN/Tensor.h:55->CNN/Tensor.h:51->CNN/conv.hpp:52]   --->   Operation 45 'add' 'tmp_13' <Predicate = (!exitcond & !brmerge2)> <Delay = 2.69> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.34> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 46 [1/1] (0.00ns)   --->   "%tmp_14 = zext i3 %tmp_13 to i64" [CNN/Tensor.h:55->CNN/Tensor.h:51->CNN/conv.hpp:52]   --->   Operation 46 'zext' 'tmp_14' <Predicate = (!exitcond & !brmerge2)> <Delay = 0.00>
+ST_4 : Operation 47 [1/1] (0.00ns)   --->   "%conv_layer1_input_da = getelementptr [8 x i16]* %conv_layer1_2_2_2_1_2_2_2_input_data_V, i64 0, i64 %tmp_14" [CNN/conv.hpp:52]   --->   Operation 47 'getelementptr' 'conv_layer1_input_da' <Predicate = (!exitcond & !brmerge2)> <Delay = 0.00>
+ST_4 : Operation 48 [2/2] (2.32ns)   --->   "%conv_layer1_input_da_1 = load i16* %conv_layer1_input_da, align 2" [CNN/conv.hpp:52]   --->   Operation 48 'load' 'conv_layer1_input_da_1' <Predicate = (!exitcond & !brmerge2)> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 16> <Depth = 8> <RAM>
+ST_4 : Operation 49 [1/1] (0.00ns)   --->   "%padd_out_data_V_addr = getelementptr [32 x i16]* %padd_out_data_V, i64 0, i64 %tmp_11" [CNN/conv.hpp:56]   --->   Operation 49 'getelementptr' 'padd_out_data_V_addr' <Predicate = (!exitcond & brmerge2)> <Delay = 0.00>
+ST_4 : Operation 50 [1/1] (2.32ns)   --->   "store i16 0, i16* %padd_out_data_V_addr, align 2" [CNN/conv.hpp:56]   --->   Operation 50 'store' <Predicate = (!exitcond & brmerge2)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 32> <RAM>
+ST_4 : Operation 51 [1/1] (0.00ns)   --->   "br label %4"   --->   Operation 51 'br' <Predicate = (!exitcond & brmerge2)> <Delay = 0.00>
+ST_4 : Operation 52 [1/1] (0.00ns)   --->   "br label %.preheader6"   --->   Operation 52 'br' <Predicate = (exitcond)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 4.64>
+ST_5 : Operation 53 [1/2] (2.32ns)   --->   "%conv_layer1_input_da_1 = load i16* %conv_layer1_input_da, align 2" [CNN/conv.hpp:52]   --->   Operation 53 'load' 'conv_layer1_input_da_1' <Predicate = (!brmerge2)> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 16> <Depth = 8> <RAM>
+ST_5 : Operation 54 [1/1] (0.00ns)   --->   "%padd_out_data_V_addr_1 = getelementptr [32 x i16]* %padd_out_data_V, i64 0, i64 %tmp_11" [CNN/conv.hpp:52]   --->   Operation 54 'getelementptr' 'padd_out_data_V_addr_1' <Predicate = (!brmerge2)> <Delay = 0.00>
+ST_5 : Operation 55 [1/1] (2.32ns)   --->   "store i16 %conv_layer1_input_da_1, i16* %padd_out_data_V_addr_1, align 2" [CNN/conv.hpp:52]   --->   Operation 55 'store' <Predicate = (!brmerge2)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 32> <RAM>
+ST_5 : Operation 56 [1/1] (0.00ns)   --->   "br label %4" [CNN/conv.hpp:53]   --->   Operation 56 'br' <Predicate = (!brmerge2)> <Delay = 0.00>
+ST_5 : Operation 57 [1/1] (0.00ns)   --->   "br label %.preheader" [CNN/conv.hpp:48]   --->   Operation 57 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', CNN/conv.hpp:44) [6]  (1.77 ns)
+
+ <State 2>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('j') with incoming values : ('j', CNN/conv.hpp:46) [17]  (1.77 ns)
+
+ <State 3>: 2.11ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', CNN/conv.hpp:46) [17]  (0 ns)
+	'icmp' operation ('p_not1', CNN/conv.hpp:50) [24]  (1.13 ns)
+	'or' operation ('tmp1', CNN/conv.hpp:50) [26]  (0 ns)
+	'or' operation ('brmerge2', CNN/conv.hpp:50) [27]  (0.978 ns)
+
+ <State 4>: 5.01ns
+The critical path consists of the following:
+	'phi' operation ('c') with incoming values : ('c', CNN/conv.hpp:48) [33]  (0 ns)
+	'add' operation ('tmp4', CNN/Tensor.h:55->CNN/Tensor.h:51->CNN/conv.hpp:52) [46]  (0 ns)
+	'add' operation ('tmp_13', CNN/Tensor.h:55->CNN/Tensor.h:51->CNN/conv.hpp:52) [47]  (2.69 ns)
+	'getelementptr' operation ('conv_layer1_input_da', CNN/conv.hpp:52) [49]  (0 ns)
+	'load' operation ('conv_layer1_input_da_1', CNN/conv.hpp:52) on array 'conv_layer1_2_2_2_1_2_2_2_input_data_V' [50]  (2.32 ns)
+
+ <State 5>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('conv_layer1_input_da_1', CNN/conv.hpp:52) on array 'conv_layer1_2_2_2_1_2_2_2_input_data_V' [50]  (2.32 ns)
+	'store' operation (CNN/conv.hpp:52) of variable 'conv_layer1_input_da_1', CNN/conv.hpp:52 on array 'padd_out_data_V' [52]  (2.32 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

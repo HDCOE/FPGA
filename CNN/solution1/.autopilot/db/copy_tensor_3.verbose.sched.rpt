@@ -1,0 +1,147 @@
+
+
+================================================================
+== Vivado HLS Report for 'copy_tensor_3'
+================================================================
+* Date:           Mon Jan  7 16:14:03 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        CNN
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     1.769|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    3|    3|    3|    3|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    2|    2|         1|          -|          -|     2|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	2  / (!exitcond2)
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%in1_V16_s = alloca i16"   --->   Operation 3 'alloca' 'in1_V16_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%in1_V_s = alloca i16"   --->   Operation 4 'alloca' 'in1_V_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%p_read = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %p_read7)"   --->   Operation 5 'read' 'p_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%p_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %p_read2)"   --->   Operation 6 'read' 'p_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (1.76ns)   --->   "br label %.loopexit" [CNN/Lenet5.cpp:14]   --->   Operation 7 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 1.56>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%k = phi i2 [ 0, %0 ], [ %k_1, %.preheader2.preheader ]"   --->   Operation 8 'phi' 'k' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)"   --->   Operation 9 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (0.95ns)   --->   "%exitcond2 = icmp eq i2 %k, -2" [CNN/Lenet5.cpp:14]   --->   Operation 10 'icmp' 'exitcond2' <Predicate = true> <Delay = 0.95> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 11 [1/1] (1.56ns)   --->   "%k_1 = add i2 %k, 1" [CNN/Lenet5.cpp:14]   --->   Operation 11 'add' 'k_1' <Predicate = true> <Delay = 1.56> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "br i1 %exitcond2, label %1, label %.preheader2.preheader" [CNN/Lenet5.cpp:14]   --->   Operation 12 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%tmp = trunc i2 %k to i1" [CNN/Lenet5.cpp:14]   --->   Operation 13 'trunc' 'tmp' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%empty_26 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 1, i64 1)"   --->   Operation 14 'speclooptripcount' 'empty_26' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%empty_27 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 1, i64 1)"   --->   Operation 15 'speclooptripcount' 'empty_27' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%in1_V16_load_1 = load i16* %in1_V16_s" [CNN/Lenet5.cpp:17]   --->   Operation 16 'load' 'in1_V16_load_1' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%in1_V_load_1 = load i16* %in1_V_s" [CNN/Lenet5.cpp:17]   --->   Operation 17 'load' 'in1_V_load_1' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.80ns)   --->   "%in1_V_2_in1_V = select i1 %tmp, i16 %in1_V_load_1, i16 %p_read_1" [CNN/Lenet5.cpp:17]   --->   Operation 18 'select' 'in1_V_2_in1_V' <Predicate = (!exitcond2)> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 19 [1/1] (0.80ns)   --->   "%in1_V_0_in1_V16_2 = select i1 %tmp, i16 %p_read, i16 %in1_V16_load_1" [CNN/Lenet5.cpp:17]   --->   Operation 19 'select' 'in1_V_0_in1_V16_2' <Predicate = (!exitcond2)> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "store i16 %in1_V_2_in1_V, i16* %in1_V_s" [CNN/Lenet5.cpp:17]   --->   Operation 20 'store' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "store i16 %in1_V_0_in1_V16_2, i16* %in1_V16_s" [CNN/Lenet5.cpp:17]   --->   Operation 21 'store' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%empty_28 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 1, i64 1)"   --->   Operation 22 'speclooptripcount' 'empty_28' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%empty_29 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 1, i64 1)"   --->   Operation 23 'speclooptripcount' 'empty_29' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "br label %.loopexit" [CNN/Lenet5.cpp:15]   --->   Operation 24 'br' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%in1_V16_load = load i16* %in1_V16_s" [CNN/Lenet5.cpp:19]   --->   Operation 25 'load' 'in1_V16_load' <Predicate = (exitcond2)> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%in1_V_load = load i16* %in1_V_s" [CNN/Lenet5.cpp:19]   --->   Operation 26 'load' 'in1_V_load' <Predicate = (exitcond2)> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%mrv = insertvalue { i16, i16 } undef, i16 %in1_V_load, 0" [CNN/Lenet5.cpp:19]   --->   Operation 27 'insertvalue' 'mrv' <Predicate = (exitcond2)> <Delay = 0.00>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%mrv_1 = insertvalue { i16, i16 } %mrv, i16 %in1_V16_load, 1" [CNN/Lenet5.cpp:19]   --->   Operation 28 'insertvalue' 'mrv_1' <Predicate = (exitcond2)> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "ret { i16, i16 } %mrv_1" [CNN/Lenet5.cpp:19]   --->   Operation 29 'ret' <Predicate = (exitcond2)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('k') with incoming values : ('k', CNN/Lenet5.cpp:14) [9]  (1.77 ns)
+
+ <State 2>: 1.56ns
+The critical path consists of the following:
+	'phi' operation ('k') with incoming values : ('k', CNN/Lenet5.cpp:14) [9]  (0 ns)
+	'add' operation ('k', CNN/Lenet5.cpp:14) [12]  (1.56 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

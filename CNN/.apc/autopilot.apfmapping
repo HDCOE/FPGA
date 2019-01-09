@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="pooling.hpp" path="/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/pooling.hpp"/>
+    <originFiles name="fc.hpp" path="/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/fc.hpp"/>
+    <originFiles name="conv.hpp" path="/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/conv.hpp"/>
+    <originFiles name="classifier.hpp" path="/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/classifier.hpp"/>
+    <originFiles name="activation.hpp" path="/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/activation.hpp"/>
+    <originFiles name="Tensor.h" path="/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/Tensor.h"/>
+    <originFiles name="Lenet5.cpp" path="/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/Lenet5.cpp"/>
+    <originFiles name="CNN.hpp" path="/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/CNN.hpp"/>
+  </source>
+  <testbench>
+    <originFiles name="TB_CNN.cpp" path="/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/TB_CNN.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

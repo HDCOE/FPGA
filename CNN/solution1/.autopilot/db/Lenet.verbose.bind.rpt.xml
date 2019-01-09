@@ -1,0 +1,53 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'Lenet'" level="0">
+<item name = "Date">Mon Jan  7 16:14:04 2019
+</item>
+<item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
+<item name = "Project">CNN</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 8.718, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_softmax_fu_204">softmax, 87, 87, 87, 87, none</column>
+<column name="grp_Conv_forward_fu_216">Conv_forward, ?, ?, ?, ?, none</column>
+<column name="grp_copy_tensor_1_fu_225">copy_tensor_1, ?, ?, ?, ?, none</column>
+<column name="grp_copy_tensor_fu_248">copy_tensor, 13, 13, 13, 13, none</column>
+<column name="grp_copy_tensor_2_fu_258">copy_tensor_2, 13, 13, 13, 13, none</column>
+<column name="grp_forward_fc_fu_268">forward_fc, 77, 77, 77, 77, none</column>
+<column name="grp_forward_ReLu_fu_275">forward_ReLu, 29, 29, 29, 29, none</column>
+<column name="grp_copy_tensor_3_fu_281">copy_tensor_3, 3, 3, 3, 3, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

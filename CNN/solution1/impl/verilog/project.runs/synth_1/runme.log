@@ -1,0 +1,1647 @@
+
+*** Running vivado
+    with args -log Lenet.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Lenet.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source Lenet.tcl -notrace
+Command: synth_design -top Lenet -part xc7z020clg484-1 -directive sdx_optimization_effort_high -no_iobuf -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 23939 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1290.621 ; gain = 85.824 ; free physical = 124 ; free virtual = 704
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Lenet' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:12]
+	Parameter ap_ST_fsm_state1 bound to: 15'b000000000000001 
+	Parameter ap_ST_fsm_state2 bound to: 15'b000000000000010 
+	Parameter ap_ST_fsm_state3 bound to: 15'b000000000000100 
+	Parameter ap_ST_fsm_state4 bound to: 15'b000000000001000 
+	Parameter ap_ST_fsm_state5 bound to: 15'b000000000010000 
+	Parameter ap_ST_fsm_state6 bound to: 15'b000000000100000 
+	Parameter ap_ST_fsm_state7 bound to: 15'b000000001000000 
+	Parameter ap_ST_fsm_state8 bound to: 15'b000000010000000 
+	Parameter ap_ST_fsm_state9 bound to: 15'b000000100000000 
+	Parameter ap_ST_fsm_state10 bound to: 15'b000001000000000 
+	Parameter ap_ST_fsm_state11 bound to: 15'b000010000000000 
+	Parameter ap_ST_fsm_state12 bound to: 15'b000100000000000 
+	Parameter ap_ST_fsm_state13 bound to: 15'b001000000000000 
+	Parameter ap_ST_fsm_state14 bound to: 15'b010000000000000 
+	Parameter ap_ST_fsm_state15 bound to: 15'b100000000000000 
+	Parameter C_S_AXI_AXILITE_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_AXILITE_ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_AXILITE_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter C_S_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:82]
+INFO: [Synth 8-6157] synthesizing module 'Lenet_axilite_s_axi' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_axilite_s_axi.v:9]
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDR_AP_CTRL bound to: 9'b000000000 
+	Parameter ADDR_GIE bound to: 9'b000000100 
+	Parameter ADDR_IER bound to: 9'b000001000 
+	Parameter ADDR_ISR bound to: 9'b000001100 
+	Parameter ADDR_DATA_IN_SIZE_X_DATA_0 bound to: 9'b000100000 
+	Parameter ADDR_DATA_IN_SIZE_X_CTRL bound to: 9'b000100100 
+	Parameter ADDR_DATA_IN_SIZE_Y_DATA_0 bound to: 9'b000101000 
+	Parameter ADDR_DATA_IN_SIZE_Y_CTRL bound to: 9'b000101100 
+	Parameter ADDR_DATA_IN_SIZE_Z_DATA_0 bound to: 9'b000110000 
+	Parameter ADDR_DATA_IN_SIZE_Z_CTRL bound to: 9'b000110100 
+	Parameter ADDR_CONV_SIZE_X_DATA_0 bound to: 9'b001010000 
+	Parameter ADDR_CONV_SIZE_X_CTRL bound to: 9'b001010100 
+	Parameter ADDR_CONV_SIZE_Y_DATA_0 bound to: 9'b001011000 
+	Parameter ADDR_CONV_SIZE_Y_CTRL bound to: 9'b001011100 
+	Parameter ADDR_CONV_SIZE_Z_DATA_0 bound to: 9'b001100000 
+	Parameter ADDR_CONV_SIZE_Z_CTRL bound to: 9'b001100100 
+	Parameter ADDR_RELU_SIZE_X_DATA_0 bound to: 9'b010000000 
+	Parameter ADDR_RELU_SIZE_X_CTRL bound to: 9'b010000100 
+	Parameter ADDR_RELU_SIZE_Y_DATA_0 bound to: 9'b010001000 
+	Parameter ADDR_RELU_SIZE_Y_CTRL bound to: 9'b010001100 
+	Parameter ADDR_RELU_SIZE_Z_DATA_0 bound to: 9'b010010000 
+	Parameter ADDR_RELU_SIZE_Z_CTRL bound to: 9'b010010100 
+	Parameter ADDR_POOL_SIZE_X_DATA_0 bound to: 9'b010110000 
+	Parameter ADDR_POOL_SIZE_X_CTRL bound to: 9'b010110100 
+	Parameter ADDR_POOL_SIZE_Y_DATA_0 bound to: 9'b010111000 
+	Parameter ADDR_POOL_SIZE_Y_CTRL bound to: 9'b010111100 
+	Parameter ADDR_POOL_SIZE_Z_DATA_0 bound to: 9'b011000000 
+	Parameter ADDR_POOL_SIZE_Z_CTRL bound to: 9'b011000100 
+	Parameter ADDR_FC_SIZE_X_DATA_0 bound to: 9'b011100000 
+	Parameter ADDR_FC_SIZE_X_CTRL bound to: 9'b011100100 
+	Parameter ADDR_FC_SIZE_Y_DATA_0 bound to: 9'b011101000 
+	Parameter ADDR_FC_SIZE_Y_CTRL bound to: 9'b011101100 
+	Parameter ADDR_FC_SIZE_Z_DATA_0 bound to: 9'b011110000 
+	Parameter ADDR_FC_SIZE_Z_CTRL bound to: 9'b011110100 
+	Parameter ADDR_DATA_OUT_SIZE_X_DATA_0 bound to: 9'b101000000 
+	Parameter ADDR_DATA_OUT_SIZE_X_CTRL bound to: 9'b101000100 
+	Parameter ADDR_DATA_OUT_SIZE_Y_DATA_0 bound to: 9'b101001000 
+	Parameter ADDR_DATA_OUT_SIZE_Y_CTRL bound to: 9'b101001100 
+	Parameter ADDR_DATA_OUT_SIZE_Z_DATA_0 bound to: 9'b101010000 
+	Parameter ADDR_DATA_OUT_SIZE_Z_CTRL bound to: 9'b101010100 
+	Parameter ADDR_DATA_IN_DATA_V_BASE bound to: 9'b000010000 
+	Parameter ADDR_DATA_IN_DATA_V_HIGH bound to: 9'b000011111 
+	Parameter ADDR_CONV_DATA_V_BASE bound to: 9'b001000000 
+	Parameter ADDR_CONV_DATA_V_HIGH bound to: 9'b001001111 
+	Parameter ADDR_RELU_DATA_V_BASE bound to: 9'b001110000 
+	Parameter ADDR_RELU_DATA_V_HIGH bound to: 9'b001111111 
+	Parameter ADDR_POOL_DATA_V_BASE bound to: 9'b010100000 
+	Parameter ADDR_POOL_DATA_V_HIGH bound to: 9'b010101111 
+	Parameter ADDR_FC_DATA_V_BASE bound to: 9'b011010000 
+	Parameter ADDR_FC_DATA_V_HIGH bound to: 9'b011011111 
+	Parameter ADDR_DATA_OUT_DATA_V_BASE bound to: 9'b100000000 
+	Parameter ADDR_DATA_OUT_DATA_V_HIGH bound to: 9'b100111111 
+	Parameter WRIDLE bound to: 2'b00 
+	Parameter WRDATA bound to: 2'b01 
+	Parameter WRRESP bound to: 2'b10 
+	Parameter WRRESET bound to: 2'b11 
+	Parameter RDIDLE bound to: 2'b00 
+	Parameter RDDATA bound to: 2'b01 
+	Parameter RDRESET bound to: 2'b10 
+	Parameter ADDR_BITS bound to: 9 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Lenet_axilite_s_axi_ram' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_axilite_s_axi.v:1244]
+	Parameter BYTES bound to: 4 - type: integer 
+	Parameter DEPTH bound to: 4 - type: integer 
+	Parameter AWIDTH bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'Lenet_axilite_s_axi_ram' (1#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_axilite_s_axi.v:1244]
+INFO: [Synth 8-6157] synthesizing module 'Lenet_axilite_s_axi_ram__parameterized0' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_axilite_s_axi.v:1244]
+	Parameter BYTES bound to: 4 - type: integer 
+	Parameter DEPTH bound to: 14 - type: integer 
+	Parameter AWIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'Lenet_axilite_s_axi_ram__parameterized0' (1#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_axilite_s_axi.v:1244]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_axilite_s_axi.v:585]
+WARNING: [Synth 8-6014] Unused sequential element int_conv_data_V_shift_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_axilite_s_axi.v:1106]
+WARNING: [Synth 8-6014] Unused sequential element int_relu_data_V_shift_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_axilite_s_axi.v:1138]
+WARNING: [Synth 8-6014] Unused sequential element int_pool_data_V_shift_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_axilite_s_axi.v:1170]
+WARNING: [Synth 8-6014] Unused sequential element int_fc_data_V_shift_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_axilite_s_axi.v:1202]
+WARNING: [Synth 8-6014] Unused sequential element int_data_out_data_V_shift_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_axilite_s_axi.v:1234]
+INFO: [Synth 8-6155] done synthesizing module 'Lenet_axilite_s_axi' (2#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_axilite_s_axi.v:9]
+WARNING: [Synth 8-350] instance 'Lenet_axilite_s_axi_U' of module 'Lenet_axilite_s_axi' requires 66 connections, but only 62 given [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:266]
+INFO: [Synth 8-6157] synthesizing module 'Lenet_conv1_inputjbC' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_conv1_inputjbC.v:46]
+	Parameter DataWidth bound to: 16 - type: integer 
+	Parameter AddressRange bound to: 8 - type: integer 
+	Parameter AddressWidth bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Lenet_conv1_inputjbC_ram' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_conv1_inputjbC.v:9]
+	Parameter DWIDTH bound to: 16 - type: integer 
+	Parameter AWIDTH bound to: 3 - type: integer 
+	Parameter MEM_SIZE bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'Lenet_conv1_inputjbC_ram' (3#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_conv1_inputjbC.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'Lenet_conv1_inputjbC' (4#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_conv1_inputjbC.v:46]
+INFO: [Synth 8-6157] synthesizing module 'Lenet_conv1_a_slilbW' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_conv1_a_slilbW.v:46]
+	Parameter DataWidth bound to: 16 - type: integer 
+	Parameter AddressRange bound to: 32 - type: integer 
+	Parameter AddressWidth bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Lenet_conv1_a_slilbW_ram' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_conv1_a_slilbW.v:9]
+	Parameter DWIDTH bound to: 16 - type: integer 
+	Parameter AWIDTH bound to: 5 - type: integer 
+	Parameter MEM_SIZE bound to: 32 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_conv1_a_slilbW.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'Lenet_conv1_a_slilbW_ram' (5#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_conv1_a_slilbW.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'Lenet_conv1_a_slilbW' (6#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_conv1_a_slilbW.v:46]
+INFO: [Synth 8-6157] synthesizing module 'softmax' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/softmax.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 43'b0000000000000000000000000000000000000000001 
+	Parameter ap_ST_fsm_state2 bound to: 43'b0000000000000000000000000000000000000000010 
+	Parameter ap_ST_fsm_state3 bound to: 43'b0000000000000000000000000000000000000000100 
+	Parameter ap_ST_fsm_state4 bound to: 43'b0000000000000000000000000000000000000001000 
+	Parameter ap_ST_fsm_state5 bound to: 43'b0000000000000000000000000000000000000010000 
+	Parameter ap_ST_fsm_state6 bound to: 43'b0000000000000000000000000000000000000100000 
+	Parameter ap_ST_fsm_state7 bound to: 43'b0000000000000000000000000000000000001000000 
+	Parameter ap_ST_fsm_state8 bound to: 43'b0000000000000000000000000000000000010000000 
+	Parameter ap_ST_fsm_state9 bound to: 43'b0000000000000000000000000000000000100000000 
+	Parameter ap_ST_fsm_state10 bound to: 43'b0000000000000000000000000000000001000000000 
+	Parameter ap_ST_fsm_state11 bound to: 43'b0000000000000000000000000000000010000000000 
+	Parameter ap_ST_fsm_state12 bound to: 43'b0000000000000000000000000000000100000000000 
+	Parameter ap_ST_fsm_state13 bound to: 43'b0000000000000000000000000000001000000000000 
+	Parameter ap_ST_fsm_state14 bound to: 43'b0000000000000000000000000000010000000000000 
+	Parameter ap_ST_fsm_state15 bound to: 43'b0000000000000000000000000000100000000000000 
+	Parameter ap_ST_fsm_state16 bound to: 43'b0000000000000000000000000001000000000000000 
+	Parameter ap_ST_fsm_state17 bound to: 43'b0000000000000000000000000010000000000000000 
+	Parameter ap_ST_fsm_state18 bound to: 43'b0000000000000000000000000100000000000000000 
+	Parameter ap_ST_fsm_state19 bound to: 43'b0000000000000000000000001000000000000000000 
+	Parameter ap_ST_fsm_state20 bound to: 43'b0000000000000000000000010000000000000000000 
+	Parameter ap_ST_fsm_state21 bound to: 43'b0000000000000000000000100000000000000000000 
+	Parameter ap_ST_fsm_state22 bound to: 43'b0000000000000000000001000000000000000000000 
+	Parameter ap_ST_fsm_state23 bound to: 43'b0000000000000000000010000000000000000000000 
+	Parameter ap_ST_fsm_state24 bound to: 43'b0000000000000000000100000000000000000000000 
+	Parameter ap_ST_fsm_state25 bound to: 43'b0000000000000000001000000000000000000000000 
+	Parameter ap_ST_fsm_state26 bound to: 43'b0000000000000000010000000000000000000000000 
+	Parameter ap_ST_fsm_state27 bound to: 43'b0000000000000000100000000000000000000000000 
+	Parameter ap_ST_fsm_state28 bound to: 43'b0000000000000001000000000000000000000000000 
+	Parameter ap_ST_fsm_state29 bound to: 43'b0000000000000010000000000000000000000000000 
+	Parameter ap_ST_fsm_state30 bound to: 43'b0000000000000100000000000000000000000000000 
+	Parameter ap_ST_fsm_state31 bound to: 43'b0000000000001000000000000000000000000000000 
+	Parameter ap_ST_fsm_state32 bound to: 43'b0000000000010000000000000000000000000000000 
+	Parameter ap_ST_fsm_state33 bound to: 43'b0000000000100000000000000000000000000000000 
+	Parameter ap_ST_fsm_state34 bound to: 43'b0000000001000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state35 bound to: 43'b0000000010000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state36 bound to: 43'b0000000100000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state37 bound to: 43'b0000001000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state38 bound to: 43'b0000010000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state39 bound to: 43'b0000100000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state40 bound to: 43'b0001000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state41 bound to: 43'b0010000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state42 bound to: 43'b0100000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state43 bound to: 43'b1000000000000000000000000000000000000000000 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/softmax.v:84]
+INFO: [Synth 8-6157] synthesizing module 'exp_16_8_s' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:10]
+	Parameter ap_ST_fsm_pp0_stage0 bound to: 1'b1 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:38]
+INFO: [Synth 8-6157] synthesizing module 'exp_16_8_s_f_x_lsfYi' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s_f_x_lsfYi.v:43]
+	Parameter DataWidth bound to: 11 - type: integer 
+	Parameter AddressRange bound to: 32 - type: integer 
+	Parameter AddressWidth bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'exp_16_8_s_f_x_lsfYi_rom' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s_f_x_lsfYi.v:9]
+	Parameter DWIDTH bound to: 11 - type: integer 
+	Parameter AWIDTH bound to: 5 - type: integer 
+	Parameter MEM_SIZE bound to: 32 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s_f_x_lsfYi.v:21]
+INFO: [Synth 8-3876] $readmem data file './exp_16_8_s_f_x_lsfYi_rom.dat' is read successfully [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s_f_x_lsfYi.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'exp_16_8_s_f_x_lsfYi_rom' (7#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s_f_x_lsfYi.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'exp_16_8_s_f_x_lsfYi' (8#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s_f_x_lsfYi.v:43]
+INFO: [Synth 8-6157] synthesizing module 'exp_16_8_s_exp_x_g8j' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s_exp_x_g8j.v:43]
+	Parameter DataWidth bound to: 25 - type: integer 
+	Parameter AddressRange bound to: 32 - type: integer 
+	Parameter AddressWidth bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'exp_16_8_s_exp_x_g8j_rom' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s_exp_x_g8j.v:9]
+	Parameter DWIDTH bound to: 25 - type: integer 
+	Parameter AWIDTH bound to: 5 - type: integer 
+	Parameter MEM_SIZE bound to: 32 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s_exp_x_g8j.v:21]
+INFO: [Synth 8-3876] $readmem data file './exp_16_8_s_exp_x_g8j_rom.dat' is read successfully [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s_exp_x_g8j.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'exp_16_8_s_exp_x_g8j_rom' (9#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s_exp_x_g8j.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'exp_16_8_s_exp_x_g8j' (10#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s_exp_x_g8j.v:43]
+INFO: [Synth 8-6157] synthesizing module 'exp_16_8_s_exp_x_hbi' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s_exp_x_hbi.v:43]
+	Parameter DataWidth bound to: 25 - type: integer 
+	Parameter AddressRange bound to: 32 - type: integer 
+	Parameter AddressWidth bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'exp_16_8_s_exp_x_hbi_rom' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s_exp_x_hbi.v:9]
+	Parameter DWIDTH bound to: 25 - type: integer 
+	Parameter AWIDTH bound to: 5 - type: integer 
+	Parameter MEM_SIZE bound to: 32 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s_exp_x_hbi.v:21]
+INFO: [Synth 8-3876] $readmem data file './exp_16_8_s_exp_x_hbi_rom.dat' is read successfully [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s_exp_x_hbi.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'exp_16_8_s_exp_x_hbi_rom' (11#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s_exp_x_hbi.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'exp_16_8_s_exp_x_hbi' (12#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s_exp_x_hbi.v:43]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:416]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:450]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:456]
+INFO: [Synth 8-6155] done synthesizing module 'exp_16_8_s' (13#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:10]
+INFO: [Synth 8-6157] synthesizing module 'Lenet_sdiv_24ns_1ibs' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_sdiv_24ns_1ibs.v:182]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 28 - type: integer 
+	Parameter din0_WIDTH bound to: 24 - type: integer 
+	Parameter din1_WIDTH bound to: 16 - type: integer 
+	Parameter dout_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Lenet_sdiv_24ns_1ibs_div' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_sdiv_24ns_1ibs.v:90]
+	Parameter in0_WIDTH bound to: 24 - type: integer 
+	Parameter in1_WIDTH bound to: 16 - type: integer 
+	Parameter out_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Lenet_sdiv_24ns_1ibs_div_u' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_sdiv_24ns_1ibs.v:10]
+	Parameter in0_WIDTH bound to: 24 - type: integer 
+	Parameter in1_WIDTH bound to: 16 - type: integer 
+	Parameter out_WIDTH bound to: 16 - type: integer 
+	Parameter cal_WIDTH bound to: 24 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'Lenet_sdiv_24ns_1ibs_div_u' (14#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_sdiv_24ns_1ibs.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'Lenet_sdiv_24ns_1ibs_div' (15#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_sdiv_24ns_1ibs.v:90]
+INFO: [Synth 8-6155] done synthesizing module 'Lenet_sdiv_24ns_1ibs' (16#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_sdiv_24ns_1ibs.v:182]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/softmax.v:527]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/softmax.v:529]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/softmax.v:553]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/softmax.v:555]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/softmax.v:557]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/softmax.v:559]
+INFO: [Synth 8-6155] done synthesizing module 'softmax' (17#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/softmax.v:10]
+INFO: [Synth 8-6157] synthesizing module 'Conv_forward' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Conv_forward.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 11'b00000000001 
+	Parameter ap_ST_fsm_state2 bound to: 11'b00000000010 
+	Parameter ap_ST_fsm_state3 bound to: 11'b00000000100 
+	Parameter ap_ST_fsm_state4 bound to: 11'b00000001000 
+	Parameter ap_ST_fsm_state5 bound to: 11'b00000010000 
+	Parameter ap_ST_fsm_state6 bound to: 11'b00000100000 
+	Parameter ap_ST_fsm_state7 bound to: 11'b00001000000 
+	Parameter ap_ST_fsm_state8 bound to: 11'b00010000000 
+	Parameter ap_ST_fsm_state9 bound to: 11'b00100000000 
+	Parameter ap_ST_fsm_state10 bound to: 11'b01000000000 
+	Parameter ap_ST_fsm_state11 bound to: 11'b10000000000 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Conv_forward.v:75]
+INFO: [Synth 8-6157] synthesizing module 'Conv_forward_convbkb' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Conv_forward_convbkb.v:43]
+	Parameter DataWidth bound to: 10 - type: integer 
+	Parameter AddressRange bound to: 16 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Conv_forward_convbkb_rom' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Conv_forward_convbkb.v:9]
+	Parameter DWIDTH bound to: 10 - type: integer 
+	Parameter AWIDTH bound to: 4 - type: integer 
+	Parameter MEM_SIZE bound to: 16 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Conv_forward_convbkb.v:21]
+INFO: [Synth 8-3876] $readmem data file './Conv_forward_convbkb_rom.dat' is read successfully [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Conv_forward_convbkb.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'Conv_forward_convbkb_rom' (18#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Conv_forward_convbkb.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'Conv_forward_convbkb' (19#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Conv_forward_convbkb.v:43]
+INFO: [Synth 8-6157] synthesizing module 'Padding' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Padding.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 5'b00001 
+	Parameter ap_ST_fsm_state2 bound to: 5'b00010 
+	Parameter ap_ST_fsm_state3 bound to: 5'b00100 
+	Parameter ap_ST_fsm_state4 bound to: 5'b01000 
+	Parameter ap_ST_fsm_state5 bound to: 5'b10000 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Padding.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'Padding' (20#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Padding.v:10]
+INFO: [Synth 8-6157] synthesizing module 'Lenet_mac_muladd_cud' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_mac_muladd_cud.v:34]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 16 - type: integer 
+	Parameter din1_WIDTH bound to: 10 - type: integer 
+	Parameter din2_WIDTH bound to: 24 - type: integer 
+	Parameter dout_WIDTH bound to: 24 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Lenet_mac_muladd_cud_DSP48_0' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_mac_muladd_cud.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'Lenet_mac_muladd_cud_DSP48_0' (21#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_mac_muladd_cud.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'Lenet_mac_muladd_cud' (22#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_mac_muladd_cud.v:34]
+INFO: [Synth 8-6155] done synthesizing module 'Conv_forward' (23#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Conv_forward.v:10]
+INFO: [Synth 8-6157] synthesizing module 'copy_tensor_1' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_1.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 6'b000001 
+	Parameter ap_ST_fsm_state2 bound to: 6'b000010 
+	Parameter ap_ST_fsm_state3 bound to: 6'b000100 
+	Parameter ap_ST_fsm_state4 bound to: 6'b001000 
+	Parameter ap_ST_fsm_state5 bound to: 6'b010000 
+	Parameter ap_ST_fsm_state6 bound to: 6'b100000 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_1.v:64]
+INFO: [Synth 8-6155] done synthesizing module 'copy_tensor_1' (24#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_1.v:10]
+INFO: [Synth 8-6157] synthesizing module 'copy_tensor' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 5'b00001 
+	Parameter ap_ST_fsm_state2 bound to: 5'b00010 
+	Parameter ap_ST_fsm_state3 bound to: 5'b00100 
+	Parameter ap_ST_fsm_state4 bound to: 5'b01000 
+	Parameter ap_ST_fsm_state5 bound to: 5'b10000 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor.v:54]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor.v:256]
+INFO: [Synth 8-6155] done synthesizing module 'copy_tensor' (25#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor.v:10]
+INFO: [Synth 8-6157] synthesizing module 'copy_tensor_2' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_2.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 5'b00001 
+	Parameter ap_ST_fsm_state2 bound to: 5'b00010 
+	Parameter ap_ST_fsm_state3 bound to: 5'b00100 
+	Parameter ap_ST_fsm_state4 bound to: 5'b01000 
+	Parameter ap_ST_fsm_state5 bound to: 5'b10000 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_2.v:54]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_2.v:256]
+INFO: [Synth 8-6155] done synthesizing module 'copy_tensor_2' (26#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_2.v:10]
+INFO: [Synth 8-6157] synthesizing module 'forward_fc' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/forward_fc.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 7'b0000001 
+	Parameter ap_ST_fsm_state2 bound to: 7'b0000010 
+	Parameter ap_ST_fsm_state3 bound to: 7'b0000100 
+	Parameter ap_ST_fsm_state4 bound to: 7'b0001000 
+	Parameter ap_ST_fsm_state5 bound to: 7'b0010000 
+	Parameter ap_ST_fsm_state6 bound to: 7'b0100000 
+	Parameter ap_ST_fsm_state7 bound to: 7'b1000000 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/forward_fc.v:51]
+INFO: [Synth 8-6157] synthesizing module 'Lenet_mac_muladd_eOg' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_mac_muladd_eOg.v:34]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 10 - type: integer 
+	Parameter din1_WIDTH bound to: 16 - type: integer 
+	Parameter din2_WIDTH bound to: 24 - type: integer 
+	Parameter dout_WIDTH bound to: 24 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Lenet_mac_muladd_eOg_DSP48_1' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_mac_muladd_eOg.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'Lenet_mac_muladd_eOg_DSP48_1' (27#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_mac_muladd_eOg.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'Lenet_mac_muladd_eOg' (28#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_mac_muladd_eOg.v:34]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/forward_fc.v:404]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/forward_fc.v:406]
+INFO: [Synth 8-6155] done synthesizing module 'forward_fc' (29#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/forward_fc.v:10]
+INFO: [Synth 8-6157] synthesizing module 'forward_ReLu' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/forward_ReLu.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 5'b00001 
+	Parameter ap_ST_fsm_state2 bound to: 5'b00010 
+	Parameter ap_ST_fsm_state3 bound to: 5'b00100 
+	Parameter ap_ST_fsm_state4 bound to: 5'b01000 
+	Parameter ap_ST_fsm_state5 bound to: 5'b10000 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/forward_ReLu.v:53]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/forward_ReLu.v:242]
+INFO: [Synth 8-6155] done synthesizing module 'forward_ReLu' (30#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/forward_ReLu.v:10]
+INFO: [Synth 8-6157] synthesizing module 'copy_tensor_3' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_3.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 2'b01 
+	Parameter ap_ST_fsm_state2 bound to: 2'b10 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_3.v:41]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_3.v:138]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_3.v:140]
+INFO: [Synth 8-6155] done synthesizing module 'copy_tensor_3' (31#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_3.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'Lenet' (32#1) [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:12]
+WARNING: [Synth 8-3331] design Conv_forward_convbkb has unconnected port reset
+WARNING: [Synth 8-3331] design exp_16_8_s_exp_x_hbi has unconnected port reset
+WARNING: [Synth 8-3331] design exp_16_8_s_exp_x_g8j has unconnected port reset
+WARNING: [Synth 8-3331] design exp_16_8_s_f_x_lsfYi has unconnected port reset
+WARNING: [Synth 8-3331] design Lenet_conv1_inputjbC has unconnected port reset
+WARNING: [Synth 8-3331] design Lenet_conv1_a_slilbW has unconnected port reset
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1345.246 ; gain = 140.449 ; free physical = 165 ; free virtual = 703
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin Lenet_axilite_s_axi_U:pool_data_V_address0[2] to constant 0 [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:266]
+WARNING: [Synth 8-3295] tying undriven pin Lenet_axilite_s_axi_U:pool_data_V_address0[1] to constant 0 [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:266]
+WARNING: [Synth 8-3295] tying undriven pin Lenet_axilite_s_axi_U:pool_data_V_address0[0] to constant 0 [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:266]
+WARNING: [Synth 8-3295] tying undriven pin Lenet_axilite_s_axi_U:pool_data_V_ce0 to constant 0 [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:266]
+WARNING: [Synth 8-3295] tying undriven pin Lenet_axilite_s_axi_U:pool_data_V_we0 to constant 0 [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:266]
+WARNING: [Synth 8-3295] tying undriven pin Lenet_axilite_s_axi_U:pool_data_V_d0[15] to constant 0 [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:266]
+WARNING: [Synth 8-3295] tying undriven pin Lenet_axilite_s_axi_U:pool_data_V_d0[14] to constant 0 [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:266]
+WARNING: [Synth 8-3295] tying undriven pin Lenet_axilite_s_axi_U:pool_data_V_d0[13] to constant 0 [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:266]
+WARNING: [Synth 8-3295] tying undriven pin Lenet_axilite_s_axi_U:pool_data_V_d0[12] to constant 0 [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:266]
+WARNING: [Synth 8-3295] tying undriven pin Lenet_axilite_s_axi_U:pool_data_V_d0[11] to constant 0 [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:266]
+WARNING: [Synth 8-3295] tying undriven pin Lenet_axilite_s_axi_U:pool_data_V_d0[10] to constant 0 [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:266]
+WARNING: [Synth 8-3295] tying undriven pin Lenet_axilite_s_axi_U:pool_data_V_d0[9] to constant 0 [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:266]
+WARNING: [Synth 8-3295] tying undriven pin Lenet_axilite_s_axi_U:pool_data_V_d0[8] to constant 0 [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:266]
+WARNING: [Synth 8-3295] tying undriven pin Lenet_axilite_s_axi_U:pool_data_V_d0[7] to constant 0 [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:266]
+WARNING: [Synth 8-3295] tying undriven pin Lenet_axilite_s_axi_U:pool_data_V_d0[6] to constant 0 [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:266]
+WARNING: [Synth 8-3295] tying undriven pin Lenet_axilite_s_axi_U:pool_data_V_d0[5] to constant 0 [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:266]
+WARNING: [Synth 8-3295] tying undriven pin Lenet_axilite_s_axi_U:pool_data_V_d0[4] to constant 0 [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:266]
+WARNING: [Synth 8-3295] tying undriven pin Lenet_axilite_s_axi_U:pool_data_V_d0[3] to constant 0 [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:266]
+WARNING: [Synth 8-3295] tying undriven pin Lenet_axilite_s_axi_U:pool_data_V_d0[2] to constant 0 [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:266]
+WARNING: [Synth 8-3295] tying undriven pin Lenet_axilite_s_axi_U:pool_data_V_d0[1] to constant 0 [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:266]
+WARNING: [Synth 8-3295] tying undriven pin Lenet_axilite_s_axi_U:pool_data_V_d0[0] to constant 0 [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.v:266]
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1345.246 ; gain = 140.449 ; free physical = 164 ; free virtual = 709
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1345.246 ; gain = 140.449 ; free physical = 164 ; free virtual = 709
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.xdc]
+Finished Parsing XDC File [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.65 . Memory (MB): peak = 1708.238 ; gain = 1.000 ; free physical = 118 ; free virtual = 528
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:31 ; elapsed = 00:01:23 . Memory (MB): peak = 1708.238 ; gain = 503.441 ; free physical = 114 ; free virtual = 614
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:31 ; elapsed = 00:01:23 . Memory (MB): peak = 1708.238 ; gain = 503.441 ; free physical = 105 ; free virtual = 614
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:01:23 . Memory (MB): peak = 1708.238 ; gain = 503.441 ; free physical = 103 ; free virtual = 616
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element int_data_in_data_V_shift_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_axilite_s_axi.v:985]
+INFO: [Synth 8-5544] ROM "wnext" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "wnext" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "ram". This will be implemented in logic
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "ram". This will be implemented in logic
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "ram". This will be implemented in logic
+INFO: [Synth 8-5544] ROM "tmp_s_fu_235_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:466]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:476]
+WARNING: [Synth 8-6014] Unused sequential element p_Val2_s_reg_571_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:287]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:466]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:466]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:466]
+WARNING: [Synth 8-6014] Unused sequential element  was removed. 
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:476]
+WARNING: [Synth 8-6014] Unused sequential element  was removed. 
+WARNING: [Synth 8-6014] Unused sequential element  was removed. 
+WARNING: [Synth 8-6014] Unused sequential element  was removed. 
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:476]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:476]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:476]
+WARNING: [Synth 8-6014] Unused sequential element  was removed. 
+WARNING: [Synth 8-3936] Found unconnected internal register 'remd_tmp_reg' and it is trimmed from '24' to '23' bits. [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_sdiv_24ns_1ibs.v:45]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5544] ROM "exitcond_fu_212_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "exitcond5_fu_137_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "exitcond6_fu_173_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "ram". This will be implemented in logic
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5544] ROM "exitcond2_fu_116_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "exitcond_fu_196_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "exitcond1_fu_140_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_s_fu_128_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_9_fu_152_p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+WARNING: [Synth 8-3936] Found unconnected internal register 'tmp_24_reg_559_reg' and it is trimmed from '6' to '4' bits. [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Conv_forward.v:330]
+WARNING: [Synth 8-3936] Found unconnected internal register 'p_x_assign_2_cast_reg_548_reg' and it is trimmed from '31' to '3' bits. [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Conv_forward.v:348]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5544] ROM "exitcond_fu_177_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "exitcond1_fu_241_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "exitcond2_fu_201_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "exitcond3_fu_304_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+WARNING: [Synth 8-3936] Found unconnected internal register 'tmp_4_reg_323_reg' and it is trimmed from '32' to '3' bits. [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_1.v:199]
+WARNING: [Synth 8-3936] Found unconnected internal register 'tmp3_reg_305_reg' and it is trimmed from '32' to '3' bits. [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_1.v:185]
+WARNING: [Synth 8-3936] Found unconnected internal register 'tmp5_reg_310_reg' and it is trimmed from '32' to '3' bits. [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_1.v:186]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+WARNING: [Synth 8-6014] Unused sequential element tmp3_reg_305_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_1.v:185]
+WARNING: [Synth 8-6014] Unused sequential element tmp5_reg_310_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_1.v:186]
+WARNING: [Synth 8-6014] Unused sequential element tmp3_reg_305_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_1.v:185]
+WARNING: [Synth 8-6014] Unused sequential element tmp4_reg_300_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_1.v:192]
+WARNING: [Synth 8-6014] Unused sequential element tmp_reg_295_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_1.v:193]
+WARNING: [Synth 8-3936] Found unconnected internal register 'tmp3_reg_225_reg' and it is trimmed from '32' to '3' bits. [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor.v:145]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5544] ROM "exitcond2_fu_132_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element tmp3_reg_225_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor.v:145]
+WARNING: [Synth 8-6014] Unused sequential element tmp_reg_220_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor.v:151]
+WARNING: [Synth 8-3936] Found unconnected internal register 'tmp3_reg_225_reg' and it is trimmed from '32' to '5' bits. [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_2.v:145]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5544] ROM "exitcond2_fu_132_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element tmp3_reg_225_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_2.v:145]
+WARNING: [Synth 8-6014] Unused sequential element tmp_reg_220_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_2.v:151]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5544] ROM "exitcond1_fu_177_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "exitcond2_fu_205_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "exitcond3_fu_237_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "exitcond_fu_253_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5544] ROM "exitcond7_fu_99_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "exitcond8_fu_111_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "exitcond_fu_127_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5544] ROM "exitcond2_fu_59_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-3971] The signal gen_write[1].mem_reg was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal gen_write[1].mem_reg was recognized as a true dual port RAM template.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:34 ; elapsed = 00:01:27 . Memory (MB): peak = 1708.238 ; gain = 503.441 ; free physical = 120 ; free virtual = 603
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     50 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 9     
+	   2 Input     31 Bit       Adders := 3     
+	   3 Input     25 Bit       Adders := 2     
+	   2 Input     25 Bit       Adders := 1     
+	   2 Input     24 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 3     
+	   3 Input     16 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 1     
+	   3 Input      5 Bit       Adders := 1     
+	   3 Input      4 Bit       Adders := 1     
+	   4 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 7     
+	   3 Input      3 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 19    
++---XORs : 
+	   2 Input      1 Bit         XORs := 8     
++---Registers : 
+	               43 Bit    Registers := 1     
+	               32 Bit    Registers := 56    
+	               31 Bit    Registers := 6     
+	               25 Bit    Registers := 8     
+	               24 Bit    Registers := 3     
+	               23 Bit    Registers := 1     
+	               19 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
+	               16 Bit    Registers := 35    
+	               15 Bit    Registers := 1     
+	               11 Bit    Registers := 4     
+	               10 Bit    Registers := 4     
+	                9 Bit    Registers := 5     
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 5     
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 10    
+	                2 Bit    Registers := 46    
+	                1 Bit    Registers := 61    
++---RAMs : 
+	              448 Bit         RAMs := 1     
+	              128 Bit         RAMs := 10    
++---Muxes : 
+	  44 Input     43 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 104   
+	  23 Input     32 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 3     
+	   2 Input     23 Bit        Muxes := 1     
+	   2 Input     22 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 32    
+	   2 Input     15 Bit        Muxes := 2     
+	   2 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 2     
+	   2 Input     10 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 13    
+	   2 Input      7 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 3     
+	   2 Input      5 Bit        Muxes := 9     
+	   2 Input      4 Bit        Muxes := 8     
+	   2 Input      3 Bit        Muxes := 15    
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 10    
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 53    
+	   7 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Lenet 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 11    
+	               16 Bit    Registers := 6     
+	               15 Bit    Registers := 1     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 7     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     15 Bit        Muxes := 2     
+	   2 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 6     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 13    
+Module Lenet_axilite_s_axi_ram 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
++---RAMs : 
+	              128 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 12    
+	   2 Input      8 Bit        Muxes := 2     
+Module Lenet_axilite_s_axi_ram__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
++---RAMs : 
+	              448 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 12    
+	   2 Input      8 Bit        Muxes := 2     
+Module Lenet_axilite_s_axi 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               32 Bit    Registers := 19    
+	                9 Bit    Registers := 1     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 20    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 24    
+	  23 Input     32 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 9     
+	   7 Input      1 Bit        Muxes := 1     
+Module Lenet_conv1_inputjbC_ram 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---RAMs : 
+	              128 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+Module Lenet_conv1_a_slilbW_ram 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+Module exp_16_8_s_f_x_lsfYi_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               11 Bit    Registers := 1     
+Module exp_16_8_s_exp_x_g8j_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               25 Bit    Registers := 1     
+Module exp_16_8_s_exp_x_hbi_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               25 Bit    Registers := 1     
+Module exp_16_8_s 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     50 Bit       Adders := 1     
+	   3 Input     25 Bit       Adders := 1     
+	   2 Input     25 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 5     
++---Registers : 
+	               25 Bit    Registers := 5     
+	               19 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
+	               11 Bit    Registers := 2     
+	                9 Bit    Registers := 4     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 16    
++---Muxes : 
+	   2 Input     22 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module Lenet_sdiv_24ns_1ibs_div_u 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     25 Bit       Adders := 1     
++---Registers : 
+	               25 Bit    Registers := 1     
+	               24 Bit    Registers := 2     
+	               23 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     24 Bit        Muxes := 2     
+	   2 Input     23 Bit        Muxes := 1     
+Module Lenet_sdiv_24ns_1ibs_div 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     24 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 3     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               24 Bit    Registers := 1     
+	               16 Bit    Registers := 3     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     24 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 3     
+Module softmax 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     16 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 3     
++---Registers : 
+	               43 Bit    Registers := 1     
+	               16 Bit    Registers := 7     
+	                2 Bit    Registers := 5     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	  44 Input     43 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 9     
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module Conv_forward_convbkb_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               10 Bit    Registers := 1     
+Module Padding 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 3     
+	   3 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                5 Bit    Registers := 2     
+	                3 Bit    Registers := 6     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module Conv_forward 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   3 Input      5 Bit       Adders := 1     
+	   3 Input      4 Bit       Adders := 1     
+	   4 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 2     
+	   3 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 5     
++---Registers : 
+	               32 Bit    Registers := 2     
+	               16 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 8     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 8     
+Module copy_tensor_1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 4     
+	   2 Input     31 Bit       Adders := 3     
++---Registers : 
+	               32 Bit    Registers := 6     
+	               31 Bit    Registers := 6     
+	                6 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+Module copy_tensor 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 3     
+	               16 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module copy_tensor_2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 3     
+	               16 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module forward_fc 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 4     
++---Registers : 
+	               16 Bit    Registers := 7     
+	               10 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 9     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 6     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+Module forward_ReLu 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 3     
++---Registers : 
+	                5 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 7     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+Module copy_tensor_3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
++---Muxes : 
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-6014] Unused sequential element B was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:476]
+WARNING: [Synth 8-6014] Unused sequential element B was removed. 
+WARNING: [Synth 8-6014] Unused sequential element Lenet_sdiv_24ns_1ibs_U27/Lenet_sdiv_24ns_1ibs_div_U/done_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_sdiv_24ns_1ibs.v:154]
+WARNING: [Synth 8-6014] Unused sequential element Lenet_sdiv_24ns_1ibs_U27/Lenet_sdiv_24ns_1ibs_div_U/remd_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_sdiv_24ns_1ibs.v:171]
+WARNING: [Synth 8-6014] Unused sequential element A was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:466]
+WARNING: [Synth 8-6014] Unused sequential element A was removed. 
+WARNING: [Synth 8-6014] Unused sequential element A was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:476]
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "p_0_out". This will be implemented in logic
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "p_0_out". This will be implemented in logic
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "p_0_out". This will be implemented in logic
+WARNING: [Synth 8-6014] Unused sequential element B was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:466]
+WARNING: [Synth 8-6014] Unused sequential element B was removed. 
+WARNING: [Synth 8-6014] Unused sequential element A was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:466]
+WARNING: [Synth 8-6014] Unused sequential element A was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:476]
+WARNING: [Synth 8-6014] Unused sequential element A was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:476]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:466]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:466]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:466]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:476]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:476]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:476]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:476]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:476]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:476]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:476]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/exp_16_8_s.v:476]
+DSP Report: Generating DSP grp_exp_16_8_s_fu_126/r_V_3_fu_340_p2, operation Mode is: A2*B''.
+DSP Report: register B is absorbed into DSP grp_exp_16_8_s_fu_126/r_V_3_fu_340_p2.
+DSP Report: register B is absorbed into DSP grp_exp_16_8_s_fu_126/r_V_3_fu_340_p2.
+DSP Report: register A is absorbed into DSP grp_exp_16_8_s_fu_126/r_V_3_fu_340_p2.
+DSP Report: operator grp_exp_16_8_s_fu_126/r_V_3_fu_340_p2 is absorbed into DSP grp_exp_16_8_s_fu_126/r_V_3_fu_340_p2.
+DSP Report: operator grp_exp_16_8_s_fu_126/r_V_3_fu_340_p2 is absorbed into DSP grp_exp_16_8_s_fu_126/r_V_3_fu_340_p2.
+DSP Report: Generating DSP grp_exp_16_8_s_fu_126/r_V_3_fu_340_p2, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register B is absorbed into DSP grp_exp_16_8_s_fu_126/r_V_3_fu_340_p2.
+DSP Report: register A is absorbed into DSP grp_exp_16_8_s_fu_126/r_V_3_fu_340_p2.
+DSP Report: operator grp_exp_16_8_s_fu_126/r_V_3_fu_340_p2 is absorbed into DSP grp_exp_16_8_s_fu_126/r_V_3_fu_340_p2.
+DSP Report: operator grp_exp_16_8_s_fu_126/r_V_3_fu_340_p2 is absorbed into DSP grp_exp_16_8_s_fu_126/r_V_3_fu_340_p2.
+DSP Report: Generating DSP grp_exp_16_8_s_fu_126/r_V_4_fu_399_p2, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP grp_exp_16_8_s_fu_126/r_V_4_fu_399_p2.
+DSP Report: register A is absorbed into DSP grp_exp_16_8_s_fu_126/r_V_4_fu_399_p2.
+DSP Report: operator grp_exp_16_8_s_fu_126/r_V_4_fu_399_p2 is absorbed into DSP grp_exp_16_8_s_fu_126/r_V_4_fu_399_p2.
+DSP Report: operator grp_exp_16_8_s_fu_126/r_V_4_fu_399_p2 is absorbed into DSP grp_exp_16_8_s_fu_126/r_V_4_fu_399_p2.
+DSP Report: Generating DSP grp_exp_16_8_s_fu_126/r_V_4_fu_399_p2, operation Mode is: A''*B2.
+DSP Report: register B is absorbed into DSP grp_exp_16_8_s_fu_126/r_V_4_fu_399_p2.
+DSP Report: register A is absorbed into DSP grp_exp_16_8_s_fu_126/r_V_4_fu_399_p2.
+DSP Report: register A is absorbed into DSP grp_exp_16_8_s_fu_126/r_V_4_fu_399_p2.
+DSP Report: operator grp_exp_16_8_s_fu_126/r_V_4_fu_399_p2 is absorbed into DSP grp_exp_16_8_s_fu_126/r_V_4_fu_399_p2.
+DSP Report: operator grp_exp_16_8_s_fu_126/r_V_4_fu_399_p2 is absorbed into DSP grp_exp_16_8_s_fu_126/r_V_4_fu_399_p2.
+DSP Report: Generating DSP grp_exp_16_8_s_fu_126/r_V_4_fu_399_p2, operation Mode is: (PCIN>>17)+A''*B2.
+DSP Report: register B is absorbed into DSP grp_exp_16_8_s_fu_126/r_V_4_fu_399_p2.
+DSP Report: register A is absorbed into DSP grp_exp_16_8_s_fu_126/r_V_4_fu_399_p2.
+DSP Report: register A is absorbed into DSP grp_exp_16_8_s_fu_126/r_V_4_fu_399_p2.
+DSP Report: operator grp_exp_16_8_s_fu_126/r_V_4_fu_399_p2 is absorbed into DSP grp_exp_16_8_s_fu_126/r_V_4_fu_399_p2.
+DSP Report: operator grp_exp_16_8_s_fu_126/r_V_4_fu_399_p2 is absorbed into DSP grp_exp_16_8_s_fu_126/r_V_4_fu_399_p2.
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "p_0_out". This will be implemented in logic
+INFO: [Synth 8-5587] ROM size for "p_0_out" is below threshold of ROM address width. It will be mapped to LUTs
+WARNING: [Synth 8-6014] Unused sequential element conv1_W_data_V_U/Conv_forward_convbkb_rom_U/q0_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Conv_forward_convbkb.v:33]
+WARNING: [Synth 8-6014] Unused sequential element conv_layer1_a_slice_1_reg_584_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Conv_forward.v:220]
+WARNING: [Synth 8-6014] Unused sequential element conv1_W_data_V_load_reg_589_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Conv_forward.v:221]
+DSP Report: Generating DSP Lenet_mac_muladd_cud_U10/Lenet_mac_muladd_cud_DSP48_0_U/p, operation Mode is: C+A2*B''.
+DSP Report: register conv1_W_data_V_U/Conv_forward_convbkb_rom_U/q0_reg is absorbed into DSP Lenet_mac_muladd_cud_U10/Lenet_mac_muladd_cud_DSP48_0_U/p.
+DSP Report: register conv1_W_data_V_load_reg_589_reg is absorbed into DSP Lenet_mac_muladd_cud_U10/Lenet_mac_muladd_cud_DSP48_0_U/p.
+DSP Report: register conv_layer1_a_slice_1_reg_584_reg is absorbed into DSP Lenet_mac_muladd_cud_U10/Lenet_mac_muladd_cud_DSP48_0_U/p.
+DSP Report: operator Lenet_mac_muladd_cud_U10/Lenet_mac_muladd_cud_DSP48_0_U/p is absorbed into DSP Lenet_mac_muladd_cud_U10/Lenet_mac_muladd_cud_DSP48_0_U/p.
+DSP Report: operator Lenet_mac_muladd_cud_U10/Lenet_mac_muladd_cud_DSP48_0_U/m is absorbed into DSP Lenet_mac_muladd_cud_U10/Lenet_mac_muladd_cud_DSP48_0_U/p.
+INFO: [Synth 8-4471] merging register 'i_reg_137_reg[30:0]' into 'i_reg_137_reg[30:0]' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_1.v:125]
+INFO: [Synth 8-4471] merging register 'i_reg_137_reg[30:0]' into 'i_reg_137_reg[30:0]' [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_1.v:125]
+WARNING: [Synth 8-6014] Unused sequential element i_reg_137_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_1.v:125]
+WARNING: [Synth 8-6014] Unused sequential element i_reg_137_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_1.v:125]
+WARNING: [Synth 8-3936] Found unconnected internal register 'tmp4_reg_300_reg' and it is trimmed from '32' to '3' bits. [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_1.v:192]
+WARNING: [Synth 8-3936] Found unconnected internal register 'tmp_reg_295_reg' and it is trimmed from '32' to '3' bits. [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_1.v:193]
+WARNING: [Synth 8-3936] Found unconnected internal register 'tmp_reg_220_reg' and it is trimmed from '32' to '3' bits. [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor.v:151]
+WARNING: [Synth 8-3936] Found unconnected internal register 'tmp_reg_220_reg' and it is trimmed from '32' to '5' bits. [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/copy_tensor_2.v:151]
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "p_0_out". This will be implemented in logic
+INFO: [Synth 8-5587] ROM size for "p_0_out" is below threshold of ROM address width. It will be mapped to LUTs
+WARNING: [Synth 8-6014] Unused sequential element fc1_W_data_V_U/Conv_forward_convbkb_rom_U/q0_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Conv_forward_convbkb.v:33]
+WARNING: [Synth 8-6014] Unused sequential element fc1_W_data_V_load_reg_400_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/forward_fc.v:131]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_mac_muladd_eOg.v:26]
+DSP Report: Generating DSP Lenet_mac_muladd_eOg_U18/Lenet_mac_muladd_eOg_DSP48_1_U/p, operation Mode is: C'+A*B''.
+DSP Report: register fc1_W_data_V_U/Conv_forward_convbkb_rom_U/q0_reg is absorbed into DSP Lenet_mac_muladd_eOg_U18/Lenet_mac_muladd_eOg_DSP48_1_U/p.
+DSP Report: register fc1_W_data_V_load_reg_400_reg is absorbed into DSP Lenet_mac_muladd_eOg_U18/Lenet_mac_muladd_eOg_DSP48_1_U/p.
+DSP Report: register C is absorbed into DSP Lenet_mac_muladd_eOg_U18/Lenet_mac_muladd_eOg_DSP48_1_U/p.
+DSP Report: operator Lenet_mac_muladd_eOg_U18/Lenet_mac_muladd_eOg_DSP48_1_U/p is absorbed into DSP Lenet_mac_muladd_eOg_U18/Lenet_mac_muladd_eOg_DSP48_1_U/p.
+DSP Report: operator Lenet_mac_muladd_eOg_U18/Lenet_mac_muladd_eOg_DSP48_1_U/m is absorbed into DSP Lenet_mac_muladd_eOg_U18/Lenet_mac_muladd_eOg_DSP48_1_U/p.
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[31]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[30]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[29]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[28]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[27]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[26]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[25]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[24]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[23]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[22]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[21]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[20]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[19]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[18]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[17]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[16]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[15]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[14]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[13]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[12]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[11]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[10]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[9]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[8]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[7]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[6]
+WARNING: [Synth 8-3331] design copy_tensor_2 has unconnected port size1_x[5]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[31]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[30]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[29]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[28]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[27]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[26]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[25]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[24]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[23]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[22]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[21]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[20]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[19]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[18]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[17]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[16]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[15]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[14]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[13]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[12]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[11]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[10]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[9]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[8]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[7]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[6]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[5]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[4]
+WARNING: [Synth 8-3331] design copy_tensor has unconnected port size1_x[3]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[31]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[30]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[29]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[28]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[27]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[26]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[25]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[24]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[23]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[22]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[21]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[20]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[19]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[18]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[17]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[16]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[15]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[14]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[13]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[12]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[11]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[10]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[9]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[8]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[7]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[6]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[5]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[4]
+WARNING: [Synth 8-3331] design copy_tensor_1 has unconnected port size1_x[3]
+INFO: [Synth 8-3971] The signal int_data_in_data_V/gen_write[1].mem_reg was recognized as a true dual port RAM template.
+WARNING: [Synth 8-6014] Unused sequential element int_conv_data_V/q0_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_axilite_s_axi.v:1284]
+INFO: [Synth 8-3971] The signal int_conv_data_V/gen_write[1].mem_reg was recognized as a true dual port RAM template.
+WARNING: [Synth 8-6014] Unused sequential element int_relu_data_V/q0_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_axilite_s_axi.v:1284]
+INFO: [Synth 8-3971] The signal int_relu_data_V/gen_write[1].mem_reg was recognized as a true dual port RAM template.
+WARNING: [Synth 8-6014] Unused sequential element int_pool_data_V/q0_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_axilite_s_axi.v:1284]
+INFO: [Synth 8-3971] The signal int_pool_data_V/gen_write[1].mem_reg was recognized as a true dual port RAM template.
+WARNING: [Synth 8-6014] Unused sequential element int_fc_data_V/q0_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_axilite_s_axi.v:1284]
+INFO: [Synth 8-3971] The signal int_fc_data_V/gen_write[1].mem_reg was recognized as a true dual port RAM template.
+WARNING: [Synth 8-6014] Unused sequential element int_data_out_data_V/q0_reg was removed.  [/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/Lenet_axilite_s_axi.v:1284]
+INFO: [Synth 8-3971] The signal int_data_out_data_V/gen_write[1].mem_reg was recognized as a true dual port RAM template.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (grp_forward_fc_fu_268/\p_x_assign_cast_reg_341_reg[2] )
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_table_U/exp_16_8_s_f_x_lsfYi_rom_U/q0_reg[0]' (FDE) to 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_table_U/exp_16_8_s_f_x_lsfYi_rom_U/q0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_table_U/exp_16_8_s_f_x_lsfYi_rom_U/q0_reg[1]' (FDE) to 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_table_U/exp_16_8_s_f_x_lsfYi_rom_U/q0_reg[9]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_table_U/exp_16_8_s_f_x_lsfYi_rom_U/q0_reg[2]' (FDE) to 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_table_U/exp_16_8_s_f_x_lsfYi_rom_U/q0_reg[10]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_table_U/exp_16_8_s_f_x_lsfYi_rom_U/q0_reg[3]' (FDE) to 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_table_U/exp_16_8_s_f_x_lsfYi_rom_U/q0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_table_U/exp_16_8_s_f_x_lsfYi_rom_U/q0_reg[4]' (FDE) to 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_table_U/exp_16_8_s_f_x_lsfYi_rom_U/q0_reg[5]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_table_U/exp_16_8_s_f_x_lsfYi_rom_U/q0_reg[5]' (FDE) to 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_table_U/exp_16_8_s_f_x_lsfYi_rom_U/q0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_table_U/exp_16_8_s_f_x_lsfYi_rom_U/q0_reg[6]' (FDE) to 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_table_U/exp_16_8_s_f_x_lsfYi_rom_U/q0_reg[8]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (grp_softmax_fu_204/\grp_exp_16_8_s_fu_126/f_x_lsb_table_U/exp_16_8_s_f_x_lsfYi_rom_U/q0_reg[8] )
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_reg[0]' (FDE) to 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_reg[10]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_reg[1]' (FDE) to 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_reg[9]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_reg[2]' (FDE) to 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_reg[10]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_reg[3]' (FDE) to 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_reg[8]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_reg[4]' (FDE) to 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_reg[8]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_reg[5]' (FDE) to 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_reg[8]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_reg[6]' (FDE) to 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_reg[8]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_pp0_iter2_reg_reg[0]' (FDE) to 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_pp0_iter2_reg_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_pp0_iter2_reg_reg[1]' (FDE) to 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_pp0_iter2_reg_reg[9]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_pp0_iter2_reg_reg[2]' (FDE) to 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_pp0_iter2_reg_reg[10]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_pp0_iter2_reg_reg[3]' (FDE) to 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_pp0_iter2_reg_reg[6]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_pp0_iter2_reg_reg[4]' (FDE) to 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_pp0_iter2_reg_reg[6]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_pp0_iter2_reg_reg[5]' (FDE) to 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_pp0_iter2_reg_reg[6]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_pp0_iter2_reg_reg[6]' (FDE) to 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_pp0_iter2_reg_reg[8]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (grp_softmax_fu_204/\grp_exp_16_8_s_fu_126/ap_CS_fsm_reg[0] )
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/p_Val2_10_reg_576_reg[17]' (FDE) to 'grp_softmax_fu_204/B[0]__0'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/p_Val2_10_reg_576_reg[18]' (FDE) to 'grp_softmax_fu_204/B[1]__0'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/p_Val2_10_reg_576_reg[19]' (FDE) to 'grp_softmax_fu_204/B[2]__0'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/p_Val2_10_reg_576_reg[20]' (FDE) to 'grp_softmax_fu_204/B[3]__0'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/p_Val2_10_reg_576_reg[21]' (FDE) to 'grp_softmax_fu_204/B[4]__0'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/p_Val2_10_reg_576_reg[22]' (FDE) to 'grp_softmax_fu_204/B[5]__0'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/p_Val2_10_reg_576_reg[23]' (FDE) to 'grp_softmax_fu_204/B[6]__0'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/grp_exp_16_8_s_fu_126/p_Val2_10_reg_576_reg[24]' (FDE) to 'grp_softmax_fu_204/B[7]__0'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/Lenet_sdiv_24ns_1ibs_U27/Lenet_sdiv_24ns_1ibs_div_U/dividend0_reg[0]' (FD) to 'grp_softmax_fu_204/Lenet_sdiv_24ns_1ibs_U27/Lenet_sdiv_24ns_1ibs_div_U/dividend0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/Lenet_sdiv_24ns_1ibs_U27/Lenet_sdiv_24ns_1ibs_div_U/dividend0_reg[1]' (FD) to 'grp_softmax_fu_204/Lenet_sdiv_24ns_1ibs_U27/Lenet_sdiv_24ns_1ibs_div_U/dividend0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/Lenet_sdiv_24ns_1ibs_U27/Lenet_sdiv_24ns_1ibs_div_U/dividend0_reg[2]' (FD) to 'grp_softmax_fu_204/Lenet_sdiv_24ns_1ibs_U27/Lenet_sdiv_24ns_1ibs_div_U/dividend0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/Lenet_sdiv_24ns_1ibs_U27/Lenet_sdiv_24ns_1ibs_div_U/dividend0_reg[3]' (FD) to 'grp_softmax_fu_204/Lenet_sdiv_24ns_1ibs_U27/Lenet_sdiv_24ns_1ibs_div_U/dividend0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/Lenet_sdiv_24ns_1ibs_U27/Lenet_sdiv_24ns_1ibs_div_U/dividend0_reg[4]' (FD) to 'grp_softmax_fu_204/Lenet_sdiv_24ns_1ibs_U27/Lenet_sdiv_24ns_1ibs_div_U/dividend0_reg[5]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/Lenet_sdiv_24ns_1ibs_U27/Lenet_sdiv_24ns_1ibs_div_U/dividend0_reg[5]' (FD) to 'grp_softmax_fu_204/Lenet_sdiv_24ns_1ibs_U27/Lenet_sdiv_24ns_1ibs_div_U/dividend0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'grp_softmax_fu_204/Lenet_sdiv_24ns_1ibs_U27/Lenet_sdiv_24ns_1ibs_div_U/dividend0_reg[6]' (FD) to 'grp_softmax_fu_204/Lenet_sdiv_24ns_1ibs_U27/Lenet_sdiv_24ns_1ibs_div_U/dividend0_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (grp_softmax_fu_204/\Lenet_sdiv_24ns_1ibs_U27/Lenet_sdiv_24ns_1ibs_div_U/dividend0_reg[7] )
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/grp_Padding_fu_169/p_x_assign_cast6_reg_255_reg[4]' (FD) to 'grp_Conv_forward_fu_216/p_x_assign_2_cast_reg_548_reg[0]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[3]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[0]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/grp_Padding_fu_169/p_x_assign_cast6_reg_255_reg[3]' (FD) to 'grp_Conv_forward_fu_216/p_x_assign_2_cast_reg_548_reg[0]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[2]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[0]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[1]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[0]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[0]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[0]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[1]' (FDE) to 'grp_Conv_forward_fu_216/v_2_cast6_reg_492_reg[1]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[0]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[0]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[30]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[29]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[28]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[27]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[26]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[25]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[24]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[23]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[22]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[21]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[20]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[19]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[18]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[17]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[16]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[15]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[14]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[13]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[12]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[11]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[10]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[9]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[8]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[7]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[6]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[5]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[4]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[3]' (FDR) to 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/v_2_cast_reg_497_reg[2]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[5]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[6]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[7]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[8]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[9]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[10]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[11]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[12]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[13]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[14]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[15]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[16]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[17]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[18]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[19]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[20]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[21]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[22]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[23]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[24]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[25]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[26]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[27]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[28]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[29]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[30]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Synth 8-3886] merging instance 'grp_Conv_forward_fu_216/tmp_53_cast_reg_543_reg[31]' (FDR) to 'grp_Conv_forward_fu_216/tmp_16_reg_530_reg[2]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (grp_forward_ReLu_fu_275/\p_x_assign_cast_reg_179_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (grp_Conv_forward_fu_216/\p_x_assign_2_cast_reg_548_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (grp_Conv_forward_fu_216/\vert_end_cast_reg_502_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (grp_Conv_forward_fu_216/\vert_end_cast_reg_502_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (grp_softmax_fu_204/\grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (grp_softmax_fu_204/\Lenet_sdiv_24ns_1ibs_U27/Lenet_sdiv_24ns_1ibs_div_U/Lenet_sdiv_24ns_1ibs_div_u_0/dividend0_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (grp_softmax_fu_204/\grp_exp_16_8_s_fu_126/f_x_lsb_V_reg_549_reg[8] )
+WARNING: [Synth 8-3332] Sequential element (i_2_0) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_2) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_4) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_6) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_8) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_10) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_12) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_14) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_16) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_18) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_20) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_22) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_24) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_26) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_28) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_30) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_32) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_34) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_36) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_38) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_40) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_42) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_44) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_46) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_48) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_50) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_52) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_54) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_56) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_58) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_60) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_62) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_64) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_0) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_2) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_4) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_6) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_8) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_10) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_12) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_14) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_16) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_18) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_20) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_22) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_24) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_26) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_28) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_30) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_32) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_34) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_36) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_38) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_40) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_42) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_44) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_46) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_48) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_50) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_52) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_54) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_56) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_58) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_60) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_62) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_64) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_0) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_2) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_4) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_6) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_8) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_10) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_12) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_14) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_16) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_18) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_20) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_22) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_24) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_26) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_28) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_30) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_32) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_34) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_36) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_38) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_40) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_42) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_44) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_46) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_48) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_50) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_52) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_54) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_56) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_58) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_60) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_62) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_64) is unused and will be removed from module Lenet_axilite_s_axi.
+WARNING: [Synth 8-3332] Sequential element (i_2_0) is unused and will be removed from module Lenet_axilite_s_axi.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (grp_softmax_fu_204/\Lenet_sdiv_24ns_1ibs_U27/Lenet_sdiv_24ns_1ibs_div_U/Lenet_sdiv_24ns_1ibs_div_u_0/dividend0_reg[0] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:52 ; elapsed = 00:01:50 . Memory (MB): peak = 1708.238 ; gain = 503.441 ; free physical = 107 ; free virtual = 634
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++-------------------------+------------+---------------+----------------+
+|Module Name              | RTL Object | Depth x Width | Implemented As | 
++-------------------------+------------+---------------+----------------+
+|exp_16_8_s_f_x_lsfYi_rom | p_0_out    | 32x11         | LUT            | 
+|exp_16_8_s_exp_x_g8j_rom | p_0_out    | 32x25         | LUT            | 
+|exp_16_8_s_exp_x_hbi_rom | p_0_out    | 32x25         | LUT            | 
+|Conv_forward_convbkb_rom | p_0_out    | 16x10         | LUT            | 
+|softmax                  | p_0_out    | 32x11         | LUT            | 
+|softmax                  | p_0_out    | 32x25         | LUT            | 
+|softmax                  | p_0_out    | 32x25         | LUT            | 
++-------------------------+------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping  Report (see note below)
++-----------------------------------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name                              | RTL Object           | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-----------------------------------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Lenet_axilite_s_axi_ram:                 | gen_write[1].mem_reg | 4 x 32(READ_FIRST)     | W | R | 4 x 32(READ_FIRST)     | W | R | Port A and B     | 0      | 1      | 
+|Lenet_axilite_s_axi_ram:                 | gen_write[1].mem_reg | 4 x 32(READ_FIRST)     | W | R | 4 x 32(READ_FIRST)     | W | R | Port A and B     | 0      | 1      | 
+|Lenet_axilite_s_axi_ram:                 | gen_write[1].mem_reg | 4 x 32(READ_FIRST)     | W | R | 4 x 32(READ_FIRST)     | W | R | Port A and B     | 0      | 1      | 
+|Lenet_axilite_s_axi_ram:                 | gen_write[1].mem_reg | 4 x 32(READ_FIRST)     | W | R | 4 x 32(READ_FIRST)     | W | R | Port A and B     | 0      | 1      | 
+|Lenet_axilite_s_axi_ram:                 | gen_write[1].mem_reg | 4 x 32(READ_FIRST)     | W | R | 4 x 32(READ_FIRST)     | W | R | Port A and B     | 0      | 1      | 
+|Lenet_axilite_s_axi_ram__parameterized0: | gen_write[1].mem_reg | 16 x 32(READ_FIRST)    | W | R | 16 x 32(READ_FIRST)    | W | R | Port A and B     | 0      | 1      | 
++-----------------------------------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The tale above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++------------+-----------------------------------------------------------+----------------+----------------------+-----------------+
+|Module Name | RTL Object                                                | Inference      | Size (Depth x Width) | Primitives      | 
++------------+-----------------------------------------------------------+----------------+----------------------+-----------------+
+|Lenet       | conv1_output_data_V_U/Lenet_conv1_inputjbC_ram_U/ram_reg  | Implied        | 8 x 16               | RAM16X1S x 16   | 
+|Lenet       | fx_output_data_V_U/Lenet_conv1_inputjbC_ram_U/ram_reg     | Implied        | 8 x 16               | RAM16X1S x 16   | 
+|Lenet       | conv1_input_data_V_U/Lenet_conv1_inputjbC_ram_U/ram_reg   | Implied        | 8 x 16               | RAM16X1S x 16   | 
+|Lenet       | conv1_a_slice_pad_da_U/Lenet_conv1_a_slilbW_ram_U/ram_reg | User Attribute | 32 x 16              | RAM32X1S x 16   | 
+|Lenet       | fx_input_data_V_U/Lenet_conv1_inputjbC_ram_U/ram_reg      | Implied        | 8 x 16               | RAM16X1S x 16   | 
+|Lenet       | fc1_input_data_V_U/Lenet_conv1_inputjbC_ram_U/ram_reg     | Implied        | 8 x 16               | RAM16X1S x 16   | 
++------------+-----------------------------------------------------------+----------------+----------------------+-----------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping  Report (see note below)
++-------------+-------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name  | DSP Mapping       | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-------------+-------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|softmax      | A2*B''            | 19     | 18     | -      | -      | 48     | 1    | 2    | -    | -    | -     | 0    | 0    | 
+|softmax      | (PCIN>>17)+A2*B2  | 19     | 9      | -      | -      | 26     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|softmax      | A2*B2             | 18     | 9      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|softmax      | A''*B2            | 18     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 0    | 0    | 
+|softmax      | (PCIN>>17)+A''*B2 | 18     | 9      | -      | -      | 33     | 2    | 1    | -    | -    | -     | 0    | 0    | 
+|Conv_forward | C+A2*B''          | 16     | 10     | 24     | -      | 24     | 1    | 2    | 0    | -    | -     | 0    | 0    | 
+|forward_fc   | C'+A*B''          | 16     | 10     | 24     | -      | 24     | 0    | 2    | 1    | -    | -     | 0    | 0    | 
++-------------+-------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance Lenet_axilite_s_axi_U/i_2_1/int_data_in_data_V/gen_write[1].mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance Lenet_axilite_s_axi_U/i_2_1/int_data_in_data_V/gen_write[1].mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance Lenet_axilite_s_axi_U/i_2_2/int_conv_data_V/gen_write[1].mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance Lenet_axilite_s_axi_U/i_2_3/int_relu_data_V/gen_write[1].mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance Lenet_axilite_s_axi_U/i_2_4/int_pool_data_V/gen_write[1].mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance Lenet_axilite_s_axi_U/i_2_5/int_fc_data_V/gen_write[1].mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance Lenet_axilite_s_axi_U/i_2_6/int_data_out_data_V/gen_write[1].mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:12 ; elapsed = 00:02:20 . Memory (MB): peak = 1731.238 ; gain = 526.441 ; free physical = 83 ; free virtual = 448
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:15 ; elapsed = 00:02:34 . Memory (MB): peak = 1748.254 ; gain = 543.457 ; free physical = 99 ; free virtual = 436
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping  Report
++-----------------------------------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name                              | RTL Object           | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-----------------------------------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Lenet_axilite_s_axi_ram:                 | gen_write[1].mem_reg | 4 x 32(READ_FIRST)     | W | R | 4 x 32(READ_FIRST)     | W | R | Port A and B     | 0      | 1      | 
+|Lenet_axilite_s_axi_ram:                 | gen_write[1].mem_reg | 4 x 32(READ_FIRST)     | W | R | 4 x 32(READ_FIRST)     | W | R | Port A and B     | 0      | 1      | 
+|Lenet_axilite_s_axi_ram:                 | gen_write[1].mem_reg | 4 x 32(READ_FIRST)     | W | R | 4 x 32(READ_FIRST)     | W | R | Port A and B     | 0      | 1      | 
+|Lenet_axilite_s_axi_ram:                 | gen_write[1].mem_reg | 4 x 32(READ_FIRST)     | W | R | 4 x 32(READ_FIRST)     | W | R | Port A and B     | 0      | 1      | 
+|Lenet_axilite_s_axi_ram:                 | gen_write[1].mem_reg | 4 x 32(READ_FIRST)     | W | R | 4 x 32(READ_FIRST)     | W | R | Port A and B     | 0      | 1      | 
+|Lenet_axilite_s_axi_ram__parameterized0: | gen_write[1].mem_reg | 16 x 32(READ_FIRST)    | W | R | 16 x 32(READ_FIRST)    | W | R | Port A and B     | 0      | 1      | 
++-----------------------------------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping  Report
++------------+-----------------------------------------------------------+----------------+----------------------+-----------------+
+|Module Name | RTL Object                                                | Inference      | Size (Depth x Width) | Primitives      | 
++------------+-----------------------------------------------------------+----------------+----------------------+-----------------+
+|Lenet       | conv1_output_data_V_U/Lenet_conv1_inputjbC_ram_U/ram_reg  | Implied        | 8 x 16               | RAM16X1S x 16   | 
+|Lenet       | fx_output_data_V_U/Lenet_conv1_inputjbC_ram_U/ram_reg     | Implied        | 8 x 16               | RAM16X1S x 16   | 
+|Lenet       | conv1_input_data_V_U/Lenet_conv1_inputjbC_ram_U/ram_reg   | Implied        | 8 x 16               | RAM16X1S x 16   | 
+|Lenet       | conv1_a_slice_pad_da_U/Lenet_conv1_a_slilbW_ram_U/ram_reg | User Attribute | 32 x 16              | RAM32X1S x 16   | 
+|Lenet       | fx_input_data_V_U/Lenet_conv1_inputjbC_ram_U/ram_reg      | Implied        | 8 x 16               | RAM16X1S x 16   | 
+|Lenet       | fc1_input_data_V_U/Lenet_conv1_inputjbC_ram_U/ram_reg     | Implied        | 8 x 16               | RAM16X1S x 16   | 
++------------+-----------------------------------------------------------+----------------+----------------------+-----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\grp_softmax_fu_204/Lenet_sdiv_24ns_1ibs_U27/Lenet_sdiv_24ns_1ibs_div_U/dividend0_reg[23] )
+INFO: [Synth 8-4480] The timing for the instance Lenet_axilite_s_axi_U/int_data_in_data_V/gen_write[1].mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance Lenet_axilite_s_axi_U/int_data_in_data_V/gen_write[1].mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance Lenet_axilite_s_axi_U/int_conv_data_V/gen_write[1].mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance Lenet_axilite_s_axi_U/int_relu_data_V/gen_write[1].mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance Lenet_axilite_s_axi_U/int_pool_data_V/gen_write[1].mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance Lenet_axilite_s_axi_U/int_fc_data_V/gen_write[1].mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance Lenet_axilite_s_axi_U/int_data_out_data_V/gen_write[1].mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:20 ; elapsed = 00:03:49 . Memory (MB): peak = 1778.996 ; gain = 574.199 ; free physical = 82 ; free virtual = 436
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5365] Flop grp_Conv_forward_fu_216/tmp_24_reg_559_reg[3] is being inverted and renamed to grp_Conv_forward_fu_216/tmp_24_reg_559_reg[3]_inv.
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:23 ; elapsed = 00:04:09 . Memory (MB): peak = 1778.996 ; gain = 574.199 ; free physical = 83 ; free virtual = 437
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:23 ; elapsed = 00:04:10 . Memory (MB): peak = 1778.996 ; gain = 574.199 ; free physical = 82 ; free virtual = 437
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:23 ; elapsed = 00:04:25 . Memory (MB): peak = 1778.996 ; gain = 574.199 ; free physical = 98 ; free virtual = 434
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:23 ; elapsed = 00:04:29 . Memory (MB): peak = 1778.996 ; gain = 574.199 ; free physical = 82 ; free virtual = 437
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:24 ; elapsed = 00:04:33 . Memory (MB): peak = 1778.996 ; gain = 574.199 ; free physical = 97 ; free virtual = 433
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:24 ; elapsed = 00:04:37 . Memory (MB): peak = 1778.996 ; gain = 574.199 ; free physical = 101 ; free virtual = 434
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+---------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                                                                                            | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+---------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Lenet       | grp_softmax_fu_204/grp_exp_16_8_s_fu_126/tmp_13_reg_517_pp0_iter4_reg_reg[0]                                        | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|Lenet       | grp_softmax_fu_204/Lenet_sdiv_24ns_1ibs_U27/Lenet_sdiv_24ns_1ibs_div_U/Lenet_sdiv_24ns_1ibs_div_u_0/r_stage_reg[24] | 24     | 1     | YES          | NO                 | YES               | 0      | 1       | 
++------------+---------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |CARRY4    |   137|
+|2     |DSP48E1   |     3|
+|3     |DSP48E1_1 |     1|
+|4     |DSP48E1_2 |     1|
+|5     |DSP48E1_3 |     2|
+|6     |LUT1      |    48|
+|7     |LUT2      |   292|
+|8     |LUT3      |   886|
+|9     |LUT4      |   422|
+|10    |LUT5      |   494|
+|11    |LUT6      |   527|
+|12    |MUXF7     |     1|
+|13    |RAM16X1S  |    80|
+|14    |RAM32X1S  |    16|
+|15    |RAMB36E1  |     6|
+|16    |SRL16E    |     1|
+|17    |SRLC32E   |     1|
+|18    |FDRE      |  2402|
+|19    |FDSE      |    28|
++------+----------+------+
+
+Report Instance Areas: 
++------+-------------------------------------+----------------------------------------+------+
+|      |Instance                             |Module                                  |Cells |
++------+-------------------------------------+----------------------------------------+------+
+|1     |top                                  |                                        |  5348|
+|2     |  conv1_output_data_V_U              |Lenet_conv1_inputjbC_0                  |    32|
+|3     |    Lenet_conv1_inputjbC_ram_U       |Lenet_conv1_inputjbC_ram_6              |    32|
+|4     |  conv1_input_data_V_U               |Lenet_conv1_inputjbC                    |    32|
+|5     |    Lenet_conv1_inputjbC_ram_U       |Lenet_conv1_inputjbC_ram_7              |    32|
+|6     |  fc1_input_data_V_U                 |Lenet_conv1_inputjbC_1                  |    16|
+|7     |    Lenet_conv1_inputjbC_ram_U       |Lenet_conv1_inputjbC_ram_5              |    16|
+|8     |  Lenet_axilite_s_axi_U              |Lenet_axilite_s_axi                     |  1916|
+|9     |    int_conv_data_V                  |Lenet_axilite_s_axi_ram                 |    67|
+|10    |    int_data_in_data_V               |Lenet_axilite_s_axi_ram_8               |    37|
+|11    |    int_data_out_data_V              |Lenet_axilite_s_axi_ram__parameterized0 |    41|
+|12    |    int_fc_data_V                    |Lenet_axilite_s_axi_ram_9               |    37|
+|13    |    int_pool_data_V                  |Lenet_axilite_s_axi_ram_10              |    41|
+|14    |    int_relu_data_V                  |Lenet_axilite_s_axi_ram_11              |    68|
+|15    |  conv1_a_slice_pad_da_U             |Lenet_conv1_a_slilbW                    |    48|
+|16    |    Lenet_conv1_a_slilbW_ram_U       |Lenet_conv1_a_slilbW_ram                |    48|
+|17    |  fx_input_data_V_U                  |Lenet_conv1_inputjbC_2                  |    47|
+|18    |    Lenet_conv1_inputjbC_ram_U       |Lenet_conv1_inputjbC_ram_4              |    47|
+|19    |  fx_output_data_V_U                 |Lenet_conv1_inputjbC_3                  |    97|
+|20    |    Lenet_conv1_inputjbC_ram_U       |Lenet_conv1_inputjbC_ram                |    97|
+|21    |  grp_Conv_forward_fu_216            |Conv_forward                            |   454|
+|22    |    Lenet_mac_muladd_cud_U10         |Lenet_mac_muladd_cud                    |    34|
+|23    |      Lenet_mac_muladd_cud_DSP48_0_U |Lenet_mac_muladd_cud_DSP48_0            |    34|
+|24    |    grp_Padding_fu_169               |Padding                                 |   106|
+|25    |  grp_copy_tensor_1_fu_225           |copy_tensor_1                           |   418|
+|26    |  grp_copy_tensor_2_fu_258           |copy_tensor_2                           |   108|
+|27    |  grp_copy_tensor_3_fu_281           |copy_tensor_3                           |    44|
+|28    |  grp_copy_tensor_fu_248             |copy_tensor                             |    85|
+|29    |  grp_forward_ReLu_fu_275            |forward_ReLu                            |    72|
+|30    |  grp_forward_fc_fu_268              |forward_fc                              |   248|
+|31    |    Lenet_mac_muladd_eOg_U18         |Lenet_mac_muladd_eOg                    |    20|
+|32    |      Lenet_mac_muladd_eOg_DSP48_1_U |Lenet_mac_muladd_eOg_DSP48_1            |    20|
+|33    |  grp_softmax_fu_204                 |softmax                                 |  1257|
+|34    |    Lenet_sdiv_24ns_1ibs_U27         |Lenet_sdiv_24ns_1ibs                    |   319|
+|35    |      Lenet_sdiv_24ns_1ibs_div_U     |Lenet_sdiv_24ns_1ibs_div                |   319|
+|36    |        Lenet_sdiv_24ns_1ibs_div_u_0 |Lenet_sdiv_24ns_1ibs_div_u              |   205|
+|37    |    grp_exp_16_8_s_fu_126            |exp_16_8_s                              |   586|
+|38    |      exp_x_msb_1_table_U            |exp_16_8_s_exp_x_hbi                    |    50|
+|39    |        exp_16_8_s_exp_x_hbi_rom_U   |exp_16_8_s_exp_x_hbi_rom                |    50|
+|40    |      exp_x_msb_2_m_1_tabl_U         |exp_16_8_s_exp_x_g8j                    |    73|
+|41    |        exp_16_8_s_exp_x_g8j_rom_U   |exp_16_8_s_exp_x_g8j_rom                |    73|
+|42    |      f_x_lsb_table_U                |exp_16_8_s_f_x_lsfYi                    |     7|
+|43    |        exp_16_8_s_f_x_lsfYi_rom_U   |exp_16_8_s_f_x_lsfYi_rom                |     7|
++------+-------------------------------------+----------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:24 ; elapsed = 00:04:42 . Memory (MB): peak = 1778.996 ; gain = 574.199 ; free physical = 82 ; free virtual = 436
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 794 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:04 ; elapsed = 00:03:35 . Memory (MB): peak = 1778.996 ; gain = 211.207 ; free physical = 106 ; free virtual = 511
+Synthesis Optimization Complete : Time (s): cpu = 00:01:24 ; elapsed = 00:04:43 . Memory (MB): peak = 1779.004 ; gain = 574.199 ; free physical = 122 ; free virtual = 522
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 247 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 96 instances were transformed.
+  RAM16X1S => RAM32X1S (RAMS32): 80 instances
+  RAM32X1S => RAM32X1S (RAMS32): 16 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+288 Infos, 305 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:29 ; elapsed = 00:04:57 . Memory (MB): peak = 1779.004 ; gain = 585.836 ; free physical = 112 ; free virtual = 533
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/hadee/FPGA_project/SimpleCNN_FPGA/CNN/solution1/impl/verilog/project.runs/synth_1/Lenet.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Lenet_utilization_synth.rpt -pb Lenet_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.39 . Memory (MB): peak = 1803.008 ; gain = 0.000 ; free physical = 105 ; free virtual = 555
+INFO: [Common 17-206] Exiting Vivado at Mon Jan  7 16:21:12 2019...

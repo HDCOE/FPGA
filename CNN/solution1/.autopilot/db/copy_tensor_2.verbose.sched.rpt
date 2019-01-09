@@ -1,0 +1,190 @@
+
+
+================================================================
+== Vivado HLS Report for 'copy_tensor_2'
+================================================================
+* Date:           Mon Jan  7 16:14:03 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        CNN
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.510|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   13|   13|   13|   13|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                 |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |    Loop Name    | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1         |   12|   12|         6|          -|          -|     2|    no    |
+        | + Loop 1.1      |    4|    4|         4|          -|          -|     1|    no    |
+        |  ++ Loop 1.1.1  |    1|    1|         1|          -|          -|     1|    no    |
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 5
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond2)
+3 --> 
+	4  / (!j)
+	2  / (j)
+4 --> 
+	5  / true
+5 --> 
+	5  / (!i)
+	3  / (i)
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecMemCore([27 x i16]* %in1_V, [1 x i8]* @p_str8, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str8, i32 -1, [1 x i8]* @p_str8, [1 x i8]* @p_str8, [1 x i8]* @p_str8, [1 x i8]* @p_str8, [1 x i8]* @p_str8)"   --->   Operation 6 'specmemcore' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%size1_y_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %size1_y)"   --->   Operation 7 'read' 'size1_y_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%size1_x_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %size1_x)"   --->   Operation 8 'read' 'size1_x_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%p_read_2 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %p_read1)"   --->   Operation 9 'read' 'p_read_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%p_read_3 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %p_read)"   --->   Operation 10 'read' 'p_read_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (1.76ns)   --->   "br label %.loopexit" [CNN/Lenet5.cpp:14]   --->   Operation 11 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 2.55>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%k = phi i2 [ 0, %0 ], [ %k_1, %.loopexit.loopexit ]"   --->   Operation 12 'phi' 'k' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%phi_mul = phi i32 [ 0, %0 ], [ %next_mul, %.loopexit.loopexit ]"   --->   Operation 13 'phi' 'phi_mul' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (2.55ns)   --->   "%next_mul = add i32 %phi_mul, %size1_y_read"   --->   Operation 14 'add' 'next_mul' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%empty_30 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)"   --->   Operation 15 'speclooptripcount' 'empty_30' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.95ns)   --->   "%exitcond2 = icmp eq i2 %k, -2" [CNN/Lenet5.cpp:14]   --->   Operation 16 'icmp' 'exitcond2' <Predicate = true> <Delay = 0.95> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 17 [1/1] (1.56ns)   --->   "%k_1 = add i2 %k, 1" [CNN/Lenet5.cpp:14]   --->   Operation 17 'add' 'k_1' <Predicate = true> <Delay = 1.56> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "br i1 %exitcond2, label %2, label %.preheader2.preheader" [CNN/Lenet5.cpp:14]   --->   Operation 18 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%tmp_23 = trunc i2 %k to i1" [CNN/Lenet5.cpp:14]   --->   Operation 19 'trunc' 'tmp_23' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.80ns)   --->   "%in2_V_load_phi = select i1 %tmp_23, i16 %p_read_2, i16 %p_read_3" [CNN/Lenet5.cpp:17]   --->   Operation 20 'select' 'in2_V_load_phi' <Predicate = (!exitcond2)> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 21 [1/1] (1.76ns)   --->   "br label %.preheader2" [CNN/Lenet5.cpp:15]   --->   Operation 21 'br' <Predicate = (!exitcond2)> <Delay = 1.76>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "ret void" [CNN/Lenet5.cpp:19]   --->   Operation 22 'ret' <Predicate = (exitcond2)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 2.55>
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%j = phi i1 [ false, %.preheader2.preheader ], [ true, %.preheader2.loopexit ]"   --->   Operation 23 'phi' 'j' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%j_cast3 = zext i1 %j to i32"   --->   Operation 24 'zext' 'j_cast3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%empty_31 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 1, i64 1)"   --->   Operation 25 'speclooptripcount' 'empty_31' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "br i1 %j, label %.loopexit.loopexit, label %.preheader.preheader" [CNN/Lenet5.cpp:15]   --->   Operation 26 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 27 [1/1] (2.55ns)   --->   "%tmp = add i32 %j_cast3, %phi_mul"   --->   Operation 27 'add' 'tmp' <Predicate = (!j)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "br label %.loopexit"   --->   Operation 28 'br' <Predicate = (j)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 8.51>
+ST_4 : Operation 29 [1/1] (8.51ns)   --->   "%tmp3 = mul i32 %tmp, %size1_x_read"   --->   Operation 29 'mul' 'tmp3' <Predicate = true> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 30 [1/1] (1.76ns)   --->   "br label %.preheader" [CNN/Lenet5.cpp:16]   --->   Operation 30 'br' <Predicate = true> <Delay = 1.76>
+
+State 5 <SV = 4> <Delay = 4.87>
+ST_5 : Operation 31 [1/1] (0.00ns)   --->   "%i = phi i1 [ true, %1 ], [ false, %.preheader.preheader ]"   --->   Operation 31 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 32 [1/1] (0.00ns)   --->   "%i_cast2 = zext i1 %i to i32"   --->   Operation 32 'zext' 'i_cast2' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 33 [1/1] (0.00ns)   --->   "%empty_32 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 1, i64 1)"   --->   Operation 33 'speclooptripcount' 'empty_32' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 34 [1/1] (0.00ns)   --->   "br i1 %i, label %.preheader2.loopexit, label %1" [CNN/Lenet5.cpp:16]   --->   Operation 34 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 35 [1/1] (2.55ns)   --->   "%tmp_7 = add nsw i32 %i_cast2, %tmp3" [CNN/Lenet5.cpp:17]   --->   Operation 35 'add' 'tmp_7' <Predicate = (!i)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 36 [1/1] (0.00ns)   --->   "%tmp_8 = sext i32 %tmp_7 to i64" [CNN/Lenet5.cpp:17]   --->   Operation 36 'sext' 'tmp_8' <Predicate = (!i)> <Delay = 0.00>
+ST_5 : Operation 37 [1/1] (0.00ns)   --->   "%in1_V_addr = getelementptr [27 x i16]* %in1_V, i64 0, i64 %tmp_8" [CNN/Lenet5.cpp:17]   --->   Operation 37 'getelementptr' 'in1_V_addr' <Predicate = (!i)> <Delay = 0.00>
+ST_5 : Operation 38 [1/1] (2.32ns)   --->   "store i16 %in2_V_load_phi, i16* %in1_V_addr, align 2" [CNN/Lenet5.cpp:17]   --->   Operation 38 'store' <Predicate = (!i)> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 16> <Depth = 27> <RAM>
+ST_5 : Operation 39 [1/1] (0.00ns)   --->   "br label %.preheader" [CNN/Lenet5.cpp:16]   --->   Operation 39 'br' <Predicate = (!i)> <Delay = 0.00>
+ST_5 : Operation 40 [1/1] (0.00ns)   --->   "br label %.preheader2"   --->   Operation 40 'br' <Predicate = (i)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('k') with incoming values : ('k', CNN/Lenet5.cpp:14) [13]  (1.77 ns)
+
+ <State 2>: 2.55ns
+The critical path consists of the following:
+	'phi' operation ('phi_mul') with incoming values : ('next_mul') [14]  (0 ns)
+	'add' operation ('next_mul') [15]  (2.55 ns)
+
+ <State 3>: 2.55ns
+The critical path consists of the following:
+	'phi' operation ('j') [25]  (0 ns)
+	'add' operation ('tmp') [30]  (2.55 ns)
+
+ <State 4>: 8.51ns
+The critical path consists of the following:
+	'mul' operation ('tmp3') [31]  (8.51 ns)
+
+ <State 5>: 4.87ns
+The critical path consists of the following:
+	'phi' operation ('i') [34]  (0 ns)
+	'add' operation ('tmp_7', CNN/Lenet5.cpp:17) [39]  (2.55 ns)
+	'getelementptr' operation ('in1_V_addr', CNN/Lenet5.cpp:17) [41]  (0 ns)
+	'store' operation (CNN/Lenet5.cpp:17) of variable 'in2_V_load_phi', CNN/Lenet5.cpp:17 on array 'in1_V' [42]  (2.32 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

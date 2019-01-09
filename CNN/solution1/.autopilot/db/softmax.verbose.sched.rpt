@@ -1,0 +1,588 @@
+
+
+================================================================
+== Vivado HLS Report for 'softmax'
+================================================================
+* Date:           Mon Jan  7 16:14:03 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        CNN
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.419|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   87|   87|   87|   87|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    2|    2|         1|          -|          -|     2|    no    |
+        |- Loop 2  |   14|   14|         7|          -|          -|     2|    no    |
+        |- Loop 3  |   68|   68|        34|          -|          -|     2|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 43
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	2  / (!exitcond5)
+	3  / (exitcond5)
+3 --> 
+	4  / (!exitcond6)
+	10  / (exitcond6)
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	3  / true
+10 --> 
+	11  / (!exitcond)
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / true
+38 --> 
+	39  / true
+39 --> 
+	40  / true
+40 --> 
+	41  / true
+41 --> 
+	42  / true
+42 --> 
+	43  / true
+43 --> 
+	10  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%classifier_input_dat = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %classifier_1_1_2_input_data_1_V_read)"   --->   Operation 44 'read' 'classifier_input_dat' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%classifier_input_dat_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %classifier_1_1_2_input_data_0_V_read)"   --->   Operation 45 'read' 'classifier_input_dat_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (1.76ns)   --->   "br label %1" [CNN/classifier.hpp:24]   --->   Operation 46 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 4.03>
+ST_2 : Operation 47 [1/1] (0.00ns)   --->   "%p_Val2_1 = phi i16 [ %classifier_input_dat_1, %0 ], [ %max_value_V_1_phi_s, %._crit_edge ]" [CNN/classifier.hpp:26]   --->   Operation 47 'phi' 'p_Val2_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 48 [1/1] (0.00ns)   --->   "%p_z_assign = phi i2 [ 0, %0 ], [ %filter, %._crit_edge ]"   --->   Operation 48 'phi' 'p_z_assign' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 49 [1/1] (0.95ns)   --->   "%exitcond5 = icmp eq i2 %p_z_assign, -2" [CNN/classifier.hpp:24]   --->   Operation 49 'icmp' 'exitcond5' <Predicate = true> <Delay = 0.95> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 50 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)"   --->   Operation 50 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 51 [1/1] (1.56ns)   --->   "%filter = add i2 %p_z_assign, 1" [CNN/classifier.hpp:24]   --->   Operation 51 'add' 'filter' <Predicate = true> <Delay = 1.56> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 52 [1/1] (0.00ns)   --->   "br i1 %exitcond5, label %.preheader84.preheader, label %._crit_edge" [CNN/classifier.hpp:24]   --->   Operation 52 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 53 [1/1] (0.00ns)   --->   "%tmp_2 = trunc i2 %p_z_assign to i1" [CNN/classifier.hpp:24]   --->   Operation 53 'trunc' 'tmp_2' <Predicate = (!exitcond5)> <Delay = 0.00>
+ST_2 : Operation 54 [1/1] (0.80ns)   --->   "%max_value_V = select i1 %tmp_2, i16 %classifier_input_dat, i16 %classifier_input_dat_1" [CNN/classifier.hpp:26]   --->   Operation 54 'select' 'max_value_V' <Predicate = (!exitcond5)> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 55 [1/1] (2.42ns)   --->   "%tmp_s = icmp sgt i16 %max_value_V, %p_Val2_1" [CNN/classifier.hpp:26]   --->   Operation 55 'icmp' 'tmp_s' <Predicate = (!exitcond5)> <Delay = 2.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 56 [1/1] (0.80ns)   --->   "%max_value_V_1_phi_s = select i1 %tmp_s, i16 %max_value_V, i16 %p_Val2_1" [CNN/classifier.hpp:26]   --->   Operation 56 'select' 'max_value_V_1_phi_s' <Predicate = (!exitcond5)> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 57 [1/1] (0.00ns)   --->   "br label %1" [CNN/classifier.hpp:24]   --->   Operation 57 'br' <Predicate = (!exitcond5)> <Delay = 0.00>
+ST_2 : Operation 58 [1/1] (1.76ns)   --->   "br label %.preheader84" [CNN/classifier.hpp:31]   --->   Operation 58 'br' <Predicate = (exitcond5)> <Delay = 1.76>
+
+State 3 <SV = 2> <Delay = 1.76>
+ST_3 : Operation 59 [1/1] (0.00ns)   --->   "%p_Val2_2 = phi i16 [ %sum_exp_z_V, %2 ], [ 0, %.preheader84.preheader ]"   --->   Operation 59 'phi' 'p_Val2_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 60 [1/1] (0.00ns)   --->   "%p_z_assign_3 = phi i2 [ %filter_1, %2 ], [ 0, %.preheader84.preheader ]"   --->   Operation 60 'phi' 'p_z_assign_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 61 [1/1] (0.95ns)   --->   "%exitcond6 = icmp eq i2 %p_z_assign_3, -2" [CNN/classifier.hpp:31]   --->   Operation 61 'icmp' 'exitcond6' <Predicate = true> <Delay = 0.95> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 62 [1/1] (0.00ns)   --->   "%empty_15 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)"   --->   Operation 62 'speclooptripcount' 'empty_15' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 63 [1/1] (1.56ns)   --->   "%filter_1 = add i2 %p_z_assign_3, 1" [CNN/classifier.hpp:31]   --->   Operation 63 'add' 'filter_1' <Predicate = true> <Delay = 1.56> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 64 [1/1] (0.00ns)   --->   "br i1 %exitcond6, label %.preheader.preheader, label %2" [CNN/classifier.hpp:31]   --->   Operation 64 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 65 [1/1] (0.00ns)   --->   "%tmp_105_tr_cast = sext i16 %p_Val2_2 to i24" [CNN/classifier.hpp:37]   --->   Operation 65 'sext' 'tmp_105_tr_cast' <Predicate = (exitcond6)> <Delay = 0.00>
+ST_3 : Operation 66 [1/1] (1.76ns)   --->   "br label %.preheader" [CNN/classifier.hpp:37]   --->   Operation 66 'br' <Predicate = (exitcond6)> <Delay = 1.76>
+
+State 4 <SV = 3> <Delay = 7.68>
+ST_4 : Operation 67 [1/1] (0.00ns) (grouped into LUT with out node in_V)   --->   "%tmp_3 = trunc i2 %p_z_assign_3 to i1" [CNN/classifier.hpp:31]   --->   Operation 67 'trunc' 'tmp_3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 68 [1/1] (0.00ns) (grouped into LUT with out node in_V)   --->   "%p_Val2_s = select i1 %tmp_3, i16 %classifier_input_dat, i16 %classifier_input_dat_1" [CNN/classifier.hpp:33]   --->   Operation 68 'select' 'p_Val2_s' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 69 [1/1] (2.07ns) (out node of the LUT)   --->   "%in_V = sub i16 %p_Val2_s, %p_Val2_1" [CNN/classifier.hpp:33]   --->   Operation 69 'sub' 'in_V' <Predicate = true> <Delay = 2.07> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 70 [6/6] (5.60ns)   --->   "%p_Val2_3 = call fastcc i16 @"exp<16, 8>"(i16 %in_V)" [/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_math.h:1011->CNN/classifier.hpp:34]   --->   Operation 70 'call' 'p_Val2_3' <Predicate = true> <Delay = 5.60> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 8.41>
+ST_5 : Operation 71 [5/6] (8.41ns)   --->   "%p_Val2_3 = call fastcc i16 @"exp<16, 8>"(i16 %in_V)" [/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_math.h:1011->CNN/classifier.hpp:34]   --->   Operation 71 'call' 'p_Val2_3' <Predicate = true> <Delay = 8.41> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 8.41>
+ST_6 : Operation 72 [4/6] (8.41ns)   --->   "%p_Val2_3 = call fastcc i16 @"exp<16, 8>"(i16 %in_V)" [/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_math.h:1011->CNN/classifier.hpp:34]   --->   Operation 72 'call' 'p_Val2_3' <Predicate = true> <Delay = 8.41> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 8.41>
+ST_7 : Operation 73 [3/6] (8.41ns)   --->   "%p_Val2_3 = call fastcc i16 @"exp<16, 8>"(i16 %in_V)" [/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_math.h:1011->CNN/classifier.hpp:34]   --->   Operation 73 'call' 'p_Val2_3' <Predicate = true> <Delay = 8.41> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 8.41>
+ST_8 : Operation 74 [2/6] (8.41ns)   --->   "%p_Val2_3 = call fastcc i16 @"exp<16, 8>"(i16 %in_V)" [/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_math.h:1011->CNN/classifier.hpp:34]   --->   Operation 74 'call' 'p_Val2_3' <Predicate = true> <Delay = 8.41> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 9 <SV = 8> <Delay = 6.39>
+ST_9 : Operation 75 [1/6] (4.31ns)   --->   "%p_Val2_3 = call fastcc i16 @"exp<16, 8>"(i16 %in_V)" [/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_math.h:1011->CNN/classifier.hpp:34]   --->   Operation 75 'call' 'p_Val2_3' <Predicate = true> <Delay = 4.31> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_9 : Operation 76 [1/1] (2.07ns)   --->   "%sum_exp_z_V = add i16 %p_Val2_3, %p_Val2_2" [CNN/classifier.hpp:34]   --->   Operation 76 'add' 'sum_exp_z_V' <Predicate = true> <Delay = 2.07> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 77 [1/1] (0.00ns)   --->   "br label %.preheader84" [CNN/classifier.hpp:31]   --->   Operation 77 'br' <Predicate = true> <Delay = 0.00>
+
+State 10 <SV = 3> <Delay = 2.07>
+ST_10 : Operation 78 [1/1] (0.00ns)   --->   "%classifier_y_hat_dat = phi i16 [ %classifier_y_hat_dat_3, %3 ], [ undef, %.preheader.preheader ]" [CNN/classifier.hpp:41]   --->   Operation 78 'phi' 'classifier_y_hat_dat' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 79 [1/1] (0.00ns)   --->   "%classifier_y_hat_dat_1 = phi i16 [ %classifier_y_hat_dat_4, %3 ], [ undef, %.preheader.preheader ]" [CNN/classifier.hpp:41]   --->   Operation 79 'phi' 'classifier_y_hat_dat_1' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 80 [1/1] (0.00ns)   --->   "%p_z_assign_4 = phi i2 [ %filter_2, %3 ], [ 0, %.preheader.preheader ]"   --->   Operation 80 'phi' 'p_z_assign_4' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 81 [1/1] (0.95ns)   --->   "%exitcond = icmp eq i2 %p_z_assign_4, -2" [CNN/classifier.hpp:37]   --->   Operation 81 'icmp' 'exitcond' <Predicate = true> <Delay = 0.95> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 82 [1/1] (0.00ns)   --->   "%empty_16 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)"   --->   Operation 82 'speclooptripcount' 'empty_16' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 83 [1/1] (1.56ns)   --->   "%filter_2 = add i2 %p_z_assign_4, 1" [CNN/classifier.hpp:37]   --->   Operation 83 'add' 'filter_2' <Predicate = true> <Delay = 1.56> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 84 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %4, label %3" [CNN/classifier.hpp:37]   --->   Operation 84 'br' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 85 [1/1] (0.00ns)   --->   "%tmp_4 = trunc i2 %p_z_assign_4 to i1" [CNN/classifier.hpp:37]   --->   Operation 85 'trunc' 'tmp_4' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_10 : Operation 86 [1/1] (0.00ns) (grouped into LUT with out node in_V_1)   --->   "%p_Val2_4 = select i1 %tmp_4, i16 %classifier_input_dat, i16 %classifier_input_dat_1" [CNN/classifier.hpp:39]   --->   Operation 86 'select' 'p_Val2_4' <Predicate = (!exitcond)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_10 : Operation 87 [1/1] (2.07ns) (out node of the LUT)   --->   "%in_V_1 = sub i16 %p_Val2_4, %p_Val2_1" [CNN/classifier.hpp:39]   --->   Operation 87 'sub' 'in_V_1' <Predicate = (!exitcond)> <Delay = 2.07> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 88 [1/1] (0.00ns)   --->   "%mrv = insertvalue { i16, i16 } undef, i16 %classifier_y_hat_dat, 0" [CNN/classifier.hpp:44]   --->   Operation 88 'insertvalue' 'mrv' <Predicate = (exitcond)> <Delay = 0.00>
+ST_10 : Operation 89 [1/1] (0.00ns)   --->   "%mrv_1 = insertvalue { i16, i16 } %mrv, i16 %classifier_y_hat_dat_1, 1" [CNN/classifier.hpp:44]   --->   Operation 89 'insertvalue' 'mrv_1' <Predicate = (exitcond)> <Delay = 0.00>
+ST_10 : Operation 90 [1/1] (0.00ns)   --->   "ret { i16, i16 } %mrv_1" [CNN/classifier.hpp:44]   --->   Operation 90 'ret' <Predicate = (exitcond)> <Delay = 0.00>
+
+State 11 <SV = 4> <Delay = 5.60>
+ST_11 : Operation 91 [6/6] (5.60ns)   --->   "%p_Val2_5 = call fastcc i16 @"exp<16, 8>"(i16 %in_V_1)" [/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_math.h:1011->CNN/classifier.hpp:40]   --->   Operation 91 'call' 'p_Val2_5' <Predicate = true> <Delay = 5.60> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 12 <SV = 5> <Delay = 8.41>
+ST_12 : Operation 92 [5/6] (8.41ns)   --->   "%p_Val2_5 = call fastcc i16 @"exp<16, 8>"(i16 %in_V_1)" [/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_math.h:1011->CNN/classifier.hpp:40]   --->   Operation 92 'call' 'p_Val2_5' <Predicate = true> <Delay = 8.41> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 13 <SV = 6> <Delay = 8.41>
+ST_13 : Operation 93 [4/6] (8.41ns)   --->   "%p_Val2_5 = call fastcc i16 @"exp<16, 8>"(i16 %in_V_1)" [/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_math.h:1011->CNN/classifier.hpp:40]   --->   Operation 93 'call' 'p_Val2_5' <Predicate = true> <Delay = 8.41> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 14 <SV = 7> <Delay = 8.41>
+ST_14 : Operation 94 [3/6] (8.41ns)   --->   "%p_Val2_5 = call fastcc i16 @"exp<16, 8>"(i16 %in_V_1)" [/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_math.h:1011->CNN/classifier.hpp:40]   --->   Operation 94 'call' 'p_Val2_5' <Predicate = true> <Delay = 8.41> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 15 <SV = 8> <Delay = 8.41>
+ST_15 : Operation 95 [2/6] (8.41ns)   --->   "%p_Val2_5 = call fastcc i16 @"exp<16, 8>"(i16 %in_V_1)" [/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_math.h:1011->CNN/classifier.hpp:40]   --->   Operation 95 'call' 'p_Val2_5' <Predicate = true> <Delay = 8.41> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 16 <SV = 9> <Delay = 8.22>
+ST_16 : Operation 96 [1/6] (4.31ns)   --->   "%p_Val2_5 = call fastcc i16 @"exp<16, 8>"(i16 %in_V_1)" [/home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_math.h:1011->CNN/classifier.hpp:40]   --->   Operation 96 'call' 'p_Val2_5' <Predicate = true> <Delay = 4.31> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_16 : Operation 97 [1/1] (0.00ns)   --->   "%tmp_1 = call i24 @_ssdm_op_BitConcatenate.i24.i16.i8(i16 %p_Val2_5, i8 0)" [CNN/classifier.hpp:41]   --->   Operation 97 'bitconcatenate' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 98 [28/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 98 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 10> <Delay = 3.91>
+ST_17 : Operation 99 [27/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 99 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 18 <SV = 11> <Delay = 3.91>
+ST_18 : Operation 100 [26/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 100 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 12> <Delay = 3.91>
+ST_19 : Operation 101 [25/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 101 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 13> <Delay = 3.91>
+ST_20 : Operation 102 [24/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 102 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 14> <Delay = 3.91>
+ST_21 : Operation 103 [23/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 103 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 22 <SV = 15> <Delay = 3.91>
+ST_22 : Operation 104 [22/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 104 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 23 <SV = 16> <Delay = 3.91>
+ST_23 : Operation 105 [21/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 105 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 24 <SV = 17> <Delay = 3.91>
+ST_24 : Operation 106 [20/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 106 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 25 <SV = 18> <Delay = 3.91>
+ST_25 : Operation 107 [19/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 107 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 26 <SV = 19> <Delay = 3.91>
+ST_26 : Operation 108 [18/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 108 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 27 <SV = 20> <Delay = 3.91>
+ST_27 : Operation 109 [17/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 109 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 28 <SV = 21> <Delay = 3.91>
+ST_28 : Operation 110 [16/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 110 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 29 <SV = 22> <Delay = 3.91>
+ST_29 : Operation 111 [15/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 111 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 30 <SV = 23> <Delay = 3.91>
+ST_30 : Operation 112 [14/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 112 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 31 <SV = 24> <Delay = 3.91>
+ST_31 : Operation 113 [13/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 113 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 32 <SV = 25> <Delay = 3.91>
+ST_32 : Operation 114 [12/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 114 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 33 <SV = 26> <Delay = 3.91>
+ST_33 : Operation 115 [11/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 115 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 34 <SV = 27> <Delay = 3.91>
+ST_34 : Operation 116 [10/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 116 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 35 <SV = 28> <Delay = 3.91>
+ST_35 : Operation 117 [9/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 117 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 36 <SV = 29> <Delay = 3.91>
+ST_36 : Operation 118 [8/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 118 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 37 <SV = 30> <Delay = 3.91>
+ST_37 : Operation 119 [7/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 119 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 38 <SV = 31> <Delay = 3.91>
+ST_38 : Operation 120 [6/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 120 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 39 <SV = 32> <Delay = 3.91>
+ST_39 : Operation 121 [5/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 121 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 40 <SV = 33> <Delay = 3.91>
+ST_40 : Operation 122 [4/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 122 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 41 <SV = 34> <Delay = 3.91>
+ST_41 : Operation 123 [3/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 123 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 42 <SV = 35> <Delay = 3.91>
+ST_42 : Operation 124 [2/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 124 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+State 43 <SV = 36> <Delay = 4.71>
+ST_43 : Operation 125 [1/28] (3.91ns)   --->   "%tmp = sdiv i24 %tmp_1, %tmp_105_tr_cast" [CNN/classifier.hpp:41]   --->   Operation 125 'sdiv' 'tmp' <Predicate = true> <Delay = 3.91> <Core = "DivnS_SEQ">   --->   Core 24 'DivnS_SEQ' <Latency = 27> <II = 16> <Delay = 3.91> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_43 : Operation 126 [1/1] (0.00ns)   --->   "%tmp_5 = trunc i24 %tmp to i16" [CNN/classifier.hpp:41]   --->   Operation 126 'trunc' 'tmp_5' <Predicate = true> <Delay = 0.00>
+ST_43 : Operation 127 [1/1] (0.80ns)   --->   "%classifier_y_hat_dat_3 = select i1 %tmp_4, i16 %classifier_y_hat_dat, i16 %tmp_5" [CNN/classifier.hpp:41]   --->   Operation 127 'select' 'classifier_y_hat_dat_3' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_43 : Operation 128 [1/1] (0.80ns)   --->   "%classifier_y_hat_dat_4 = select i1 %tmp_4, i16 %tmp_5, i16 %classifier_y_hat_dat_1" [CNN/classifier.hpp:41]   --->   Operation 128 'select' 'classifier_y_hat_dat_4' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_43 : Operation 129 [1/1] (0.00ns)   --->   "br label %.preheader" [CNN/classifier.hpp:37]   --->   Operation 129 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('__Val2__', CNN/classifier.hpp:26) with incoming values : ('classifier<1, 1, 2>.input.data[0].V') ('max_value_V_1_phi_s', CNN/classifier.hpp:26) [10]  (1.77 ns)
+
+ <State 2>: 4.04ns
+The critical path consists of the following:
+	'phi' operation ('filter') with incoming values : ('filter', CNN/classifier.hpp:24) [11]  (0 ns)
+	'select' operation ('classifier<1, 1, 2>.input.data[1].V', CNN/classifier.hpp:26) [18]  (0.805 ns)
+	'icmp' operation ('tmp_s', CNN/classifier.hpp:26) [19]  (2.43 ns)
+	'select' operation ('max_value_V_1_phi_s', CNN/classifier.hpp:26) [20]  (0.805 ns)
+
+ <State 3>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('classifier<1, 1, 2>.y_hat.data[0].V', CNN/classifier.hpp:41) with incoming values : ('classifier<1, 1, 2>.y_hat.data[0].V', CNN/classifier.hpp:41) [42]  (1.77 ns)
+
+ <State 4>: 7.68ns
+The critical path consists of the following:
+	'select' operation ('classifier<1, 1, 2>.input.data[1].V', CNN/classifier.hpp:33) [33]  (0 ns)
+	'sub' operation ('in.V', CNN/classifier.hpp:33) [34]  (2.08 ns)
+	'call' operation ('__Val2__', /home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_math.h:1011->CNN/classifier.hpp:34) to 'exp<16, 8>' [35]  (5.61 ns)
+
+ <State 5>: 8.42ns
+The critical path consists of the following:
+	'call' operation ('__Val2__', /home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_math.h:1011->CNN/classifier.hpp:34) to 'exp<16, 8>' [35]  (8.42 ns)
+
+ <State 6>: 8.42ns
+The critical path consists of the following:
+	'call' operation ('__Val2__', /home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_math.h:1011->CNN/classifier.hpp:34) to 'exp<16, 8>' [35]  (8.42 ns)
+
+ <State 7>: 8.42ns
+The critical path consists of the following:
+	'call' operation ('__Val2__', /home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_math.h:1011->CNN/classifier.hpp:34) to 'exp<16, 8>' [35]  (8.42 ns)
+
+ <State 8>: 8.42ns
+The critical path consists of the following:
+	'call' operation ('__Val2__', /home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_math.h:1011->CNN/classifier.hpp:34) to 'exp<16, 8>' [35]  (8.42 ns)
+
+ <State 9>: 6.39ns
+The critical path consists of the following:
+	'call' operation ('__Val2__', /home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_math.h:1011->CNN/classifier.hpp:34) to 'exp<16, 8>' [35]  (4.32 ns)
+	'add' operation ('sum_exp_z.V', CNN/classifier.hpp:34) [36]  (2.08 ns)
+
+ <State 10>: 2.08ns
+The critical path consists of the following:
+	'phi' operation ('filter') with incoming values : ('filter', CNN/classifier.hpp:37) [44]  (0 ns)
+	'select' operation ('classifier<1, 1, 2>.input.data[1].V', CNN/classifier.hpp:39) [51]  (0 ns)
+	'sub' operation ('in.V', CNN/classifier.hpp:39) [52]  (2.08 ns)
+
+ <State 11>: 5.61ns
+The critical path consists of the following:
+	'call' operation ('__Val2__', /home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_math.h:1011->CNN/classifier.hpp:40) to 'exp<16, 8>' [53]  (5.61 ns)
+
+ <State 12>: 8.42ns
+The critical path consists of the following:
+	'call' operation ('__Val2__', /home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_math.h:1011->CNN/classifier.hpp:40) to 'exp<16, 8>' [53]  (8.42 ns)
+
+ <State 13>: 8.42ns
+The critical path consists of the following:
+	'call' operation ('__Val2__', /home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_math.h:1011->CNN/classifier.hpp:40) to 'exp<16, 8>' [53]  (8.42 ns)
+
+ <State 14>: 8.42ns
+The critical path consists of the following:
+	'call' operation ('__Val2__', /home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_math.h:1011->CNN/classifier.hpp:40) to 'exp<16, 8>' [53]  (8.42 ns)
+
+ <State 15>: 8.42ns
+The critical path consists of the following:
+	'call' operation ('__Val2__', /home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_math.h:1011->CNN/classifier.hpp:40) to 'exp<16, 8>' [53]  (8.42 ns)
+
+ <State 16>: 8.23ns
+The critical path consists of the following:
+	'call' operation ('__Val2__', /home/hadee/Vivado/Vivado/2018.2/common/technology/autopilot/hls_math.h:1011->CNN/classifier.hpp:40) to 'exp<16, 8>' [53]  (4.32 ns)
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 17>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 18>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 19>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 20>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 21>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 22>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 23>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 24>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 25>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 26>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 27>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 28>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 29>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 30>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 31>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 32>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 33>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 34>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 35>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 36>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 37>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 38>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 39>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 40>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 41>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 42>: 3.91ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+
+ <State 43>: 4.72ns
+The critical path consists of the following:
+	'sdiv' operation ('tmp', CNN/classifier.hpp:41) [55]  (3.91 ns)
+	'select' operation ('classifier<1, 1, 2>.y_hat.data[0].V', CNN/classifier.hpp:41) [57]  (0.805 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
